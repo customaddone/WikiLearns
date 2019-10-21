@@ -1,5 +1,7 @@
 @extends('layouts.app')
 
 @section('content')
-    あ
+    @component('components.nav')
+    @endcomponent
+    
 @endsection
