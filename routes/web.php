@@ -10,7 +10,7 @@
 | contains the "web" middleware group. Now create something great!
 |
 */
-
+// まずUikitを使ってビューを作ろう
 Route::get('/', function () {
-    return view('welcome');
+    return view('home.index');
 });
