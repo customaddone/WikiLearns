@@ -7,7 +7,7 @@
     <!-- uk-container 横にpadding uk-section 縦にpadding -->
     <div class="uk-section-primary uk-section-xsmall uk-container">
         <div class="uk-margin">
-            <h1 class="uk-text-left uk-text-primary" style="font-size: 30px; font-family: 'Pacifico', cursive;">
+            <h1 class="uk-text-center uk-text-primary" style="font-size: 30px; font-family: 'Pacifico', cursive;">
                      Search
             </h1>
             <form class="uk-search uk-search-default " style="width: 100%;">

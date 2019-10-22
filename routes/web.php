@@ -12,5 +12,5 @@
 */
 // まずUikitを使ってビューを作ろう
 Route::get('/', function () {
-    return view('home.search');
+    return view('home.articles');
 });
