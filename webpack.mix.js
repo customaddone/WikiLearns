@@ -12,4 +12,6 @@ const mix = require('laravel-mix');
  */
 
 mix.js('resources/js/app.js', 'public/js')
+    // 末尾のsを忘れないように
+    .scripts('resources/js/HomeView.js', 'public/js/HomeView.js')
     .sass('resources/sass/app.scss', 'public/css');

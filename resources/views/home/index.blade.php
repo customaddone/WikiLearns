@@ -38,4 +38,6 @@
     </div>
     <!-- タイトルのフォント -->
     <link href="https://fonts.googleapis.com/css?family=Pacifico&display=swap" rel="stylesheet">
+    <!-- SPA用スクリプト-->
+    <script src="{{ asset('js/HomeView.js') }}"></script>
 @endsection
