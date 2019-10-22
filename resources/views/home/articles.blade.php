@@ -9,7 +9,7 @@
         <div class="uk-margin">
             <h1 class="uk-text-center uk-text-primary " style="font-size: 30px;
                 font-family: 'Pacifico', cursive;">
-                Articles
+                ~Articles~
             </h1>
             <p class='uk-text-lead'>・Top Hit</p>
             <div class="uk-first-column">
