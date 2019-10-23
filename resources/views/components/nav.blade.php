@@ -6,12 +6,13 @@
                 </a>
             </div>
             <div class="uk-navbar-center">
-                <a href="/" class="uk-navbar-item">
+                <!-- たとえcomponentだろうとRouterのbindの影響は及ぶ -->
+                <router-link to="/" class="uk-navbar-item">
                     <p style="font-size: 30px; font-family: Droid Sans;
                         margin-top: 13px;">
                         WikiLearns
                     </p>
-                </a>
+                </router-link>
             </div>
             <div class="uk-navbar-right">
                 <a uk-navbar-toggle-icon href="" class="uk-icon

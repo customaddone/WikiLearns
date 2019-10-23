@@ -1,10 +1,10 @@
 @extends('layouts.app')
 
 @section('content')
-    @component('components.nav')
-    @endcomponent
-
     <div id="homeView">
+        @component('components.nav')
+        @endcomponent
+        
         <router-view></router-view>
     </div>
     <!-- タイトルのフォント -->

@@ -3,6 +3,7 @@
         <div class="uk-margin">
 
             <!-- タイトル -->
+            <div class=""
             <h1 class="uk-text-center uk-text-primary" style="font-size: 30px; font-family: 'Pacifico', cursive;">
                    ~Search~
             </h1>
