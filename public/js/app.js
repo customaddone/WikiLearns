@@ -19421,6 +19421,480 @@ render._withStripped = true
 
 /***/ }),
 
+/***/ "./node_modules/vue-loader/lib/loaders/templateLoader.js?!./node_modules/vue-loader/lib/index.js?!./resources/js/components/HomeSearch.vue?vue&type=template&id=09e28492&":
+/*!*************************************************************************************************************************************************************************************************************!*\
+  !*** ./node_modules/vue-loader/lib/loaders/templateLoader.js??vue-loader-options!./node_modules/vue-loader/lib??vue-loader-options!./resources/js/components/HomeSearch.vue?vue&type=template&id=09e28492& ***!
+  \*************************************************************************************************************************************************************************************************************/
+/*! exports provided: render, staticRenderFns */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "render", function() { return render; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "staticRenderFns", function() { return staticRenderFns; });
+var render = function() {
+  var _vm = this
+  var _h = _vm.$createElement
+  var _c = _vm._self._c || _h
+  return _vm._m(0)
+}
+var staticRenderFns = [
+  function() {
+    var _vm = this
+    var _h = _vm.$createElement
+    var _c = _vm._self._c || _h
+    return _c(
+      "div",
+      { staticClass: "uk-section-primary uk-section-xsmall uk-container" },
+      [
+        _c("div", { staticClass: "uk-margin" }, [
+          _c(
+            "h1",
+            {
+              staticClass: "uk-text-center uk-text-primary",
+              staticStyle: {
+                "font-size": "30px",
+                "font-family": "'Pacifico', cursive"
+              }
+            },
+            [_vm._v("\n               ~Search~\n        ")]
+          ),
+          _vm._v(" "),
+          _c(
+            "form",
+            {
+              staticClass: "uk-search uk-search-default ",
+              staticStyle: { width: "100%" }
+            },
+            [
+              _c("a", { attrs: { href: "", "uk-search-icon": "" } }),
+              _vm._v(" "),
+              _c("input", {
+                staticClass: "uk-search-input ",
+                attrs: { type: "search", placeholder: "Search..." }
+              })
+            ]
+          )
+        ]),
+        _vm._v(" "),
+        _c("div", { staticStyle: { padding: "5px 5px" } }, [
+          _c(
+            "div",
+            {
+              staticClass:
+                "uk-card uk-card-header uk-card-primary uk-width-1-2@m uk-border-rounded ",
+              staticStyle: { border: "solid 1px #fff" }
+            },
+            [
+              _c("p", [_c("strong", [_vm._v("Title")])]),
+              _vm._v(" "),
+              _c("p", [
+                _vm._v("Lorem ipsum "),
+                _c("a", { attrs: { href: "#" } }, [_vm._v("dolor")]),
+                _vm._v(
+                  " sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua."
+                )
+              ])
+            ]
+          )
+        ]),
+        _vm._v(" "),
+        _c("div", { staticStyle: { padding: "5px 5px" } }, [
+          _c(
+            "div",
+            {
+              staticClass:
+                "uk-card uk-card-header uk-card-primary uk-width-1-2@m uk-border-rounded ",
+              staticStyle: { border: "solid 1px #fff" }
+            },
+            [
+              _c("p", [_c("strong", [_vm._v("Title")])]),
+              _vm._v(" "),
+              _c("p", [
+                _vm._v("Lorem ipsum "),
+                _c("a", { attrs: { href: "#" } }, [_vm._v("dolor")]),
+                _vm._v(
+                  " sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua."
+                )
+              ])
+            ]
+          )
+        ]),
+        _vm._v(" "),
+        _c("div", { staticStyle: { padding: "5px 5px" } }, [
+          _c(
+            "div",
+            {
+              staticClass:
+                "uk-card uk-card-header uk-card-primary uk-width-1-2@m uk-border-rounded ",
+              staticStyle: { border: "solid 1px #fff" }
+            },
+            [
+              _c("p", [_c("strong", [_vm._v("Title")])]),
+              _vm._v(" "),
+              _c("p", [
+                _vm._v("Lorem ipsum "),
+                _c("a", { attrs: { href: "#" } }, [_vm._v("dolor")]),
+                _vm._v(
+                  " sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua."
+                )
+              ])
+            ]
+          )
+        ])
+      ]
+    )
+  }
+]
+render._withStripped = true
+
+
+
+/***/ }),
+
+/***/ "./node_modules/vue-loader/lib/loaders/templateLoader.js?!./node_modules/vue-loader/lib/index.js?!./resources/js/components/HomeVocabula.vue?vue&type=template&id=7899056e&":
+/*!***************************************************************************************************************************************************************************************************************!*\
+  !*** ./node_modules/vue-loader/lib/loaders/templateLoader.js??vue-loader-options!./node_modules/vue-loader/lib??vue-loader-options!./resources/js/components/HomeVocabula.vue?vue&type=template&id=7899056e& ***!
+  \***************************************************************************************************************************************************************************************************************/
+/*! exports provided: render, staticRenderFns */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "render", function() { return render; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "staticRenderFns", function() { return staticRenderFns; });
+var render = function() {
+  var _vm = this
+  var _h = _vm.$createElement
+  var _c = _vm._self._c || _h
+  return _vm._m(0)
+}
+var staticRenderFns = [
+  function() {
+    var _vm = this
+    var _h = _vm.$createElement
+    var _c = _vm._self._c || _h
+    return _c(
+      "div",
+      { staticClass: "uk-section-primary uk-section-xsmall uk-container" },
+      [
+        _c("div", { staticClass: "uk-margin" }, [
+          _c(
+            "h1",
+            {
+              staticClass: "uk-text-center uk-text-primary ",
+              staticStyle: {
+                "font-size": "30px",
+                "font-family": "'Pacifico', cursive"
+              }
+            },
+            [_vm._v("\n            ~Vocabulary~\n        ")]
+          ),
+          _vm._v(" "),
+          _c("hr"),
+          _vm._v(" "),
+          _c("p", [_vm._v("Articles and related words")]),
+          _vm._v(" "),
+          _c("div", [
+            _c(
+              "ul",
+              {
+                staticClass: "uk-child-width-expand uk-tab",
+                attrs: { "uk-tab": "animation: uk-animation-fade" }
+              },
+              [
+                _c("li", { attrs: { "aria-expanded": "false" } }, [
+                  _c("a", { attrs: { href: "#" } }, [_vm._v("ITEM 1")])
+                ]),
+                _vm._v(" "),
+                _c(
+                  "li",
+                  {
+                    staticClass: "uk-active",
+                    attrs: { "aria-expanded": "true" }
+                  },
+                  [_c("a", { attrs: { href: "#" } }, [_vm._v("ITEM 2")])]
+                ),
+                _vm._v(" "),
+                _c("li", { attrs: { "aria-expanded": "false" } }, [
+                  _c("a", { attrs: { href: "#" } }, [_vm._v("ITEM 3")])
+                ]),
+                _vm._v(" "),
+                _c("li", { attrs: { "aria-expanded": "false" } }, [
+                  _c("a", { attrs: { href: "#" } }, [_vm._v("ITEM 4")])
+                ])
+              ]
+            ),
+            _vm._v(" "),
+            _c("ul", { staticClass: "uk-switcher uk-margin" }, [
+              _c("li", { staticClass: "uk-background-primary" }, [
+                _c("h1", [_vm._v("Title")]),
+                _vm._v(
+                  "\n                    タブパネル\n                    Lorem ipsum dolor sit amet, consectetur adipisicing elit. Aliquid ducimus voluptate quae, maxime incidunt fuga saepe fugit sapiente cupiditate vel magni, amet sint! Laboriosam fugit nesciunt, repudiandae debitis, minima doloribus.\n                    "
+                ),
+                _c("p", [_c("strong", [_vm._v("・related words")])]),
+                _vm._v(" "),
+                _c("div", { staticClass: "uk-container" }, [
+                  _c(
+                    "div",
+                    {
+                      staticClass: "uk-child-width-1-3 uk-text-center",
+                      attrs: { "uk-grid": "" }
+                    },
+                    [
+                      _c("div", [
+                        _c("p", [_vm._v("sample")]),
+                        _vm._v(" "),
+                        _c("p", [_vm._v("例、サンプル")])
+                      ]),
+                      _vm._v(" "),
+                      _c("div", [
+                        _c("p", [_vm._v("sample")]),
+                        _vm._v(" "),
+                        _c("p", [_vm._v("例、サンプル")])
+                      ]),
+                      _vm._v(" "),
+                      _c("div", [
+                        _c("p", [_vm._v("sample")]),
+                        _vm._v(" "),
+                        _c("p", [_vm._v("例、サンプル")])
+                      ])
+                    ]
+                  ),
+                  _vm._v(" "),
+                  _c(
+                    "div",
+                    {
+                      staticClass: "uk-child-width-1-3 uk-text-center",
+                      attrs: { "uk-grid": "" }
+                    },
+                    [
+                      _c("div", [
+                        _c("p", [_vm._v("sample")]),
+                        _vm._v(" "),
+                        _c("p", [_vm._v("例、サンプル")])
+                      ]),
+                      _vm._v(" "),
+                      _c("div", [
+                        _c("p", [_vm._v("sample")]),
+                        _vm._v(" "),
+                        _c("p", [_vm._v("例、サンプル")])
+                      ]),
+                      _vm._v(" "),
+                      _c("div", [
+                        _c("p", [_vm._v("sample")]),
+                        _vm._v(" "),
+                        _c("p", [_vm._v("例、サンプル")])
+                      ])
+                    ]
+                  )
+                ])
+              ]),
+              _vm._v(" "),
+              _c("li", { staticClass: "uk-background-primary" }, [
+                _c("h1", [_vm._v("Title")]),
+                _vm._v(
+                  "\n                    タブパネル\n                    Lorem ipsum dolor sit amet, consectetur adipisicing elit. Aliquid ducimus voluptate quae, maxime incidunt fuga saepe fugit sapiente cupiditate vel magni, amet sint! Laboriosam fugit nesciunt, repudiandae debitis, minima doloribus.\n                    "
+                ),
+                _c("p", [_c("strong", [_vm._v("・related words")])]),
+                _vm._v(" "),
+                _c("div", { staticClass: "uk-container" }, [
+                  _c(
+                    "div",
+                    {
+                      staticClass: "uk-child-width-1-3 uk-text-center",
+                      attrs: { "uk-grid": "" }
+                    },
+                    [
+                      _c("div", [
+                        _c("p", [_vm._v("sample")]),
+                        _vm._v(" "),
+                        _c("p", [_vm._v("例、サンプル")])
+                      ]),
+                      _vm._v(" "),
+                      _c("div", [
+                        _c("p", [_vm._v("sample")]),
+                        _vm._v(" "),
+                        _c("p", [_vm._v("例、サンプル")])
+                      ]),
+                      _vm._v(" "),
+                      _c("div", [
+                        _c("p", [_vm._v("sample")]),
+                        _vm._v(" "),
+                        _c("p", [_vm._v("例、サンプル")])
+                      ])
+                    ]
+                  ),
+                  _vm._v(" "),
+                  _c(
+                    "div",
+                    {
+                      staticClass: "uk-child-width-1-3 uk-text-center",
+                      attrs: { "uk-grid": "" }
+                    },
+                    [
+                      _c("div", [
+                        _c("p", [_vm._v("sample")]),
+                        _vm._v(" "),
+                        _c("p", [_vm._v("例、サンプル")])
+                      ]),
+                      _vm._v(" "),
+                      _c("div", [
+                        _c("p", [_vm._v("sample")]),
+                        _vm._v(" "),
+                        _c("p", [_vm._v("例、サンプル")])
+                      ]),
+                      _vm._v(" "),
+                      _c("div", [
+                        _c("p", [_vm._v("sample")]),
+                        _vm._v(" "),
+                        _c("p", [_vm._v("例、サンプル")])
+                      ])
+                    ]
+                  )
+                ])
+              ]),
+              _vm._v(" "),
+              _c("li", { staticClass: "uk-background-primary" }, [
+                _c("h1", [_vm._v("Title")]),
+                _vm._v(
+                  "\n                    タブパネル\n                    Lorem ipsum dolor sit amet, consectetur adipisicing elit. Aliquid ducimus voluptate quae, maxime incidunt fuga saepe fugit sapiente cupiditate vel magni, amet sint! Laboriosam fugit nesciunt, repudiandae debitis, minima doloribus.\n                    "
+                ),
+                _c("p", [_c("strong", [_vm._v("・related words")])]),
+                _vm._v(" "),
+                _c("div", { staticClass: "uk-container" }, [
+                  _c(
+                    "div",
+                    {
+                      staticClass: "uk-child-width-1-3 uk-text-center",
+                      attrs: { "uk-grid": "" }
+                    },
+                    [
+                      _c("div", [
+                        _c("p", [_vm._v("sample")]),
+                        _vm._v(" "),
+                        _c("p", [_vm._v("例、サンプル")])
+                      ]),
+                      _vm._v(" "),
+                      _c("div", [
+                        _c("p", [_vm._v("sample")]),
+                        _vm._v(" "),
+                        _c("p", [_vm._v("例、サンプル")])
+                      ]),
+                      _vm._v(" "),
+                      _c("div", [
+                        _c("p", [_vm._v("sample")]),
+                        _vm._v(" "),
+                        _c("p", [_vm._v("例、サンプル")])
+                      ])
+                    ]
+                  ),
+                  _vm._v(" "),
+                  _c(
+                    "div",
+                    {
+                      staticClass: "uk-child-width-1-3 uk-text-center",
+                      attrs: { "uk-grid": "" }
+                    },
+                    [
+                      _c("div", [
+                        _c("p", [_vm._v("sample")]),
+                        _vm._v(" "),
+                        _c("p", [_vm._v("例、サンプル")])
+                      ]),
+                      _vm._v(" "),
+                      _c("div", [
+                        _c("p", [_vm._v("sample")]),
+                        _vm._v(" "),
+                        _c("p", [_vm._v("例、サンプル")])
+                      ]),
+                      _vm._v(" "),
+                      _c("div", [
+                        _c("p", [_vm._v("sample")]),
+                        _vm._v(" "),
+                        _c("p", [_vm._v("例、サンプル")])
+                      ])
+                    ]
+                  )
+                ])
+              ]),
+              _vm._v(" "),
+              _c("li", { staticClass: "uk-background-primary" }, [
+                _c("h1", [_vm._v("Title")]),
+                _vm._v(
+                  "\n                    タブパネル\n                    Lorem ipsum dolor sit amet, consectetur adipisicing elit. Aliquid ducimus voluptate quae, maxime incidunt fuga saepe fugit sapiente cupiditate vel magni, amet sint! Laboriosam fugit nesciunt, repudiandae debitis, minima doloribus.\n                    "
+                ),
+                _c("p", [_c("strong", [_vm._v("・related words")])]),
+                _vm._v(" "),
+                _c("div", { staticClass: "uk-container" }, [
+                  _c(
+                    "div",
+                    {
+                      staticClass: "uk-child-width-1-3 uk-text-center",
+                      attrs: { "uk-grid": "" }
+                    },
+                    [
+                      _c("div", [
+                        _c("p", [_vm._v("sample")]),
+                        _vm._v(" "),
+                        _c("p", [_vm._v("例、サンプル")])
+                      ]),
+                      _vm._v(" "),
+                      _c("div", [
+                        _c("p", [_vm._v("sample")]),
+                        _vm._v(" "),
+                        _c("p", [_vm._v("例、サンプル")])
+                      ]),
+                      _vm._v(" "),
+                      _c("div", [
+                        _c("p", [_vm._v("sample")]),
+                        _vm._v(" "),
+                        _c("p", [_vm._v("例、サンプル")])
+                      ])
+                    ]
+                  ),
+                  _vm._v(" "),
+                  _c(
+                    "div",
+                    {
+                      staticClass: "uk-child-width-1-3 uk-text-center",
+                      attrs: { "uk-grid": "" }
+                    },
+                    [
+                      _c("div", [
+                        _c("p", [_vm._v("sample")]),
+                        _vm._v(" "),
+                        _c("p", [_vm._v("例、サンプル")])
+                      ]),
+                      _vm._v(" "),
+                      _c("div", [
+                        _c("p", [_vm._v("sample")]),
+                        _vm._v(" "),
+                        _c("p", [_vm._v("例、サンプル")])
+                      ]),
+                      _vm._v(" "),
+                      _c("div", [
+                        _c("p", [_vm._v("sample")]),
+                        _vm._v(" "),
+                        _c("p", [_vm._v("例、サンプル")])
+                      ])
+                    ]
+                  )
+                ])
+              ])
+            ])
+          ])
+        ])
+      ]
+    )
+  }
+]
+render._withStripped = true
+
+
+
+/***/ }),
+
 /***/ "./node_modules/vue-loader/lib/runtime/componentNormalizer.js":
 /*!********************************************************************!*\
   !*** ./node_modules/vue-loader/lib/runtime/componentNormalizer.js ***!
@@ -19596,14 +20070,34 @@ module.exports = function(module) {
 /*!*****************************!*\
   !*** ./resources/js/app.js ***!
   \*****************************/
-/*! no static exports found */
-/***/ (function(module, exports, __webpack_require__) {
+/*! no exports provided */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
 
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony import */ var _components_HomeArticles_vue__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./components/HomeArticles.vue */ "./resources/js/components/HomeArticles.vue");
+/* harmony import */ var _components_HomeSearch_vue__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./components/HomeSearch.vue */ "./resources/js/components/HomeSearch.vue");
+/* harmony import */ var _components_HomeVocabula_vue__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ./components/HomeVocabula.vue */ "./resources/js/components/HomeVocabula.vue");
 __webpack_require__(/*! ./bootstrap */ "./resources/js/bootstrap.js");
 
-Vue.component('home-articles', __webpack_require__(/*! ./components/HomeArticles.vue */ "./resources/js/components/HomeArticles.vue")["default"]);
+
+
+
+var router = new VueRouter({
+  routes: [{
+    path: '/articles',
+    component: _components_HomeArticles_vue__WEBPACK_IMPORTED_MODULE_0__["default"]
+  }, {
+    path: '/search',
+    component: _components_HomeSearch_vue__WEBPACK_IMPORTED_MODULE_1__["default"]
+  }, {
+    path: '/vocabula',
+    component: _components_HomeVocabula_vue__WEBPACK_IMPORTED_MODULE_2__["default"]
+  }]
+});
 var app = new Vue({
-  el: '#homeView'
+  el: "#homeView",
+  router: router
 });
 
 /***/ }),
@@ -19688,6 +20182,112 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony reexport (safe) */ __webpack_require__.d(__webpack_exports__, "render", function() { return _node_modules_vue_loader_lib_loaders_templateLoader_js_vue_loader_options_node_modules_vue_loader_lib_index_js_vue_loader_options_HomeArticles_vue_vue_type_template_id_3ca7d227___WEBPACK_IMPORTED_MODULE_0__["render"]; });
 
 /* harmony reexport (safe) */ __webpack_require__.d(__webpack_exports__, "staticRenderFns", function() { return _node_modules_vue_loader_lib_loaders_templateLoader_js_vue_loader_options_node_modules_vue_loader_lib_index_js_vue_loader_options_HomeArticles_vue_vue_type_template_id_3ca7d227___WEBPACK_IMPORTED_MODULE_0__["staticRenderFns"]; });
+
+
+
+/***/ }),
+
+/***/ "./resources/js/components/HomeSearch.vue":
+/*!************************************************!*\
+  !*** ./resources/js/components/HomeSearch.vue ***!
+  \************************************************/
+/*! exports provided: default */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony import */ var _HomeSearch_vue_vue_type_template_id_09e28492___WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./HomeSearch.vue?vue&type=template&id=09e28492& */ "./resources/js/components/HomeSearch.vue?vue&type=template&id=09e28492&");
+/* harmony import */ var _node_modules_vue_loader_lib_runtime_componentNormalizer_js__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ../../../node_modules/vue-loader/lib/runtime/componentNormalizer.js */ "./node_modules/vue-loader/lib/runtime/componentNormalizer.js");
+
+var script = {}
+
+
+/* normalize component */
+
+var component = Object(_node_modules_vue_loader_lib_runtime_componentNormalizer_js__WEBPACK_IMPORTED_MODULE_1__["default"])(
+  script,
+  _HomeSearch_vue_vue_type_template_id_09e28492___WEBPACK_IMPORTED_MODULE_0__["render"],
+  _HomeSearch_vue_vue_type_template_id_09e28492___WEBPACK_IMPORTED_MODULE_0__["staticRenderFns"],
+  false,
+  null,
+  null,
+  null
+  
+)
+
+/* hot reload */
+if (false) { var api; }
+component.options.__file = "resources/js/components/HomeSearch.vue"
+/* harmony default export */ __webpack_exports__["default"] = (component.exports);
+
+/***/ }),
+
+/***/ "./resources/js/components/HomeSearch.vue?vue&type=template&id=09e28492&":
+/*!*******************************************************************************!*\
+  !*** ./resources/js/components/HomeSearch.vue?vue&type=template&id=09e28492& ***!
+  \*******************************************************************************/
+/*! exports provided: render, staticRenderFns */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony import */ var _node_modules_vue_loader_lib_loaders_templateLoader_js_vue_loader_options_node_modules_vue_loader_lib_index_js_vue_loader_options_HomeSearch_vue_vue_type_template_id_09e28492___WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! -!../../../node_modules/vue-loader/lib/loaders/templateLoader.js??vue-loader-options!../../../node_modules/vue-loader/lib??vue-loader-options!./HomeSearch.vue?vue&type=template&id=09e28492& */ "./node_modules/vue-loader/lib/loaders/templateLoader.js?!./node_modules/vue-loader/lib/index.js?!./resources/js/components/HomeSearch.vue?vue&type=template&id=09e28492&");
+/* harmony reexport (safe) */ __webpack_require__.d(__webpack_exports__, "render", function() { return _node_modules_vue_loader_lib_loaders_templateLoader_js_vue_loader_options_node_modules_vue_loader_lib_index_js_vue_loader_options_HomeSearch_vue_vue_type_template_id_09e28492___WEBPACK_IMPORTED_MODULE_0__["render"]; });
+
+/* harmony reexport (safe) */ __webpack_require__.d(__webpack_exports__, "staticRenderFns", function() { return _node_modules_vue_loader_lib_loaders_templateLoader_js_vue_loader_options_node_modules_vue_loader_lib_index_js_vue_loader_options_HomeSearch_vue_vue_type_template_id_09e28492___WEBPACK_IMPORTED_MODULE_0__["staticRenderFns"]; });
+
+
+
+/***/ }),
+
+/***/ "./resources/js/components/HomeVocabula.vue":
+/*!**************************************************!*\
+  !*** ./resources/js/components/HomeVocabula.vue ***!
+  \**************************************************/
+/*! exports provided: default */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony import */ var _HomeVocabula_vue_vue_type_template_id_7899056e___WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./HomeVocabula.vue?vue&type=template&id=7899056e& */ "./resources/js/components/HomeVocabula.vue?vue&type=template&id=7899056e&");
+/* harmony import */ var _node_modules_vue_loader_lib_runtime_componentNormalizer_js__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ../../../node_modules/vue-loader/lib/runtime/componentNormalizer.js */ "./node_modules/vue-loader/lib/runtime/componentNormalizer.js");
+
+var script = {}
+
+
+/* normalize component */
+
+var component = Object(_node_modules_vue_loader_lib_runtime_componentNormalizer_js__WEBPACK_IMPORTED_MODULE_1__["default"])(
+  script,
+  _HomeVocabula_vue_vue_type_template_id_7899056e___WEBPACK_IMPORTED_MODULE_0__["render"],
+  _HomeVocabula_vue_vue_type_template_id_7899056e___WEBPACK_IMPORTED_MODULE_0__["staticRenderFns"],
+  false,
+  null,
+  null,
+  null
+  
+)
+
+/* hot reload */
+if (false) { var api; }
+component.options.__file = "resources/js/components/HomeVocabula.vue"
+/* harmony default export */ __webpack_exports__["default"] = (component.exports);
+
+/***/ }),
+
+/***/ "./resources/js/components/HomeVocabula.vue?vue&type=template&id=7899056e&":
+/*!*********************************************************************************!*\
+  !*** ./resources/js/components/HomeVocabula.vue?vue&type=template&id=7899056e& ***!
+  \*********************************************************************************/
+/*! exports provided: render, staticRenderFns */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony import */ var _node_modules_vue_loader_lib_loaders_templateLoader_js_vue_loader_options_node_modules_vue_loader_lib_index_js_vue_loader_options_HomeVocabula_vue_vue_type_template_id_7899056e___WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! -!../../../node_modules/vue-loader/lib/loaders/templateLoader.js??vue-loader-options!../../../node_modules/vue-loader/lib??vue-loader-options!./HomeVocabula.vue?vue&type=template&id=7899056e& */ "./node_modules/vue-loader/lib/loaders/templateLoader.js?!./node_modules/vue-loader/lib/index.js?!./resources/js/components/HomeVocabula.vue?vue&type=template&id=7899056e&");
+/* harmony reexport (safe) */ __webpack_require__.d(__webpack_exports__, "render", function() { return _node_modules_vue_loader_lib_loaders_templateLoader_js_vue_loader_options_node_modules_vue_loader_lib_index_js_vue_loader_options_HomeVocabula_vue_vue_type_template_id_7899056e___WEBPACK_IMPORTED_MODULE_0__["render"]; });
+
+/* harmony reexport (safe) */ __webpack_require__.d(__webpack_exports__, "staticRenderFns", function() { return _node_modules_vue_loader_lib_loaders_templateLoader_js_vue_loader_options_node_modules_vue_loader_lib_index_js_vue_loader_options_HomeVocabula_vue_vue_type_template_id_7899056e___WEBPACK_IMPORTED_MODULE_0__["staticRenderFns"]; });
 
 
 

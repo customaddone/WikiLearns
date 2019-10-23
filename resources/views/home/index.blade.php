@@ -40,7 +40,10 @@
     <link href="https://fonts.googleapis.com/css?family=Pacifico&display=swap" rel="stylesheet">
     <!-- SPA用スクリプト-->
     <div id="homeView">
-        <home-articles></home-articles>
+        <router-link to="/articles">記事</router-link>
+        <router-link to="/search">記事</router-link>
+        <router-link to="/vocabula">記事</router-link>
+        <router-view></router-view>
     </div>
     <script src="{{ asset('js/app.js') }}"></script>
 
