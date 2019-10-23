@@ -1,6 +1,7 @@
 require('./bootstrap');
 
-// テンプレートをインポートする
+// Vueファイルからテンプレートをインポートする
+import HomeTop from './components/HomeTop.vue'
 import HomeArticles from './components/HomeArticles.vue'
 import HomeSearch from './components/HomeSearch.vue'
 import HomeVocabula from './components/HomeVocabula.vue'
@@ -8,6 +9,10 @@ import HomeVocabula from './components/HomeVocabula.vue'
 var router = new VueRouter({
 
   routes: [
+    {
+      path: '/',
+      component: HomeTop
+    },
     {
       path: '/articles',
       component: HomeArticles　// テンプレート名をcomponentにつける　
