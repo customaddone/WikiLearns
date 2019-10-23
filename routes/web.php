@@ -12,5 +12,5 @@
 */
 // まずUikitを使ってビューを作ろう
 Route::get('/', function () {
-    return view('home.vocabula');
+    return view('home.index');
 });
