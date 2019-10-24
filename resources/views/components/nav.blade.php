@@ -8,10 +8,10 @@
             <div class="uk-navbar-center">
                 <!-- たとえcomponentだろうとRouterのbindの影響は及ぶ -->
                 <router-link to="/" class="uk-navbar-item">
-                    <p style="font-size: 30px; font-family: Droid Sans;
-                        margin-top: 13px;">
+                    <div style="font-size: 30px; font-family: Droid Sans;
+                        ">
                         WikiLearns
-                    </p>
+                    </div>
                 </router-link>
             </div>
             <div class="uk-navbar-right">
