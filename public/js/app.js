@@ -1878,7 +1878,7 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony default export */ __webpack_exports__["default"] = ({
   data: function data() {
     return {
-      users: [],
+      searchResults: [{}, {}, {}],
       usersshow: "",
       searchword: ""
     };
@@ -1887,22 +1887,20 @@ __webpack_require__.r(__webpack_exports__);
     searchword: function searchword(newSearch) {
       var _this = this;
 
-      // usersを空にしないと再度検索できない
+      // usersを空にするとResultが空になる
       if (newSearch == "") {
-        this.users = [];
+        this.searchResults = [{}, {}, {}];
       }
 
       axios.get("/api/homeSearch/" + newSearch).then(function (response) {
         for (var i = 0; i < 3; i++) {
           // ３つだけ取って配列に入れる
-          if (_this.users.length < 3) {
-            alert(JSON.stringify(response.data));
-
-            _this.users.push(response.data.query.search[i]);
+          if (_this.searchResults.length < 3) {
+            _this.searchResults.push(response.data.query.search[i]);
           } else {
-            _this.users.shift();
+            _this.searchResults.shift();
 
-            _this.users.push(response.data.query.search[i]);
+            _this.searchResults.push(response.data.query.search[i]);
           }
         }
       })["catch"](function (response) {
@@ -19576,7 +19574,7 @@ var render = function() {
             )
           ]),
           _vm._v(" "),
-          _vm._l(_vm.users, function(user, index) {
+          _vm._l(_vm.searchResults, function(searchResult, index) {
             return _c("div", { key: index }, [
               _c("div", { staticStyle: { padding: "5px 5px" } }, [
                 _c(
@@ -19584,12 +19582,16 @@ var render = function() {
                   {
                     staticClass:
                       "uk-card uk-card-header uk-card-primary uk-width-1-2@m uk-border-rounded ",
-                    staticStyle: { border: "solid 1px #fff" }
+                    staticStyle: { height: "150px", border: "solid 1px #fff" }
                   },
                   [
-                    _c("p", [_c("strong", [_vm._v(_vm._s(user.title))])]),
+                    _c("p", [
+                      _c("strong", [_vm._v(_vm._s(searchResult.title))])
+                    ]),
                     _vm._v(" "),
-                    _c("div", { domProps: { innerHTML: _vm._s(user.snippet) } })
+                    _c("div", {
+                      domProps: { innerHTML: _vm._s(searchResult.snippet) }
+                    })
                   ]
                 )
               ])

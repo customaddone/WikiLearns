@@ -19,14 +19,14 @@
 
             <!-- uk-card-primary 青色カード表示　-->
             <!-- 検索結果表示 -->
-            <div v-for="(user, index) in users" v-bind:key="index">
+            <div v-for="(searchResult, index) in searchResults" v-bind:key="index">
                 <div style="padding: 5px 5px;">
                     <div class="uk-card uk-card-header uk-card-primary uk-width-1-2@m uk-border-rounded "
-                        style="border: solid 1px #fff;">
+                        style="height: 150px; border: solid 1px #fff;">
                         <!-- 検索結果見出し -->
-                        <p><strong>{{ user.title }}</strong></p>
+                        <p><strong>{{ searchResult.title }}</strong></p>
                         <!-- 検索結果本文 -->
-                        <div v-html="user.snippet"></div>
+                        <div v-html="searchResult.snippet"></div>
                     </div>
                 </div>
             </div>
@@ -39,7 +39,7 @@
 export default {
   data: function () {
     return {
-      users: [],
+      searchResults: [{}, {}, {}],
       usersshow: "",
       searchword: "",
     }
@@ -48,21 +48,20 @@ export default {
   watch: {
     searchword: function(newSearch) {
 
-      // usersを空にしないと再度検索できない
+      // usersを空にするとResultが空になる
       if (newSearch == "") {
-        this.users = [];
+        this.searchResults = [{}, {},　{}];
       }
 
       axios.get("/api/homeSearch/" + newSearch)
            .then((response) => {
              for(var i = 0; i < 3; i++) {
              // ３つだけ取って配列に入れる
-             if (this.users.length < 3) {
-               alert(JSON.stringify(response.data));
-               this.users.push(response.data.query.search[i]);
+             if (this.searchResults.length < 3) {
+               this.searchResults.push(response.data.query.search[i]);
               } else {
-                this.users.shift();
-                this.users.push(response.data.query.search[i]);
+                this.searchResults.shift();
+                this.searchResults.push(response.data.query.search[i]);
               }
             }})
             .catch(response => console.log(response));
