@@ -18,3 +18,9 @@ Route::middleware('auth:api')->get('/user', function (Request $request) {
 });
 
 Route::get("/homeSearch/{pass}", "WikiSearchController@homeSearch");
+
+Route::get("/data/{pass}", "ArticlesController@dict"
+);
+
+Route::get("/datashow/{passId}", "ArticlesController@dictshow"
+);

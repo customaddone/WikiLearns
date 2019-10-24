@@ -401,7 +401,7 @@ var render = function() {
             _c(
               "button",
               {
-                staticClass: "uk-button　uk-button-primary",
+                staticClass: "uk-button uk-button-primary",
                 on: { click: _vm.switchKeyValue }
               },
               [_vm._v("単語検索")]
@@ -655,7 +655,7 @@ __webpack_require__.r(__webpack_exports__);
 /*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
 
-module.exports = __webpack_require__(/*! /var/www/resources/js/articlesShow.js */"./resources/js/articlesShow.js");
+module.exports = __webpack_require__(/*! /Users/fujisawakenyuu/sampleapp/laravel/wikiLearns/resources/js/articlesShow.js */"./resources/js/articlesShow.js");
 
 
 /***/ })
