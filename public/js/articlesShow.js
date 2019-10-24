@@ -390,14 +390,24 @@ var render = function() {
             _c(
               "button",
               {
-                staticClass: "uk-button uk-button-primary",
+                staticClass: "uk-button uk-button-muted",
+                on: { click: _vm.switchKeyValue }
+              },
+              [_vm._v("標準")]
+            )
+          ])
+        : _vm.switchFunctionKey % 3 == 1
+        ? _c("div", [
+            _c(
+              "button",
+              {
+                staticClass: "uk-button　uk-button-primary",
                 on: { click: _vm.switchKeyValue }
               },
               [_vm._v("単語検索")]
             )
           ])
-        : _vm.switchFunctionKey % 3 == 1
-        ? _c("div", [
+        : _c("div", [
             _c(
               "button",
               {
@@ -406,16 +416,6 @@ var render = function() {
                 on: { click: _vm.switchKeyValue }
               },
               [_vm._v("ライト")]
-            )
-          ])
-        : _c("div", [
-            _c(
-              "button",
-              {
-                staticClass: "uk-button uk-button-muted",
-                on: { click: _vm.switchKeyValue }
-              },
-              [_vm._v(" 解除 ")]
             )
           ])
     ]),

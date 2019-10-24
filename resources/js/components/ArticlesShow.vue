@@ -23,13 +23,13 @@
         <!-- 単語モード、ハイライトモード、標準モードを切り替えるためのボタン -->
         <div class="showSwitchButton">
             <div v-if="switchFunctionKey % 3 == 0">
-                <button @click="switchKeyValue" class="uk-button uk-button-primary">単語検索</button>
+                <button @click="switchKeyValue" class="uk-button uk-button-muted">標準</button>
             </div>
             <div v-else-if="switchFunctionKey % 3 == 1">
-                <button @click="switchKeyValue" class="uk-button" style="backgroundColor: yellow;">ライト</button>
+                <button @click="switchKeyValue" class="uk-button　uk-button-primary">単語検索</button>
             </div>
             <div v-else>
-                <button @click="switchKeyValue" class="uk-button uk-button-muted"> 解除 </button>
+                <button @click="switchKeyValue" class="uk-button" style="backgroundColor: yellow;">ライト</button>
             </div>
         </div>
 
