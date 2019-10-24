@@ -14,3 +14,5 @@
 Route::get('/', function () {
     return view('home.index');
 });
+
+Route::match(["get", "options"],'/articles/wikishow/{pass?}', 'ArticlesController@wikishow');

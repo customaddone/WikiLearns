@@ -21,13 +21,15 @@
             <!-- 検索結果表示 -->
             <div v-for="(searchResult, index) in searchResults" v-bind:key="index">
                 <div style="padding: 5px 5px;">
-                    <div class="uk-card uk-card-header uk-card-primary uk-width-1-2@m uk-border-rounded "
-                        style="height: 170px; border: solid 1px #fff;">
-                        <!-- 検索結果見出し -->
-                        <p><strong>{{ searchResult.title }}</strong></p>
-                        <!-- 検索結果本文 -->
-                        <div v-html="searchResult.snippet"></div>
-                    </div>
+                    <a :href="'articles/wikishow/' + searchResult.title ">
+                        <div class="uk-card uk-card-header uk-card-primary uk-width-1-2@m uk-border-rounded "
+                            style="height: 200px; border: solid 1px #fff;">
+                            <!-- 検索結果見出し -->
+                            <p><strong>{{ searchResult.title }}</strong></p>
+                            <!-- 検索結果本文 -->
+                            <div v-html="searchResult.snippet"></div>
+                        </div>
+                    </a>
                 </div>
             </div>
 

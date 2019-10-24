@@ -12,6 +12,6 @@ const mix = require('laravel-mix');
  */
 
 mix.js('resources/js/app.js', 'public/js')
+    .js('resources/js/articlesShow.js', 'public/js')
     // ホームでの検索用 末尾のsを忘れないように
-    .scripts('resources/js/searchWikiAPI.js', 'public/js/searchWikiAPI.js')
     .sass('resources/sass/app.scss', 'public/css');
