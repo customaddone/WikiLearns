@@ -19582,7 +19582,7 @@ var render = function() {
                   {
                     staticClass:
                       "uk-card uk-card-header uk-card-primary uk-width-1-2@m uk-border-rounded ",
-                    staticStyle: { height: "150px", border: "solid 1px #fff" }
+                    staticStyle: { height: "170px", border: "solid 1px #fff" }
                   },
                   [
                     _c("p", [
@@ -20598,8 +20598,8 @@ __webpack_require__.r(__webpack_exports__);
 /*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
 
-__webpack_require__(/*! /var/www/resources/js/app.js */"./resources/js/app.js");
-module.exports = __webpack_require__(/*! /var/www/resources/sass/app.scss */"./resources/sass/app.scss");
+__webpack_require__(/*! /Users/fujisawakenyuu/sampleapp/laravel/wikiLearns/resources/js/app.js */"./resources/js/app.js");
+module.exports = __webpack_require__(/*! /Users/fujisawakenyuu/sampleapp/laravel/wikiLearns/resources/sass/app.scss */"./resources/sass/app.scss");
 
 
 /***/ })

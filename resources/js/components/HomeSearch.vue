@@ -22,7 +22,7 @@
             <div v-for="(searchResult, index) in searchResults" v-bind:key="index">
                 <div style="padding: 5px 5px;">
                     <div class="uk-card uk-card-header uk-card-primary uk-width-1-2@m uk-border-rounded "
-                        style="height: 150px; border: solid 1px #fff;">
+                        style="height: 170px; border: solid 1px #fff;">
                         <!-- 検索結果見出し -->
                         <p><strong>{{ searchResult.title }}</strong></p>
                         <!-- 検索結果本文 -->
