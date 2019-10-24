@@ -1,42 +1,72 @@
 <template>
     <div class="uk-section-primary uk-section-xsmall uk-container">
         <div class="uk-margin">
+            <div>
 
-            <!-- タイトル -->
-            <div class=""
-            <h1 class="uk-text-center uk-text-primary" style="font-size: 30px; font-family: 'Pacifico', cursive;">
+                <!-- タイトル -->
+                <h1 class="uk-text-center uk-text-primary" style="font-size: 30px; font-family: 'Pacifico', cursive;">
                    ~Search~
-            </h1>
+                </h1>
 
-            <!-- 検索ボタン -->
-            <form class="uk-search uk-search-default " style="width: 100%;">
-                <a href="" uk-search-icon></a>
-                <input class="uk-search-input " type="search" placeholder="Search...">
-            </form>
+                <!-- 検索ボタン -->
+                <div class="uk-search uk-search-default"style="width: 100%;">
+                    <a href="" uk-search-icon></a>
+                    <input class="uk-search-input " type="search"
+                        v-model="searchword" placeholder="Search...">
+                </div>
+
             </div>
+
             <!-- uk-card-primary 青色カード表示　-->
-            <div style="padding: 5px 5px;">
-            <div class="uk-card uk-card-header uk-card-primary uk-width-1-2@m uk-border-rounded "
-              style="border: solid 1px #fff;">
-                <p><strong>Title</strong></p>
-                <p>Lorem ipsum <a href="#">dolor</a> sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>
+            <!-- 検索結果表示 -->
+            <div v-for="(user, index) in users" v-bind:key="index">
+                <div style="padding: 5px 5px;">
+                    <div class="uk-card uk-card-header uk-card-primary uk-width-1-2@m uk-border-rounded "
+                        style="border: solid 1px #fff;">
+                        <!-- 検索結果見出し -->
+                        <p><strong>{{ user.title }}</strong></p>
+                        <!-- 検索結果本文 -->
+                        <div v-html="user.snippet"></div>
+                    </div>
+                </div>
             </div>
-        </div>
 
-        <!-- 検索結果表示 -->
-        <div style="padding: 5px 5px;">
-            <div class="uk-card uk-card-header uk-card-primary uk-width-1-2@m uk-border-rounded "
-                style="border: solid 1px #fff;">
-                <p><strong>Title</strong></p>
-                <p>Lorem ipsum <a href="#">dolor</a> sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>
-            </div>
-        </div>
-        <div style="padding: 5px 5px;">
-            <div class="uk-card uk-card-header uk-card-primary uk-width-1-2@m uk-border-rounded "
-                style="border: solid 1px #fff;">
-                <p><strong>Title</strong></p>
-                <p>Lorem ipsum <a href="#">dolor</a> sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>
-            </div>
         </div>
     </div>
 </template>
+
+<script>
+export default {
+  data: function () {
+    return {
+      users: [],
+      usersshow: "",
+      searchword: "",
+    }
+
+  },
+  watch: {
+    searchword: function(newSearch) {
+
+      // usersを空にしないと再度検索できない
+      if (newSearch == "") {
+        this.users = [];
+      }
+
+      axios.get("/api/homeSearch/" + newSearch)
+           .then((response) => {
+             for(var i = 0; i < 3; i++) {
+             // ３つだけ取って配列に入れる
+             if (this.users.length < 3) {
+               alert(JSON.stringify(response.data));
+               this.users.push(response.data.query.search[i]);
+              } else {
+                this.users.shift();
+                this.users.push(response.data.query.search[i]);
+              }
+            }})
+            .catch(response => console.log(response));
+      }
+   },
+}
+</script>
