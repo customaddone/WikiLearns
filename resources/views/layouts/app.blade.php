@@ -22,6 +22,9 @@
 
     <!-- 特殊フォント -->
     <link href="https://fonts.googleapis.com/css?family=Pacifico&display=swap" rel="stylesheet">
+
+    <!-- wikipedia用css -->
+    <link href="{{ asset('css/wikicss.css') }}" rel="stylesheet">
 </head>
 <body>
     @yield('content')
