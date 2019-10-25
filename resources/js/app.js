@@ -26,12 +26,6 @@ var router = new VueRouter({
       path: '/vocabula',
       component: HomeVocabula
     },
-
-    {
-      path: '/search/:title?',
-      name: 'search',
-      component: ArticlesShow
-    }
   ]
 })
 

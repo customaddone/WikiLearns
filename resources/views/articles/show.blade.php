@@ -2,14 +2,13 @@
 
 @section('content')
 
-    <div id="homeView">
-        @component('components.nav')
-        @endcomponent
 
-        <div id="articlesShow">
-            <div class="uk-container">
-                <wiki-show></wiki-show>
-            </div>
+   @component('components.navShow')
+   @endcomponent
+
+   <div id="articlesShow">
+       <div class="uk-container">
+           <wiki-show></wiki-show>
         </div>
     </div>
 

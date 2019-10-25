@@ -1888,7 +1888,12 @@ __webpack_require__.r(__webpack_exports__);
     return {
       /* mount時にwikiの記事を引っ張ってくるためのquery */
       article: "",
-      page: "",
+      showquery: {
+        format: 'json',
+        action: 'parse',
+        origin: '*',
+        page: ""
+      },
       url: "https://en.wikipedia.org/w/api.php",
 
       /* 単語検索モード、ハイライトモード、標準モードを切り替える際のキー */
@@ -1912,12 +1917,16 @@ __webpack_require__.r(__webpack_exports__);
     var _this = this;
 
     /* 前のページからパス(wikiのページのタイトル)を受け取る */
-    var pathname = this.$route.params.title;
-    this.page = encodeURI(pathname);
+    var pathname = location.pathname;
+    var searchname = pathname.split("/");
+    var underVarJoin = searchname[3].split("%20").join('_');
+    this.showquery.page = searchname.length == 4 ? encodeURI(underVarJoin) : "";
     /* axiosで記事を引っ張ってくる。その際、記事上のaリンクを加工する(./任意のタイトルでページを
        開けるように) */
 
-    axios.get("/api/articlesShow/" + this.page).then(function (response) {
+    axios.get(this.url, {
+      params: this.showquery
+    }).then(function (response) {
       _this.article = response.data.parse.text["*"].replace(/<a href="\/wiki\/((?!File:).*?)".*?>(.+?)<\/a>/g, '<a href="./$1">$2</a>').replace(/<a href="\/w\/index.*?".*?>(.*?)<\/a>/g, '$1').replace(/<a href="((?=Help).*?)".*?>(.*?)<\/a>/g, '$2');
     })["catch"](function (response) {
       return console.log(response);
@@ -19943,50 +19952,40 @@ var render = function() {
           _vm._l(_vm.searchResults, function(searchResult, index) {
             return _c("div", { key: index }, [
               searchResult
-                ? _c(
-                    "div",
-                    { staticStyle: { padding: "5px 5px" } },
-                    [
-                      _c(
-                        "router-link",
-                        {
-                          attrs: {
-                            to: {
-                              name: "search",
-                              params: { title: searchResult.title }
+                ? _c("div", { staticStyle: { padding: "5px 5px" } }, [
+                    _c(
+                      "a",
+                      {
+                        attrs: {
+                          href: "articles/wikishow/" + searchResult.title
+                        }
+                      },
+                      [
+                        _c(
+                          "div",
+                          {
+                            staticClass:
+                              "uk-card uk-card-header uk-card-primary uk-width-1-2@m uk-border-rounded ",
+                            staticStyle: {
+                              height: "200px",
+                              border: "solid 1px #fff"
                             }
-                          }
-                        },
-                        [
-                          _c(
-                            "div",
-                            {
-                              staticClass:
-                                "uk-card uk-card-header uk-card-primary uk-width-1-2@m uk-border-rounded ",
-                              staticStyle: {
-                                height: "200px",
-                                border: "solid 1px #fff"
+                          },
+                          [
+                            _c("p", [
+                              _c("strong", [_vm._v(_vm._s(searchResult.title))])
+                            ]),
+                            _vm._v(" "),
+                            _c("div", {
+                              domProps: {
+                                innerHTML: _vm._s(searchResult.snippet)
                               }
-                            },
-                            [
-                              _c("p", [
-                                _c("strong", [
-                                  _vm._v(_vm._s(searchResult.title))
-                                ])
-                              ]),
-                              _vm._v(" "),
-                              _c("div", {
-                                domProps: {
-                                  innerHTML: _vm._s(searchResult.snippet)
-                                }
-                              })
-                            ]
-                          )
-                        ]
-                      )
-                    ],
-                    1
-                  )
+                            })
+                          ]
+                        )
+                      ]
+                    )
+                  ])
                 : _vm._e()
             ])
           })
@@ -20706,10 +20705,6 @@ var router = new VueRouter({
   }, {
     path: '/vocabula',
     component: _components_HomeVocabula_vue__WEBPACK_IMPORTED_MODULE_3__["default"]
-  }, {
-    path: '/search/:title?',
-    name: 'search',
-    component: _components_ArticlesShow_vue__WEBPACK_IMPORTED_MODULE_4__["default"]
   }]
 });
 var app = new Vue({

@@ -145,7 +145,12 @@ __webpack_require__.r(__webpack_exports__);
     return {
       /* mount時にwikiの記事を引っ張ってくるためのquery */
       article: "",
-      page: "",
+      showquery: {
+        format: 'json',
+        action: 'parse',
+        origin: '*',
+        page: ""
+      },
       url: "https://en.wikipedia.org/w/api.php",
 
       /* 単語検索モード、ハイライトモード、標準モードを切り替える際のキー */
@@ -169,12 +174,16 @@ __webpack_require__.r(__webpack_exports__);
     var _this = this;
 
     /* 前のページからパス(wikiのページのタイトル)を受け取る */
-    var pathname = this.$route.params.title;
-    this.page = encodeURI(pathname);
+    var pathname = location.pathname;
+    var searchname = pathname.split("/");
+    var underVarJoin = searchname[3].split("%20").join('_');
+    this.showquery.page = searchname.length == 4 ? encodeURI(underVarJoin) : "";
     /* axiosで記事を引っ張ってくる。その際、記事上のaリンクを加工する(./任意のタイトルでページを
        開けるように) */
 
-    axios.get("/api/articlesShow/" + this.page).then(function (response) {
+    axios.get(this.url, {
+      params: this.showquery
+    }).then(function (response) {
       _this.article = response.data.parse.text["*"].replace(/<a href="\/wiki\/((?!File:).*?)".*?>(.+?)<\/a>/g, '<a href="./$1">$2</a>').replace(/<a href="\/w\/index.*?".*?>(.*?)<\/a>/g, '$1').replace(/<a href="((?=Help).*?)".*?>(.*?)<\/a>/g, '$2');
     })["catch"](function (response) {
       return console.log(response);
