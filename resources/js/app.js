@@ -25,6 +25,14 @@ var router = new VueRouter({
       path: '/vocabula',
       component: HomeVocabula
     },
+
+    {
+      path: '/search/:id',
+      name: 'search',
+      component: {
+        template: '<div>タイトルはです</div>',
+      }
+    }
   ]
 })
 

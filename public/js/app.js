@@ -1877,6 +1877,7 @@ __webpack_require__.r(__webpack_exports__);
 //
 //
 //
+//
 /* harmony default export */ __webpack_exports__["default"] = ({
   data: function data() {
     return {
@@ -19578,36 +19579,48 @@ var render = function() {
           _vm._v(" "),
           _vm._l(_vm.searchResults, function(searchResult, index) {
             return _c("div", { key: index }, [
-              _c("div", { staticStyle: { padding: "5px 5px" } }, [
-                _c(
-                  "a",
-                  {
-                    attrs: { href: "articles/wikishow/" + searchResult.title }
-                  },
-                  [
-                    _c(
-                      "div",
-                      {
-                        staticClass:
-                          "uk-card uk-card-header uk-card-primary uk-width-1-2@m uk-border-rounded ",
-                        staticStyle: {
-                          height: "200px",
-                          border: "solid 1px #fff"
+              _c(
+                "div",
+                { staticStyle: { padding: "5px 5px" } },
+                [
+                  _c(
+                    "router-link",
+                    {
+                      attrs: {
+                        to: {
+                          name: "search",
+                          params: { id: searchResult.title }
                         }
-                      },
-                      [
-                        _c("p", [
-                          _c("strong", [_vm._v(_vm._s(searchResult.title))])
-                        ]),
-                        _vm._v(" "),
-                        _c("div", {
-                          domProps: { innerHTML: _vm._s(searchResult.snippet) }
-                        })
-                      ]
-                    )
-                  ]
-                )
-              ])
+                      }
+                    },
+                    [
+                      _c(
+                        "div",
+                        {
+                          staticClass:
+                            "uk-card uk-card-header uk-card-primary uk-width-1-2@m uk-border-rounded ",
+                          staticStyle: {
+                            height: "200px",
+                            border: "solid 1px #fff"
+                          }
+                        },
+                        [
+                          _c("p", [
+                            _c("strong", [_vm._v(_vm._s(searchResult.title))])
+                          ]),
+                          _vm._v(" "),
+                          _c("div", {
+                            domProps: {
+                              innerHTML: _vm._s(searchResult.snippet)
+                            }
+                          })
+                        ]
+                      )
+                    ]
+                  )
+                ],
+                1
+              )
             ])
           })
         ],
@@ -20324,6 +20337,12 @@ var router = new VueRouter({
   }, {
     path: '/vocabula',
     component: _components_HomeVocabula_vue__WEBPACK_IMPORTED_MODULE_3__["default"]
+  }, {
+    path: '/search/:id',
+    name: 'search',
+    component: {
+      template: '<div>タイトルはです</div>'
+    }
   }]
 });
 var app = new Vue({

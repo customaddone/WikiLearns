@@ -21,7 +21,8 @@
             <!-- 検索結果表示 -->
             <div v-for="(searchResult, index) in searchResults" v-bind:key="index">
                 <div style="padding: 5px 5px;">
-                    <a :href="'articles/wikishow/' + searchResult.title ">
+                    <!-- toの前の「:」を忘れない -->
+                    <router-link :to="{ name : 'search', params: { id: searchResult.title } }">
                         <div class="uk-card uk-card-header uk-card-primary uk-width-1-2@m uk-border-rounded "
                             style="height: 200px; border: solid 1px #fff;">
                             <!-- 検索結果見出し -->
@@ -29,7 +30,7 @@
                             <!-- 検索結果本文 -->
                             <div v-html="searchResult.snippet"></div>
                         </div>
-                    </a>
+                    </router-link>
                 </div>
             </div>
 
