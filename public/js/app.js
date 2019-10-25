@@ -1913,7 +1913,6 @@ __webpack_require__.r(__webpack_exports__);
 
     /* 前のページからパス(wikiのページのタイトル)を受け取る */
     var pathname = this.$route.params.title;
-    alert(encodeURI(pathname));
     this.page = encodeURI(pathname);
     /* axiosで記事を引っ張ってくる。その際、記事上のaリンクを加工する(./任意のタイトルでページを
        開けるように) */
@@ -19943,48 +19942,52 @@ var render = function() {
           _vm._v(" "),
           _vm._l(_vm.searchResults, function(searchResult, index) {
             return _c("div", { key: index }, [
-              _c(
-                "div",
-                { staticStyle: { padding: "5px 5px" } },
-                [
-                  _c(
-                    "router-link",
-                    {
-                      attrs: {
-                        to: {
-                          name: "search",
-                          params: { title: searchResult.title }
-                        }
-                      }
-                    },
+              searchResult
+                ? _c(
+                    "div",
+                    { staticStyle: { padding: "5px 5px" } },
                     [
                       _c(
-                        "div",
+                        "router-link",
                         {
-                          staticClass:
-                            "uk-card uk-card-header uk-card-primary uk-width-1-2@m uk-border-rounded ",
-                          staticStyle: {
-                            height: "200px",
-                            border: "solid 1px #fff"
+                          attrs: {
+                            to: {
+                              name: "search",
+                              params: { title: searchResult.title }
+                            }
                           }
                         },
                         [
-                          _c("p", [
-                            _c("strong", [_vm._v(_vm._s(searchResult.title))])
-                          ]),
-                          _vm._v(" "),
-                          _c("div", {
-                            domProps: {
-                              innerHTML: _vm._s(searchResult.snippet)
-                            }
-                          })
+                          _c(
+                            "div",
+                            {
+                              staticClass:
+                                "uk-card uk-card-header uk-card-primary uk-width-1-2@m uk-border-rounded ",
+                              staticStyle: {
+                                height: "200px",
+                                border: "solid 1px #fff"
+                              }
+                            },
+                            [
+                              _c("p", [
+                                _c("strong", [
+                                  _vm._v(_vm._s(searchResult.title))
+                                ])
+                              ]),
+                              _vm._v(" "),
+                              _c("div", {
+                                domProps: {
+                                  innerHTML: _vm._s(searchResult.snippet)
+                                }
+                              })
+                            ]
+                          )
                         ]
                       )
-                    ]
+                    ],
+                    1
                   )
-                ],
-                1
-              )
+                : _vm._e()
             ])
           })
         ],
@@ -20704,7 +20707,7 @@ var router = new VueRouter({
     path: '/vocabula',
     component: _components_HomeVocabula_vue__WEBPACK_IMPORTED_MODULE_3__["default"]
   }, {
-    path: '/search/:title',
+    path: '/search/:title?',
     name: 'search',
     component: _components_ArticlesShow_vue__WEBPACK_IMPORTED_MODULE_4__["default"]
   }]

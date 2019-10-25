@@ -170,7 +170,6 @@ __webpack_require__.r(__webpack_exports__);
 
     /* 前のページからパス(wikiのページのタイトル)を受け取る */
     var pathname = this.$route.params.title;
-    alert(encodeURI(pathname));
     this.page = encodeURI(pathname);
     /* axiosで記事を引っ張ってくる。その際、記事上のaリンクを加工する(./任意のタイトルでページを
        開けるように) */

@@ -28,7 +28,7 @@ var router = new VueRouter({
     },
 
     {
-      path: '/search/:title',
+      path: '/search/:title?',
       name: 'search',
       component: ArticlesShow
     }
