@@ -1829,6 +1829,221 @@ module.exports = {
 
 /***/ }),
 
+/***/ "./node_modules/babel-loader/lib/index.js?!./node_modules/vue-loader/lib/index.js?!./resources/js/components/ArticlesShow.vue?vue&type=script&lang=js&":
+/*!***********************************************************************************************************************************************************************!*\
+  !*** ./node_modules/babel-loader/lib??ref--4-0!./node_modules/vue-loader/lib??vue-loader-options!./resources/js/components/ArticlesShow.vue?vue&type=script&lang=js& ***!
+  \***********************************************************************************************************************************************************************/
+/*! exports provided: default */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+/* harmony default export */ __webpack_exports__["default"] = ({
+  data: function data() {
+    return {
+      /* mount時にwikiの記事を引っ張ってくるためのquery */
+      article: "",
+      page: "",
+      url: "https://en.wikipedia.org/w/api.php",
+
+      /* 単語検索モード、ハイライトモード、標準モードを切り替える際のキー */
+      switchFunctionKey: 0,
+
+      /*
+        translatingWord 入力する単語
+        selectedText 表示する単語カードのタイトル
+        searchWordId axios1回目の通信で返ってきた記事のID
+        translated 表示する単語カードの本文
+      */
+      translatingWord: "",
+      selectedText: "使い方",
+      searchWordId: "",
+      translated: "「単語検索」のボタンで表示切り替え、範囲指定＋適当なところをタッチで単語検索"
+    };
+  },
+
+  /* ページを開いた時に前のページからパスを受け取り、axiosでwikiの記事を引っ張ってくる */
+  mounted: function mounted() {
+    var _this = this;
+
+    /* 前のページからパス(wikiのページのタイトル)を受け取る */
+    var pathname = this.$route.params.title;
+    this.page = encodeURI(pathname);
+    /* axiosで記事を引っ張ってくる。その際、記事上のaリンクを加工する(./任意のタイトルでページを
+       開けるように) */
+
+    axios.get("/api/articlesShow/" + this.page).then(function (response) {
+      _this.article = response.data.parse.text["*"].replace(/<a href="\/wiki\/((?!File:).*?)".*?>(.+?)<\/a>/g, '<a href="./$1">$2</a>').replace(/<a href="\/w\/index.*?".*?>(.*?)<\/a>/g, '$1').replace(/<a href="((?=Help).*?)".*?>(.*?)<\/a>/g, '$2');
+    })["catch"](function (response) {
+      return console.log(response);
+    });
+  },
+  methods: {
+    /* ボタンで単語検索モード、ハイライトモード、標準モードを切り替えて、touchstart,
+       touchmove, clickの挙動を変える */
+    switchKeyValue: function switchKeyValue() {
+      this.switchFunctionKey += 1;
+    },
+    switchWordFunction: function switchWordFunction() {
+      if (this.switchFunctionKey % 3 == 1) {
+        this.searchWordFunction();
+      } else if (this.switchFunctionKey % 3 == 2) {
+        this.selected();
+      }
+    },
+    switchUnhighlight: function switchUnhighlight() {
+      if (this.switchFunctionKey % 3 == 2) {
+        this.unhighlight();
+      }
+    },
+
+    /* 単語検索を行う */
+    searchWordFunction: function searchWordFunction(event) {
+      var _this2 = this;
+
+      /* 検索ワードが空であれば何もしない */
+      if (window.getSelection().toString() !== "") {
+        this.selectedText = window.getSelection().toString();
+        this.translatingWord = this.selectedText;
+        var seeWord = this.selectedText;
+      }
+      /* 選択した単語が名詞の複数形、動詞の過去形だった場合整形 */
+
+
+      var translateCut = function translateCut() {
+        /* 配列の中の要素が末尾にあれば切り取る */
+        var endword = ['ing', 'es', 's', 'ed', 'd'];
+
+        for (var i = 0; i < endword.length; i++) {
+          /* 配列の中の要素が末尾にあるか、配列の前から順に調べていく
+             あれば末尾を切り取りfunctionの戻り値にしてループを抜ける */
+          var pattern = new RegExp('^(.+)' + endword[i] + '$');
+          var searchWord = seeWord.match(pattern);
+
+          if (searchWord) {
+            var cuttedWord = searchWord[0].replace(pattern, '$1');
+            return cuttedWord;
+          }
+        }
+        /* ヒットしなければ入力した語をそのまま返す */
+
+
+        return seeWord;
+      };
+      /* まず入力された単語を検索する。無ければ、整形後の単語で検索
+         それでも無ければ「検索に一致する項目は...」を表示 */
+
+
+      this.researchAxios(this.translatingWord)["catch"](function () {
+        _this2.researchAxios(translateCut())["catch"](function () {
+          _this2.translated = "検索に一致する項目はありませんでした...";
+        });
+      });
+    },
+
+    /* デ辞蔵を使って単語検索->ヒットすればIDを取得して単語のページを検索
+       Guzzleを使ってクロスオリジン通信を行う */
+    researchAxios: function researchAxios(word) {
+      var _this3 = this;
+
+      return new Promise(function (resolve, reject) {
+        axios.get("/api/data/" + word).then(function (response) {
+          /* 戻ってきたデータからIDを取得 */
+          var searchId = response.data.match(/(\d{6})/);
+          _this3.searchWordId = searchId[0];
+          /* IDを用いて単語のページを検索 */
+
+          axios.get("/api/datashow/" + _this3.searchWordId).then(function (response) {
+            var means = response.data.match(/<div>(.*?)<\/div>/);
+            _this3.translated = means[1];
+            resolve();
+          })["catch"](function (response) {
+            return console.log(response);
+          });
+        })["catch"](function (response) {
+          console.log(response);
+          reject();
+        });
+      });
+    },
+
+    /* ハイライトを書く */
+    selected: function selected() {
+      var userSelection = window.getSelection();
+      var rangeObject = userSelection.getRangeAt(0);
+      var span = document.createElement("span");
+      rangeObject.surroundContents(span);
+      span.style.backgroundColor = "yellow";
+    },
+
+    /* ハイライトを外す */
+    unhighlight: function unhighlight() {
+      var userSelection = window.getSelection();
+      var startRangeObject = userSelection.getRangeAt(0).startContainer;
+      var endRangeObject = userSelection.getRangeAt(0).endContainer;
+      var child = startRangeObject;
+
+      while (child) {
+        if (child.nodeName == "SPAN") {
+          var insertChild = document.createTextNode(child.textContent);
+          var spanPalent = child.parentNode;
+          spanPalent.insertBefore(insertChild, child);
+          child.parentNode.removeChild(child);
+        }
+
+        child = child.nextSibling;
+      }
+    }
+  }
+});
+
+/***/ }),
+
 /***/ "./node_modules/babel-loader/lib/index.js?!./node_modules/vue-loader/lib/index.js?!./resources/js/components/HomeSearch.vue?vue&type=script&lang=js&":
 /*!*********************************************************************************************************************************************************************!*\
   !*** ./node_modules/babel-loader/lib??ref--4-0!./node_modules/vue-loader/lib??vue-loader-options!./resources/js/components/HomeSearch.vue?vue&type=script&lang=js& ***!
@@ -1838,6 +2053,7 @@ module.exports = {
 
 "use strict";
 __webpack_require__.r(__webpack_exports__);
+//
 //
 //
 //
@@ -19247,6 +19463,154 @@ process.umask = function() { return 0; };
 
 /***/ }),
 
+/***/ "./node_modules/vue-loader/lib/loaders/templateLoader.js?!./node_modules/vue-loader/lib/index.js?!./resources/js/components/ArticlesShow.vue?vue&type=template&id=6edd9c76&scoped=true&":
+/*!***************************************************************************************************************************************************************************************************************************!*\
+  !*** ./node_modules/vue-loader/lib/loaders/templateLoader.js??vue-loader-options!./node_modules/vue-loader/lib??vue-loader-options!./resources/js/components/ArticlesShow.vue?vue&type=template&id=6edd9c76&scoped=true& ***!
+  \***************************************************************************************************************************************************************************************************************************/
+/*! exports provided: render, staticRenderFns */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "render", function() { return render; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "staticRenderFns", function() { return staticRenderFns; });
+var render = function() {
+  var _vm = this
+  var _h = _vm.$createElement
+  var _c = _vm._self._c || _h
+  return _c("div", [
+    _c("div", { staticClass: "showTextBox" }, [
+      _vm.switchFunctionKey % 3 == 1
+        ? _c(
+            "div",
+            {
+              staticClass: "uk-card uk-card-default uk-margin",
+              staticStyle: { width: "250px" }
+            },
+            [
+              _c("div", { staticClass: "uk-card-media-top" }, [
+                _c("div", { staticClass: "uk-cover-container" }),
+                _vm._v(" "),
+                _c(
+                  "div",
+                  {
+                    staticClass: "uk-card-body",
+                    staticStyle: { padding: "5px" }
+                  },
+                  [
+                    _c("h3", { staticClass: "uk-card-title" }, [
+                      _vm._v(_vm._s(_vm.selectedText))
+                    ]),
+                    _vm._v(" "),
+                    _c(
+                      "p",
+                      { staticStyle: { height: "105px", overflow: "hidden" } },
+                      [_vm._v(_vm._s(_vm.translated))]
+                    )
+                  ]
+                ),
+                _vm._v(" "),
+                _vm._m(0)
+              ])
+            ]
+          )
+        : _vm._e()
+    ]),
+    _vm._v(" "),
+    _c("p", [_vm._v("右下のボタンでモードを切り替えてください")]),
+    _vm._v(" "),
+    _c("p", [
+      _vm._v(
+        "単語検索モード：単語１wordを範囲指定して適当な場所を押すと検索結果が右上に出ます"
+      )
+    ]),
+    _vm._v(" "),
+    _c("p", [
+      _vm._v(
+        "ハイライトモード：範囲指定して適当な場所を軽くタッチするとハイライトが付きます"
+      )
+    ]),
+    _vm._v(" "),
+    _c("p", [
+      _vm._v(
+        "長押ししてハイライトの周りをグリグリするとして小さく指をずらすとハイライトが消えます（割と広範囲\n    が消えます）"
+      )
+    ]),
+    _vm._v(" "),
+    _c("div", { staticClass: "showSwitchButton" }, [
+      _vm.switchFunctionKey % 3 == 0
+        ? _c("div", [
+            _c(
+              "button",
+              {
+                staticClass: "uk-button uk-button-muted",
+                on: { click: _vm.switchKeyValue }
+              },
+              [_vm._v("標準")]
+            )
+          ])
+        : _vm.switchFunctionKey % 3 == 1
+        ? _c("div", [
+            _c(
+              "button",
+              {
+                staticClass: "uk-button uk-button-primary",
+                on: { click: _vm.switchKeyValue }
+              },
+              [_vm._v("単語検索")]
+            )
+          ])
+        : _c("div", [
+            _c(
+              "button",
+              {
+                staticClass: "uk-button",
+                staticStyle: { backgroundColor: "yellow" },
+                on: { click: _vm.switchKeyValue }
+              },
+              [_vm._v("ライト")]
+            )
+          ])
+    ]),
+    _vm._v(" "),
+    _c(
+      "div",
+      {
+        on: {
+          select: _vm.selected,
+          touchstart: _vm.switchWordFunction,
+          touchmove: _vm.switchUnhighlight,
+          blur: _vm.selected,
+          keyup: _vm.selected,
+          click: _vm.switchWordFunction
+        }
+      },
+      [_c("div", { domProps: { innerHTML: _vm._s(_vm.article) } })]
+    )
+  ])
+}
+var staticRenderFns = [
+  function() {
+    var _vm = this
+    var _h = _vm.$createElement
+    var _c = _vm._self._c || _h
+    return _c(
+      "div",
+      { staticClass: "uk-card-footer", staticStyle: { padding: "5px 25px" } },
+      [
+        _c("a", { staticClass: "uk-text-muted", attrs: { href: "#" } }, [
+          _vm._v("READ MORE")
+        ])
+      ]
+    )
+  }
+]
+render._withStripped = true
+
+
+
+/***/ }),
+
 /***/ "./node_modules/vue-loader/lib/loaders/templateLoader.js?!./node_modules/vue-loader/lib/index.js?!./resources/js/components/HomeArticles.vue?vue&type=template&id=3ca7d227&":
 /*!***************************************************************************************************************************************************************************************************************!*\
   !*** ./node_modules/vue-loader/lib/loaders/templateLoader.js??vue-loader-options!./node_modules/vue-loader/lib??vue-loader-options!./resources/js/components/HomeArticles.vue?vue&type=template&id=3ca7d227& ***!
@@ -19578,36 +19942,52 @@ var render = function() {
           _vm._v(" "),
           _vm._l(_vm.searchResults, function(searchResult, index) {
             return _c("div", { key: index }, [
-              _c("div", { staticStyle: { padding: "5px 5px" } }, [
-                _c(
-                  "a",
-                  {
-                    attrs: { href: "articles/wikishow/" + searchResult.title }
-                  },
-                  [
-                    _c(
-                      "div",
-                      {
-                        staticClass:
-                          "uk-card uk-card-header uk-card-primary uk-width-1-2@m uk-border-rounded ",
-                        staticStyle: {
-                          height: "200px",
-                          border: "solid 1px #fff"
-                        }
-                      },
-                      [
-                        _c("p", [
-                          _c("strong", [_vm._v(_vm._s(searchResult.title))])
-                        ]),
-                        _vm._v(" "),
-                        _c("div", {
-                          domProps: { innerHTML: _vm._s(searchResult.snippet) }
-                        })
-                      ]
-                    )
-                  ]
-                )
-              ])
+              searchResult
+                ? _c(
+                    "div",
+                    { staticStyle: { padding: "5px 5px" } },
+                    [
+                      _c(
+                        "router-link",
+                        {
+                          attrs: {
+                            to: {
+                              name: "search",
+                              params: { title: searchResult.title }
+                            }
+                          }
+                        },
+                        [
+                          _c(
+                            "div",
+                            {
+                              staticClass:
+                                "uk-card uk-card-header uk-card-primary uk-width-1-2@m uk-border-rounded ",
+                              staticStyle: {
+                                height: "200px",
+                                border: "solid 1px #fff"
+                              }
+                            },
+                            [
+                              _c("p", [
+                                _c("strong", [
+                                  _vm._v(_vm._s(searchResult.title))
+                                ])
+                              ]),
+                              _vm._v(" "),
+                              _c("div", {
+                                domProps: {
+                                  innerHTML: _vm._s(searchResult.snippet)
+                                }
+                              })
+                            ]
+                          )
+                        ]
+                      )
+                    ],
+                    1
+                  )
+                : _vm._e()
             ])
           })
         ],
@@ -20303,7 +20683,9 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _components_HomeArticles_vue__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./components/HomeArticles.vue */ "./resources/js/components/HomeArticles.vue");
 /* harmony import */ var _components_HomeSearch_vue__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ./components/HomeSearch.vue */ "./resources/js/components/HomeSearch.vue");
 /* harmony import */ var _components_HomeVocabula_vue__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ./components/HomeVocabula.vue */ "./resources/js/components/HomeVocabula.vue");
+/* harmony import */ var _components_ArticlesShow_vue__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! ./components/ArticlesShow.vue */ "./resources/js/components/ArticlesShow.vue");
 __webpack_require__(/*! ./bootstrap */ "./resources/js/bootstrap.js"); // Vueファイルからテンプレートをインポートする
+
 
 
 
@@ -20324,6 +20706,10 @@ var router = new VueRouter({
   }, {
     path: '/vocabula',
     component: _components_HomeVocabula_vue__WEBPACK_IMPORTED_MODULE_3__["default"]
+  }, {
+    path: '/search/:title?',
+    name: 'search',
+    component: _components_ArticlesShow_vue__WEBPACK_IMPORTED_MODULE_4__["default"]
   }]
 });
 var app = new Vue({
@@ -20362,6 +20748,75 @@ window.axios.defaults.headers.common['X-Requested-With'] = 'XMLHttpRequest';
 //     cluster: process.env.MIX_PUSHER_APP_CLUSTER,
 //     encrypted: true
 // });
+
+/***/ }),
+
+/***/ "./resources/js/components/ArticlesShow.vue":
+/*!**************************************************!*\
+  !*** ./resources/js/components/ArticlesShow.vue ***!
+  \**************************************************/
+/*! exports provided: default */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony import */ var _ArticlesShow_vue_vue_type_template_id_6edd9c76_scoped_true___WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./ArticlesShow.vue?vue&type=template&id=6edd9c76&scoped=true& */ "./resources/js/components/ArticlesShow.vue?vue&type=template&id=6edd9c76&scoped=true&");
+/* harmony import */ var _ArticlesShow_vue_vue_type_script_lang_js___WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./ArticlesShow.vue?vue&type=script&lang=js& */ "./resources/js/components/ArticlesShow.vue?vue&type=script&lang=js&");
+/* empty/unused harmony star reexport *//* harmony import */ var _node_modules_vue_loader_lib_runtime_componentNormalizer_js__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ../../../node_modules/vue-loader/lib/runtime/componentNormalizer.js */ "./node_modules/vue-loader/lib/runtime/componentNormalizer.js");
+
+
+
+
+
+/* normalize component */
+
+var component = Object(_node_modules_vue_loader_lib_runtime_componentNormalizer_js__WEBPACK_IMPORTED_MODULE_2__["default"])(
+  _ArticlesShow_vue_vue_type_script_lang_js___WEBPACK_IMPORTED_MODULE_1__["default"],
+  _ArticlesShow_vue_vue_type_template_id_6edd9c76_scoped_true___WEBPACK_IMPORTED_MODULE_0__["render"],
+  _ArticlesShow_vue_vue_type_template_id_6edd9c76_scoped_true___WEBPACK_IMPORTED_MODULE_0__["staticRenderFns"],
+  false,
+  null,
+  "6edd9c76",
+  null
+  
+)
+
+/* hot reload */
+if (false) { var api; }
+component.options.__file = "resources/js/components/ArticlesShow.vue"
+/* harmony default export */ __webpack_exports__["default"] = (component.exports);
+
+/***/ }),
+
+/***/ "./resources/js/components/ArticlesShow.vue?vue&type=script&lang=js&":
+/*!***************************************************************************!*\
+  !*** ./resources/js/components/ArticlesShow.vue?vue&type=script&lang=js& ***!
+  \***************************************************************************/
+/*! exports provided: default */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony import */ var _node_modules_babel_loader_lib_index_js_ref_4_0_node_modules_vue_loader_lib_index_js_vue_loader_options_ArticlesShow_vue_vue_type_script_lang_js___WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! -!../../../node_modules/babel-loader/lib??ref--4-0!../../../node_modules/vue-loader/lib??vue-loader-options!./ArticlesShow.vue?vue&type=script&lang=js& */ "./node_modules/babel-loader/lib/index.js?!./node_modules/vue-loader/lib/index.js?!./resources/js/components/ArticlesShow.vue?vue&type=script&lang=js&");
+/* empty/unused harmony star reexport */ /* harmony default export */ __webpack_exports__["default"] = (_node_modules_babel_loader_lib_index_js_ref_4_0_node_modules_vue_loader_lib_index_js_vue_loader_options_ArticlesShow_vue_vue_type_script_lang_js___WEBPACK_IMPORTED_MODULE_0__["default"]); 
+
+/***/ }),
+
+/***/ "./resources/js/components/ArticlesShow.vue?vue&type=template&id=6edd9c76&scoped=true&":
+/*!*********************************************************************************************!*\
+  !*** ./resources/js/components/ArticlesShow.vue?vue&type=template&id=6edd9c76&scoped=true& ***!
+  \*********************************************************************************************/
+/*! exports provided: render, staticRenderFns */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony import */ var _node_modules_vue_loader_lib_loaders_templateLoader_js_vue_loader_options_node_modules_vue_loader_lib_index_js_vue_loader_options_ArticlesShow_vue_vue_type_template_id_6edd9c76_scoped_true___WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! -!../../../node_modules/vue-loader/lib/loaders/templateLoader.js??vue-loader-options!../../../node_modules/vue-loader/lib??vue-loader-options!./ArticlesShow.vue?vue&type=template&id=6edd9c76&scoped=true& */ "./node_modules/vue-loader/lib/loaders/templateLoader.js?!./node_modules/vue-loader/lib/index.js?!./resources/js/components/ArticlesShow.vue?vue&type=template&id=6edd9c76&scoped=true&");
+/* harmony reexport (safe) */ __webpack_require__.d(__webpack_exports__, "render", function() { return _node_modules_vue_loader_lib_loaders_templateLoader_js_vue_loader_options_node_modules_vue_loader_lib_index_js_vue_loader_options_ArticlesShow_vue_vue_type_template_id_6edd9c76_scoped_true___WEBPACK_IMPORTED_MODULE_0__["render"]; });
+
+/* harmony reexport (safe) */ __webpack_require__.d(__webpack_exports__, "staticRenderFns", function() { return _node_modules_vue_loader_lib_loaders_templateLoader_js_vue_loader_options_node_modules_vue_loader_lib_index_js_vue_loader_options_ArticlesShow_vue_vue_type_template_id_6edd9c76_scoped_true___WEBPACK_IMPORTED_MODULE_0__["staticRenderFns"]; });
+
+
 
 /***/ }),
 

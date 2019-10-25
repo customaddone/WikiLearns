@@ -50,12 +50,7 @@ export default {
 
       /* mount時にwikiの記事を引っ張ってくるためのquery */
       article: "",
-      showquery: {
-        format: 'json',
-        action: 'parse',
-        origin: '*',
-        page: "",
-      },
+      page: "",
       url: "https://en.wikipedia.org/w/api.php",
 
       /* 単語検索モード、ハイライトモード、標準モードを切り替える際のキー */
@@ -78,14 +73,12 @@ export default {
   mounted: function () {
 
     /* 前のページからパス(wikiのページのタイトル)を受け取る */
-    var pathname= location.pathname;
-    var searchname = pathname.split("/");
-    var underVarJoin = searchname[3].split("%20").join('_')
-    this.showquery.page = (searchname.length == 4) ? encodeURI(underVarJoin) : "";
+    var pathname= this.$route.params.title;
+    this.page = encodeURI(pathname);
 
     /* axiosで記事を引っ張ってくる。その際、記事上のaリンクを加工する(./任意のタイトルでページを
        開けるように) */
-    axios.get(this.url, {params: this.showquery})
+    axios.get("/api/articlesShow/" + this.page)
          .then((response) => {
             this.article = response.data.parse.text["*"]
              .replace(
