@@ -22,6 +22,11 @@
 
     <!-- 特殊フォント -->
     <link href="https://fonts.googleapis.com/css?family=Pacifico&display=swap" rel="stylesheet">
+
+    <!-- wikipedia用css -->
+    <link href="{{ asset('css/wikicss.css') }}" rel="stylesheet">
+    <!-- 単語検索、ハイライト用css-->
+    <link href="{{ asset('css/floatContents.css') }}" rel="stylesheet">
 </head>
 <body>
     @yield('content')

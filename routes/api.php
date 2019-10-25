@@ -24,3 +24,6 @@ Route::get("/data/{pass}", "ArticlesController@dict"
 
 Route::get("/datashow/{passId}", "ArticlesController@dictshow"
 );
+
+Route::get("/articlesShow/{pass}", "WikiSearchController@articlesShow"
+);
