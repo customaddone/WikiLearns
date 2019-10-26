@@ -355,9 +355,12 @@ export default {
          status: 'wiki',
        }).then((response) => {
          alert('インポートしました！！')
-       }).catch((response) => {
+       }).catch(function (error) {
 
-         console.log(response);
+       console.log(error.response.data);
+     console.log(error.response.status);      // 例：400
+     console.log(error.response.statusText);  // Bad Request
+     console.log(error.response.headers);
 
        });
      }
