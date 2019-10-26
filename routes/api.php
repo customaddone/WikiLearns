@@ -27,12 +27,12 @@ Route::group(['middleware' => 'api'], function() {
   // 記事ページ移動用
   Route::get("/articlesShow/{pass}", "WikiSearchController@articlesShow");
   // 記事のインポート用
-  Route::get('/get',  'ArticlesController@index')
+  Route::match(["get", "options"], '/get',  'ArticlesController@index')
   ->middleware('modify');
-  Route::get('/find/{id?}',  'ArticlesController@find')
+  Route::match(["get", "options"], '/find/{id?}',  'ArticlesController@find')
   ->middleware('modify');
-  Route::post('/add',  'ArticlesController@store')
+  Route::match(["post", "options"], '/add',  'ArticlesController@store')
   ->middleware('modify');  //←追記
-  Route::post('/edit',  'ArticlesController@edit')
-  ->middleware('modify'); 
+  Route::match(["post", "options"], '/edit',  'ArticlesController@edit')
+  ->middleware('modify');
 });
