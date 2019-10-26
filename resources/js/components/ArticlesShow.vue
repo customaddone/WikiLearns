@@ -1,5 +1,50 @@
 <template>
-    <div>
+<div>
+    <!-- ナビバー componentにはvueで宣言した変数の値は渡されないっぽい -->
+    <div class="uk-section-primary" style="width: 100%; border-bottom: dotted 2px #ffffff;">
+        <div class="uk-container">
+            <nav class="uk-navbar">
+                <div class="uk-navbar-left">
+                    <a href="../" uk-icon="icon: tag" class="uk-navbar-item uk-logo">
+                    </a>
+                </div>
+                <div class="uk-navbar-center">
+                    <a href="/" class="uk-navbar-item">
+                    <div style="font-size: 30px; font-family: Droid Sans;
+                        ">
+                        WikiLearns
+                    </div>
+                    </a>
+                </div>
+                <div class="uk-navbar-right">
+                    <a uk-navbar-toggle-icon v-on:click="inportButton" class="uk-icon
+                        uk-navbar-toggle-icon">
+                        <svg width="20" height="20" viewBox="0 0 20 20"
+                          data-svg="navbar-toggle-icon">
+                            <rect y="9" width="20" height="2"></rect>
+                            <rect y="3" width="20" height="2"></rect>
+                            <rect y="15" width="20" height="2"></rect>
+                        </svg>
+                    </a>
+                </div>
+            </nav>
+        </div>
+    </div>
+
+    <div class="showInportBox">
+        <div v-if="inportArticleButton" class="uk-card uk-card-default uk-margin" style="width: 250px;">
+            <div class="uk-card-media-top">
+                <div class="uk-cover-container">
+                </div>
+                <div class="uk-card-body" style="padding: 5px;">
+                    <a class="uk-card-title" v-on:click="inportArticle">インポート</a>
+                    <p style="height: 105px; overflow: hidden;">{{ translated }}</p>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="uk-container">
         <!-- 単語検索結果を表示するカードを右上に設置 -->
         <div class="showTextBox">
             <div v-if="switchFunctionKey % 3 == 1" class="uk-card uk-card-default uk-margin" style="width: 250px;">
@@ -87,9 +132,10 @@
 
             <div v-html="article"></div>
         </div>
-
     </div>
+</div>
 </template>
+
 <script>
 export default {
   data:function () {
@@ -124,7 +170,10 @@ export default {
       // ハイライトの色
       nowHighlightColor: "#FF89FF",
       // ハイライトの色の配列
-      highlightColor: ["#FF89FF", "#89DB89", "#90AFEE", "	#C8AAF2", "#8BDEDE", "#FF9999"]
+      highlightColor: ["#FF89FF", "#89DB89", "#90AFEE", "	#C8AAF2", "#8BDEDE", "#FF9999"],
+
+      // 記事取り込み用ボタン
+      inportArticleButton: true,
     }
   },
   /* ページを開いた時に前のページからパスを受け取り、axiosでwikiの記事を引っ張ってくる */
@@ -287,6 +336,30 @@ export default {
        this.isActive[number] = true;
        // ハイライトの色変更
        this.nowHighlightColor = this.highlightColor[number]
+     },
+
+     inportButton: function () {
+       this.inportArticleButton = !this.inportArticleButton;
+     },
+
+     // wiki記事を取り込む
+     inportArticle: function () {
+       axios.post('/api/add',{
+         title: this.showquery.page,
+         userId: 1,
+         // wikiの記事のaリンクを消す replaceは非破壊的メソッド
+         article: this.article
+         .replace(
+         /<a.*?>(.+?)<\/a>/g,
+         '$1'),
+         status: 'wiki',
+       }).then((response) => {
+         alert('インポートしました！！')
+       }).catch((response) => {
+
+         console.log(response);
+
+       });
      }
   },
 }

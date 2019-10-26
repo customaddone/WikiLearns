@@ -7,6 +7,15 @@
   width:1;
 }
 
+.showInportBox {
+  position: absolute;
+  display: flex;
+  z-index: 999;
+  top: 70px;
+  left: 130px;
+  width:1;
+}
+
 .showSwitchButton {
   position: fixed;
   display: flex;
@@ -15,6 +24,7 @@
   opacity: 0.4;
   left: 250px;
 }
+
 
 .sample-active {
    opacity: 1.0 !important;

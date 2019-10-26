@@ -2,14 +2,8 @@
 
 @section('content')
 
-
-    @component('components.navShow')
-    @endcomponent
-
     <div id="articlesShow">
-       <div class="uk-container">
-           <wiki-show></wiki-show>
-        </div>
+        <wiki-show></wiki-show>
     </div>
 
     <script src="{{ asset('js/articlesShow.js') }}"></script>

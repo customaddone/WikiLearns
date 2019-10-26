@@ -1930,6 +1930,52 @@ __webpack_require__.r(__webpack_exports__);
 //
 //
 //
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
 /* harmony default export */ __webpack_exports__["default"] = ({
   data: function data() {
     return {
@@ -1959,9 +2005,11 @@ __webpack_require__.r(__webpack_exports__);
       // ハイライトの色切り替えのためのスイッチ
       isActive: [true, false, false, false, false, false],
       // ハイライトの色
-      nowHighlightColor: "#c000c0",
+      nowHighlightColor: "#FF89FF",
       // ハイライトの色の配列
-      highlightColor: ["#FF89FF", "#89DB89", "#90AFEE", "	#C8AAF2", "#8BDEDE", "#FF9999"]
+      highlightColor: ["#FF89FF", "#89DB89", "#90AFEE", "	#C8AAF2", "#8BDEDE", "#FF9999"],
+      // 記事取り込み用ボタン
+      inportArticleButton: true
     };
   },
 
@@ -2108,6 +2156,26 @@ __webpack_require__.r(__webpack_exports__);
       this.isActive[number] = true; // ハイライトの色変更
 
       this.nowHighlightColor = this.highlightColor[number];
+    },
+    inportButton: function inportButton() {
+      this.inportArticleButton = !this.inportArticleButton;
+    },
+    // wiki記事を取り込む
+    inportArticle: function inportArticle() {
+      var _this4 = this;
+
+      axios.post('/api/add', {
+        title: this.showquery.page,
+        userId: 1,
+        // wikiの記事のaリンクを消す replaceは非破壊的メソッド
+        article: this.article.replace(/<a.*?>(.+?)<\/a>/g, '$1'),
+        status: 'wiki'
+      }).then(function (response) {
+        alert(_this4.article.length);
+        alert(_this4.article.replace(/<a.*?>(.+?)<\/a>/g, '$1').length);
+      })["catch"](function (response) {
+        console.log(response);
+      });
     }
   }
 });
@@ -19549,8 +19617,63 @@ var render = function() {
   var _h = _vm.$createElement
   var _c = _vm._self._c || _h
   return _c("div", [
-    _c("div", { staticClass: "showTextBox" }, [
-      _vm.switchFunctionKey % 3 == 1
+    _c(
+      "div",
+      {
+        staticClass: "uk-section-primary",
+        staticStyle: { width: "100%", "border-bottom": "dotted 2px #ffffff" }
+      },
+      [
+        _c("div", { staticClass: "uk-container" }, [
+          _c("nav", { staticClass: "uk-navbar" }, [
+            _vm._m(0),
+            _vm._v(" "),
+            _vm._m(1),
+            _vm._v(" "),
+            _c("div", { staticClass: "uk-navbar-right" }, [
+              _c(
+                "a",
+                {
+                  staticClass:
+                    "uk-icon\n                        uk-navbar-toggle-icon",
+                  attrs: { "uk-navbar-toggle-icon": "" },
+                  on: { click: _vm.inportButton }
+                },
+                [
+                  _c(
+                    "svg",
+                    {
+                      attrs: {
+                        width: "20",
+                        height: "20",
+                        viewBox: "0 0 20 20",
+                        "data-svg": "navbar-toggle-icon"
+                      }
+                    },
+                    [
+                      _c("rect", {
+                        attrs: { y: "9", width: "20", height: "2" }
+                      }),
+                      _vm._v(" "),
+                      _c("rect", {
+                        attrs: { y: "3", width: "20", height: "2" }
+                      }),
+                      _vm._v(" "),
+                      _c("rect", {
+                        attrs: { y: "15", width: "20", height: "2" }
+                      })
+                    ]
+                  )
+                ]
+              )
+            ])
+          ])
+        ])
+      ]
+    ),
+    _vm._v(" "),
+    _c("div", { staticClass: "showInportBox" }, [
+      _vm.inportArticleButton
         ? _c(
             "div",
             {
@@ -19568,158 +19691,19 @@ var render = function() {
                     staticStyle: { padding: "5px" }
                   },
                   [
-                    _c("h3", { staticClass: "uk-card-title" }, [
-                      _vm._v(_vm._s(_vm.selectedText))
-                    ]),
+                    _c(
+                      "a",
+                      {
+                        staticClass: "uk-card-title",
+                        on: { click: _vm.inportArticle }
+                      },
+                      [_vm._v("インポート")]
+                    ),
                     _vm._v(" "),
                     _c(
                       "p",
                       { staticStyle: { height: "105px", overflow: "hidden" } },
                       [_vm._v(_vm._s(_vm.translated))]
-                    )
-                  ]
-                ),
-                _vm._v(" "),
-                _vm._m(0)
-              ])
-            ]
-          )
-        : _vm._e()
-    ]),
-    _vm._v(" "),
-    _c("div", { staticClass: "showTextBox" }, [
-      _vm.switchFunctionKey % 3 == 2
-        ? _c(
-            "div",
-            {
-              staticClass: "uk-card uk-card-default uk-margin",
-              staticStyle: { width: "250px" }
-            },
-            [
-              _c("div", { staticClass: "uk-card-media-top" }, [
-                _c("div", { staticClass: "uk-cover-container" }),
-                _vm._v(" "),
-                _c(
-                  "div",
-                  {
-                    staticClass: "uk-card-body",
-                    staticStyle: { padding: "5px" }
-                  },
-                  [
-                    _c("h3", { staticClass: "uk-card-title" }, [
-                      _vm._v("カラー選択")
-                    ]),
-                    _vm._v(" "),
-                    _c(
-                      "div",
-                      {
-                        staticClass: "uk-grid-small uk-text-center",
-                        staticStyle: { "padding-left": "12px" },
-                        attrs: { "uk-grid": "" }
-                      },
-                      [
-                        _c("div", [
-                          _c("div", {
-                            staticClass:
-                              "uk-card uk-card-default uk-card-body uk-border-rounded",
-                            class: { "sample-active": _vm.isActive[0] },
-                            staticStyle: {
-                              "background-color": "#FF89FF",
-                              opacity: "0.3"
-                            },
-                            on: {
-                              click: function($event) {
-                                return _vm.changeColor(0)
-                              }
-                            }
-                          })
-                        ]),
-                        _vm._v(" "),
-                        _c("div", [
-                          _c("div", {
-                            staticClass:
-                              "uk-card uk-card-default uk-card-body uk-border-rounded",
-                            class: { "sample-active": _vm.isActive[1] },
-                            staticStyle: {
-                              "background-color": "#89DB89",
-                              opacity: "0.3"
-                            },
-                            on: {
-                              click: function($event) {
-                                return _vm.changeColor(1)
-                              }
-                            }
-                          })
-                        ]),
-                        _vm._v(" "),
-                        _c("div", [
-                          _c("div", {
-                            staticClass:
-                              "uk-card uk-card-default uk-card-body uk-border-rounded",
-                            class: { "sample-active": _vm.isActive[2] },
-                            staticStyle: {
-                              "background-color": "#90AFEE",
-                              opacity: "0.3"
-                            },
-                            on: {
-                              click: function($event) {
-                                return _vm.changeColor(2)
-                              }
-                            }
-                          })
-                        ]),
-                        _vm._v(" "),
-                        _c("div", [
-                          _c("div", {
-                            staticClass:
-                              "uk-card uk-card-default uk-card-body uk-border-rounded",
-                            class: { "sample-active": _vm.isActive[3] },
-                            staticStyle: {
-                              "background-color": "#C8AAF2",
-                              opacity: "0.3"
-                            },
-                            on: {
-                              click: function($event) {
-                                return _vm.changeColor(3)
-                              }
-                            }
-                          })
-                        ]),
-                        _vm._v(" "),
-                        _c("div", [
-                          _c("div", {
-                            staticClass:
-                              "uk-card uk-card-default uk-card-body uk-border-rounded",
-                            class: { "sample-active": _vm.isActive[4] },
-                            staticStyle: {
-                              "background-color": "#8BDEDE",
-                              opacity: "0.3"
-                            },
-                            on: {
-                              click: function($event) {
-                                return _vm.changeColor(4)
-                              }
-                            }
-                          })
-                        ]),
-                        _vm._v(" "),
-                        _c("div", [
-                          _c("div", {
-                            staticClass:
-                              "uk-card uk-card-default uk-card-body uk-border-rounded",
-                            class: { "sample-active": _vm.isActive[5] },
-                            staticStyle: {
-                              "background-color": "#FF9999",
-                              opacity: "0.3"
-                            },
-                            on: {
-                              click: function($event) {
-                                return _vm.changeColor(5)
-                              }
-                            }
-                          })
-                        ])
-                      ]
                     )
                   ]
                 )
@@ -19729,79 +19713,288 @@ var render = function() {
         : _vm._e()
     ]),
     _vm._v(" "),
-    _c("p", [_vm._v("右下のボタンでモードを切り替えてください")]),
-    _vm._v(" "),
-    _c("p", [
-      _vm._v(
-        "単語検索モード：単語１wordを範囲指定して適当な場所を押すと検索結果が右上に出ます"
-      )
-    ]),
-    _vm._v(" "),
-    _c("p", [
-      _vm._v(
-        "ハイライトモード：範囲指定して適当な場所を軽くタッチするとハイライトが付きます"
-      )
-    ]),
-    _vm._v(" "),
-    _c("p", [
-      _vm._v(
-        "長押ししてハイライトの周りをグリグリするとして小さく指をずらすとハイライトが消えます（割と広範囲\n    が消えます）"
-      )
-    ]),
-    _vm._v(" "),
-    _c("div", { staticClass: "showSwitchButton" }, [
-      _vm.switchFunctionKey % 3 == 0
-        ? _c("div", [
-            _c(
-              "button",
+    _c("div", { staticClass: "uk-container" }, [
+      _c("div", { staticClass: "showTextBox" }, [
+        _vm.switchFunctionKey % 3 == 1
+          ? _c(
+              "div",
               {
-                staticClass: "uk-button uk-button-muted",
-                on: { click: _vm.switchKeyValue }
+                staticClass: "uk-card uk-card-default uk-margin",
+                staticStyle: { width: "250px" }
               },
-              [_vm._v("標準")]
+              [
+                _c("div", { staticClass: "uk-card-media-top" }, [
+                  _c("div", { staticClass: "uk-cover-container" }),
+                  _vm._v(" "),
+                  _c(
+                    "div",
+                    {
+                      staticClass: "uk-card-body",
+                      staticStyle: { padding: "5px" }
+                    },
+                    [
+                      _c("h3", { staticClass: "uk-card-title" }, [
+                        _vm._v(_vm._s(_vm.selectedText))
+                      ]),
+                      _vm._v(" "),
+                      _c(
+                        "p",
+                        {
+                          staticStyle: { height: "105px", overflow: "hidden" }
+                        },
+                        [_vm._v(_vm._s(_vm.translated))]
+                      )
+                    ]
+                  ),
+                  _vm._v(" "),
+                  _vm._m(2)
+                ])
+              ]
             )
-          ])
-        : _vm.switchFunctionKey % 3 == 1
-        ? _c("div", [
-            _c(
-              "button",
+          : _vm._e()
+      ]),
+      _vm._v(" "),
+      _c("div", { staticClass: "showTextBox" }, [
+        _vm.switchFunctionKey % 3 == 2
+          ? _c(
+              "div",
               {
-                staticClass: "uk-button uk-button-primary",
-                on: { click: _vm.switchKeyValue }
+                staticClass: "uk-card uk-card-default uk-margin",
+                staticStyle: { width: "250px" }
               },
-              [_vm._v("単語検索")]
+              [
+                _c("div", { staticClass: "uk-card-media-top" }, [
+                  _c("div", { staticClass: "uk-cover-container" }),
+                  _vm._v(" "),
+                  _c(
+                    "div",
+                    {
+                      staticClass: "uk-card-body",
+                      staticStyle: { padding: "5px" }
+                    },
+                    [
+                      _c("h3", { staticClass: "uk-card-title" }, [
+                        _vm._v("カラー選択")
+                      ]),
+                      _vm._v(" "),
+                      _c(
+                        "div",
+                        {
+                          staticClass: "uk-grid-small uk-text-center",
+                          staticStyle: { "padding-left": "12px" },
+                          attrs: { "uk-grid": "" }
+                        },
+                        [
+                          _c("div", [
+                            _c("div", {
+                              staticClass:
+                                "uk-card uk-card-default uk-card-body uk-border-rounded",
+                              class: { "sample-active": _vm.isActive[0] },
+                              staticStyle: {
+                                "background-color": "#FF89FF",
+                                opacity: "0.3"
+                              },
+                              on: {
+                                click: function($event) {
+                                  return _vm.changeColor(0)
+                                }
+                              }
+                            })
+                          ]),
+                          _vm._v(" "),
+                          _c("div", [
+                            _c("div", {
+                              staticClass:
+                                "uk-card uk-card-default uk-card-body uk-border-rounded",
+                              class: { "sample-active": _vm.isActive[1] },
+                              staticStyle: {
+                                "background-color": "#89DB89",
+                                opacity: "0.3"
+                              },
+                              on: {
+                                click: function($event) {
+                                  return _vm.changeColor(1)
+                                }
+                              }
+                            })
+                          ]),
+                          _vm._v(" "),
+                          _c("div", [
+                            _c("div", {
+                              staticClass:
+                                "uk-card uk-card-default uk-card-body uk-border-rounded",
+                              class: { "sample-active": _vm.isActive[2] },
+                              staticStyle: {
+                                "background-color": "#90AFEE",
+                                opacity: "0.3"
+                              },
+                              on: {
+                                click: function($event) {
+                                  return _vm.changeColor(2)
+                                }
+                              }
+                            })
+                          ]),
+                          _vm._v(" "),
+                          _c("div", [
+                            _c("div", {
+                              staticClass:
+                                "uk-card uk-card-default uk-card-body uk-border-rounded",
+                              class: { "sample-active": _vm.isActive[3] },
+                              staticStyle: {
+                                "background-color": "#C8AAF2",
+                                opacity: "0.3"
+                              },
+                              on: {
+                                click: function($event) {
+                                  return _vm.changeColor(3)
+                                }
+                              }
+                            })
+                          ]),
+                          _vm._v(" "),
+                          _c("div", [
+                            _c("div", {
+                              staticClass:
+                                "uk-card uk-card-default uk-card-body uk-border-rounded",
+                              class: { "sample-active": _vm.isActive[4] },
+                              staticStyle: {
+                                "background-color": "#8BDEDE",
+                                opacity: "0.3"
+                              },
+                              on: {
+                                click: function($event) {
+                                  return _vm.changeColor(4)
+                                }
+                              }
+                            })
+                          ]),
+                          _vm._v(" "),
+                          _c("div", [
+                            _c("div", {
+                              staticClass:
+                                "uk-card uk-card-default uk-card-body uk-border-rounded",
+                              class: { "sample-active": _vm.isActive[5] },
+                              staticStyle: {
+                                "background-color": "#FF9999",
+                                opacity: "0.3"
+                              },
+                              on: {
+                                click: function($event) {
+                                  return _vm.changeColor(5)
+                                }
+                              }
+                            })
+                          ])
+                        ]
+                      )
+                    ]
+                  )
+                ])
+              ]
             )
-          ])
-        : _c("div", [
-            _c(
-              "button",
-              {
-                staticClass: "uk-button",
-                staticStyle: { backgroundColor: "yellow" },
-                on: { click: _vm.switchKeyValue }
-              },
-              [_vm._v("ライト")]
-            )
-          ])
-    ]),
-    _vm._v(" "),
-    _c(
-      "div",
-      {
-        on: {
-          select: _vm.selected,
-          touchstart: _vm.switchWordFunction,
-          touchmove: _vm.switchUnhighlight,
-          blur: _vm.selected,
-          keyup: _vm.selected,
-          click: _vm.switchWordFunction
-        }
-      },
-      [_c("div", { domProps: { innerHTML: _vm._s(_vm.article) } })]
-    )
+          : _vm._e()
+      ]),
+      _vm._v(" "),
+      _c("p", [_vm._v("右下のボタンでモードを切り替えてください")]),
+      _vm._v(" "),
+      _c("p", [
+        _vm._v(
+          "単語検索モード：単語１wordを範囲指定して適当な場所を押すと検索結果が右上に出ます"
+        )
+      ]),
+      _vm._v(" "),
+      _c("p", [
+        _vm._v(
+          "ハイライトモード：範囲指定して適当な場所を軽くタッチするとハイライトが付きます"
+        )
+      ]),
+      _vm._v(" "),
+      _c("p", [
+        _vm._v(
+          "長押ししてハイライトの周りをグリグリするとして小さく指をずらすとハイライトが消えます（割と広範囲\n        が消えます）"
+        )
+      ]),
+      _vm._v(" "),
+      _c("div", { staticClass: "showSwitchButton" }, [
+        _vm.switchFunctionKey % 3 == 0
+          ? _c("div", [
+              _c(
+                "button",
+                {
+                  staticClass: "uk-button uk-button-muted",
+                  on: { click: _vm.switchKeyValue }
+                },
+                [_vm._v("標準")]
+              )
+            ])
+          : _vm.switchFunctionKey % 3 == 1
+          ? _c("div", [
+              _c(
+                "button",
+                {
+                  staticClass: "uk-button uk-button-primary",
+                  on: { click: _vm.switchKeyValue }
+                },
+                [_vm._v("単語検索")]
+              )
+            ])
+          : _c("div", [
+              _c(
+                "button",
+                {
+                  staticClass: "uk-button",
+                  staticStyle: { backgroundColor: "yellow" },
+                  on: { click: _vm.switchKeyValue }
+                },
+                [_vm._v("ライト")]
+              )
+            ])
+      ]),
+      _vm._v(" "),
+      _c(
+        "div",
+        {
+          on: {
+            select: _vm.selected,
+            touchstart: _vm.switchWordFunction,
+            touchmove: _vm.switchUnhighlight,
+            blur: _vm.selected,
+            keyup: _vm.selected,
+            click: _vm.switchWordFunction
+          }
+        },
+        [_c("div", { domProps: { innerHTML: _vm._s(_vm.article) } })]
+      )
+    ])
   ])
 }
 var staticRenderFns = [
+  function() {
+    var _vm = this
+    var _h = _vm.$createElement
+    var _c = _vm._self._c || _h
+    return _c("div", { staticClass: "uk-navbar-left" }, [
+      _c("a", {
+        staticClass: "uk-navbar-item uk-logo",
+        attrs: { href: "../", "uk-icon": "icon: tag" }
+      })
+    ])
+  },
+  function() {
+    var _vm = this
+    var _h = _vm.$createElement
+    var _c = _vm._self._c || _h
+    return _c("div", { staticClass: "uk-navbar-center" }, [
+      _c("a", { staticClass: "uk-navbar-item", attrs: { href: "/" } }, [
+        _c(
+          "div",
+          { staticStyle: { "font-size": "30px", "font-family": "Droid Sans" } },
+          [_vm._v("\n                        WikiLearns\n                    ")]
+        )
+      ])
+    ])
+  },
   function() {
     var _vm = this
     var _h = _vm.$createElement
@@ -20953,15 +21146,14 @@ window.axios.defaults.headers.common['X-Requested-With'] = 'XMLHttpRequest';
 /*!**************************************************!*\
   !*** ./resources/js/components/ArticlesShow.vue ***!
   \**************************************************/
-/*! no static exports found */
+/*! exports provided: default */
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
 __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _ArticlesShow_vue_vue_type_template_id_6edd9c76_scoped_true___WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./ArticlesShow.vue?vue&type=template&id=6edd9c76&scoped=true& */ "./resources/js/components/ArticlesShow.vue?vue&type=template&id=6edd9c76&scoped=true&");
 /* harmony import */ var _ArticlesShow_vue_vue_type_script_lang_js___WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./ArticlesShow.vue?vue&type=script&lang=js& */ "./resources/js/components/ArticlesShow.vue?vue&type=script&lang=js&");
-/* harmony reexport (unknown) */ for(var __WEBPACK_IMPORT_KEY__ in _ArticlesShow_vue_vue_type_script_lang_js___WEBPACK_IMPORTED_MODULE_1__) if(__WEBPACK_IMPORT_KEY__ !== 'default') (function(key) { __webpack_require__.d(__webpack_exports__, key, function() { return _ArticlesShow_vue_vue_type_script_lang_js___WEBPACK_IMPORTED_MODULE_1__[key]; }) }(__WEBPACK_IMPORT_KEY__));
-/* harmony import */ var _node_modules_vue_loader_lib_runtime_componentNormalizer_js__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ../../../node_modules/vue-loader/lib/runtime/componentNormalizer.js */ "./node_modules/vue-loader/lib/runtime/componentNormalizer.js");
+/* empty/unused harmony star reexport *//* harmony import */ var _node_modules_vue_loader_lib_runtime_componentNormalizer_js__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ../../../node_modules/vue-loader/lib/runtime/componentNormalizer.js */ "./node_modules/vue-loader/lib/runtime/componentNormalizer.js");
 
 
 
@@ -20991,7 +21183,7 @@ component.options.__file = "resources/js/components/ArticlesShow.vue"
 /*!***************************************************************************!*\
   !*** ./resources/js/components/ArticlesShow.vue?vue&type=script&lang=js& ***!
   \***************************************************************************/
-/*! no static exports found */
+/*! exports provided: default */
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
@@ -21265,8 +21457,8 @@ __webpack_require__.r(__webpack_exports__);
 /*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
 
-__webpack_require__(/*! /Users/fujisawakenyuu/sampleapp/laravel/wikiLearns/resources/js/app.js */"./resources/js/app.js");
-module.exports = __webpack_require__(/*! /Users/fujisawakenyuu/sampleapp/laravel/wikiLearns/resources/sass/app.scss */"./resources/sass/app.scss");
+__webpack_require__(/*! /var/www/resources/js/app.js */"./resources/js/app.js");
+module.exports = __webpack_require__(/*! /var/www/resources/sass/app.scss */"./resources/sass/app.scss");
 
 
 /***/ })

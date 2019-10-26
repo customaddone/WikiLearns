@@ -19,11 +19,12 @@ Route::middleware('auth:api')->get('/user', function (Request $request) {
 
 Route::get("/homeSearch/{pass}", "WikiSearchController@homeSearch");
 
-Route::get("/data/{pass}", "ArticlesController@dict"
-);
+Route::get("/data/{pass}", "ArticlesController@dict");
 
-Route::get("/datashow/{passId}", "ArticlesController@dictshow"
-);
+Route::get("/datashow/{passId}", "ArticlesController@dictshow");
 
-Route::get("/articlesShow/{pass}", "WikiSearchController@articlesShow"
-);
+Route::get("/articlesShow/{pass}", "WikiSearchController@articlesShow");
+
+Route::group(['middleware' => 'api'], function() {
+  Route::post('add',  'ArticlesController@store');  //←追記
+});

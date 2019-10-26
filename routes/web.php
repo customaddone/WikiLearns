@@ -16,3 +16,5 @@ Route::get('/', function () {
 });
 
 Route::match(["get", "options"],'/articles/wikishow/{pass?}', 'ArticlesController@wikishow');
+
+Route::resource('/articles', 'ArticlesController');

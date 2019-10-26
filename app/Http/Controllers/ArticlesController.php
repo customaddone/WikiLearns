@@ -2,10 +2,21 @@
 
 namespace App\Http\Controllers;
 
+use App\Article;
 use Illuminate\Http\Request;
 
 class ArticlesController extends Controller
 {
+
+    public function store(Request $request) {
+        $article = new Article;
+        $article->title = $request->title;
+        $article->userId = $request->userId;
+        $article->article = $request->article;
+        $article->status = $request->status;
+        $article->save();
+    }
+
     public function wikishow(Request $request)
     {
         return response()->view('articles.show');
