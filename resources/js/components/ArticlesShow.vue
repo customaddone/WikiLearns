@@ -26,28 +26,33 @@
                         <div class="uk-grid-small uk-text-center" uk-grid
                             style="padding-left: 12px;">
                             <div>
-                                <div v-bind:class="{ 'sample-active' : isActive }" v-on:click="changeColor"
+                                <div v-bind:class="{ 'sample-active' : isActive[0] }" v-on:click="changeColor(0)"
                                     class="uk-card uk-card-default uk-card-body uk-border-rounded"
                                     style="background-color: #c000c0;"></div>
                             </div>
                             <div>
-                                <div class="uk-card uk-card-default uk-card-body uk-border-rounded"
+                                <div v-bind:class="{ 'sample-active' : isActive[1] }" v-on:click="changeColor(1)"
+                                    class="uk-card uk-card-default uk-card-body uk-border-rounded"
                                     style="background-color: #3EC63E;"></div>
                             </div>
                             <div>
-                                <div class="uk-card uk-card-default uk-card-body uk-border-rounded"
+                                <div v-bind:class="{ 'sample-active' : isActive[2] }" v-on:click="changeColor(2)"
+                                    class="uk-card uk-card-default uk-card-body uk-border-rounded"
                                     style="background-color: #4F80E5;"></div>
                             </div>
                             <div>
-                                <div class="uk-card uk-card-default uk-card-body uk-border-rounded"
+                                <div  v-bind:class="{ 'sample-active' : isActive[3] }" v-on:click="changeColor(3)"
+                                    class="uk-card uk-card-default uk-card-body uk-border-rounded"
                                     style="background-color: #9355E6;"></div>
                             </div>
                             <div>
-                                <div class="uk-card uk-card-default uk-card-body uk-border-rounded"
+                                <div  v-bind:class="{ 'sample-active' : isActive[4] }" v-on:click="changeColor(4)"
+                                    class="uk-card uk-card-default uk-card-body uk-border-rounded"
                                     style="background-color: #51CFCF;"></div>
                             </div>
                             <div>
-                                <div class="uk-card uk-card-default uk-card-body uk-border-rounded"
+                                <div  v-bind:class="{ 'sample-active' : isActive[5] }" v-on:click="changeColor(5)"
+                                    class="uk-card uk-card-default uk-card-body uk-border-rounded"
                                     style="background-color: #FF6666;"></div>
                             </div>
                         </div>
@@ -114,7 +119,7 @@ export default {
       searchWordId: "",
       translated: "「単語検索」のボタンで表示切り替え、範囲指定＋適当なところをタッチで単語検索",
 
-      isActive: false,
+      isActive: [true, false, false, false, false, false]
     }
   },
   /* ページを開いた時に前のページからパスを受け取り、axiosでwikiの記事を引っ張ってくる */
@@ -270,8 +275,9 @@ export default {
 
        }
      },
-     changeColor: function () {
-       this.isActive = !this.isActive
+     changeColor: function (number) {
+       this.isActive = [false, false, false, false, false, false];
+       this.isActive[number] = true
      }
   },
 }
