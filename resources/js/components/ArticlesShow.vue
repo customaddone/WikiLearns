@@ -28,32 +28,32 @@
                             <div>
                                 <div v-bind:class="{ 'sample-active' : isActive[0] }" v-on:click="changeColor(0)"
                                     class="uk-card uk-card-default uk-card-body uk-border-rounded"
-                                    style="background-color: #c000c0;"></div>
+                                    style="background-color: #FF89FF;　opacity: 0.3;"></div>
                             </div>
                             <div>
                                 <div v-bind:class="{ 'sample-active' : isActive[1] }" v-on:click="changeColor(1)"
                                     class="uk-card uk-card-default uk-card-body uk-border-rounded"
-                                    style="background-color: #3EC63E;"></div>
+                                    style="background-color: #89DB89; opacity: 0.3;"></div>
                             </div>
                             <div>
                                 <div v-bind:class="{ 'sample-active' : isActive[2] }" v-on:click="changeColor(2)"
                                     class="uk-card uk-card-default uk-card-body uk-border-rounded"
-                                    style="background-color: #4F80E5;"></div>
+                                    style="background-color: #90AFEE; opacity: 0.3;"></div>
                             </div>
                             <div>
                                 <div  v-bind:class="{ 'sample-active' : isActive[3] }" v-on:click="changeColor(3)"
                                     class="uk-card uk-card-default uk-card-body uk-border-rounded"
-                                    style="background-color: #9355E6;"></div>
+                                    style="background-color: #C8AAF2; opacity: 0.3;"></div>
                             </div>
                             <div>
                                 <div  v-bind:class="{ 'sample-active' : isActive[4] }" v-on:click="changeColor(4)"
                                     class="uk-card uk-card-default uk-card-body uk-border-rounded"
-                                    style="background-color: #51CFCF;"></div>
+                                    style="background-color: #8BDEDE; opacity: 0.3;"></div>
                             </div>
                             <div>
                                 <div  v-bind:class="{ 'sample-active' : isActive[5] }" v-on:click="changeColor(5)"
                                     class="uk-card uk-card-default uk-card-body uk-border-rounded"
-                                    style="background-color: #FF6666;"></div>
+                                    style="background-color: #FF9999; opacity: 0.3;"></div>
                             </div>
                         </div>
                     </div>
@@ -119,7 +119,12 @@ export default {
       searchWordId: "",
       translated: "「単語検索」のボタンで表示切り替え、範囲指定＋適当なところをタッチで単語検索",
 
-      isActive: [true, false, false, false, false, false]
+      // ハイライトの色切り替えのためのスイッチ
+      isActive: [true, false, false, false, false, false],
+      // ハイライトの色
+      nowHighlightColor: "#c000c0",
+      // ハイライトの色の配列
+      highlightColor: ["#FF89FF", "#89DB89", "#90AFEE", "	#C8AAF2", "#8BDEDE", "#FF9999"]
     }
   },
   /* ページを開いた時に前のページからパスを受け取り、axiosでwikiの記事を引っ張ってくる */
@@ -252,7 +257,7 @@ export default {
         var rangeObject = userSelection.getRangeAt(0);
         var span = document.createElement("span");
         rangeObject.surroundContents(span);
-        span.style.backgroundColor = "yellow";
+        span.style.backgroundColor = this.nowHighlightColor;
 
      },
      /* ハイライトを外す */
@@ -276,8 +281,12 @@ export default {
        }
      },
      changeColor: function (number) {
+       // 一旦全ての色をfalse（初期化）
        this.isActive = [false, false, false, false, false, false];
-       this.isActive[number] = true
+       // 右上のカードの表示変更
+       this.isActive[number] = true;
+       // ハイライトの色変更
+       this.nowHighlightColor = this.highlightColor[number]
      }
   },
 }

@@ -1956,7 +1956,12 @@ __webpack_require__.r(__webpack_exports__);
       selectedText: "使い方",
       searchWordId: "",
       translated: "「単語検索」のボタンで表示切り替え、範囲指定＋適当なところをタッチで単語検索",
-      isActive: [true, false, false, false, false, false]
+      // ハイライトの色切り替えのためのスイッチ
+      isActive: [true, false, false, false, false, false],
+      // ハイライトの色
+      nowHighlightColor: "#c000c0",
+      // ハイライトの色の配列
+      highlightColor: ["#FF89FF", "#89DB89", "#90AFEE", "	#C8AAF2", "#8BDEDE", "#FF9999"]
     };
   },
 
@@ -2075,7 +2080,7 @@ __webpack_require__.r(__webpack_exports__);
       var rangeObject = userSelection.getRangeAt(0);
       var span = document.createElement("span");
       rangeObject.surroundContents(span);
-      span.style.backgroundColor = "yellow";
+      span.style.backgroundColor = this.nowHighlightColor;
     },
 
     /* ハイライトを外す */
@@ -2097,8 +2102,12 @@ __webpack_require__.r(__webpack_exports__);
       }
     },
     changeColor: function changeColor(number) {
-      this.isActive = [false, false, false, false, false, false];
-      this.isActive[number] = true;
+      // 一旦全ての色をfalse（初期化）
+      this.isActive = [false, false, false, false, false, false]; // 右上のカードの表示変更
+
+      this.isActive[number] = true; // ハイライトの色変更
+
+      this.nowHighlightColor = this.highlightColor[number];
     }
   }
 });
@@ -19614,7 +19623,10 @@ var render = function() {
                             staticClass:
                               "uk-card uk-card-default uk-card-body uk-border-rounded",
                             class: { "sample-active": _vm.isActive[0] },
-                            staticStyle: { "background-color": "#c000c0" },
+                            staticStyle: {
+                              "background-color": "#FF89FF",
+                              opacity: "0.3"
+                            },
                             on: {
                               click: function($event) {
                                 return _vm.changeColor(0)
@@ -19628,7 +19640,10 @@ var render = function() {
                             staticClass:
                               "uk-card uk-card-default uk-card-body uk-border-rounded",
                             class: { "sample-active": _vm.isActive[1] },
-                            staticStyle: { "background-color": "#3EC63E" },
+                            staticStyle: {
+                              "background-color": "#89DB89",
+                              opacity: "0.3"
+                            },
                             on: {
                               click: function($event) {
                                 return _vm.changeColor(1)
@@ -19642,7 +19657,10 @@ var render = function() {
                             staticClass:
                               "uk-card uk-card-default uk-card-body uk-border-rounded",
                             class: { "sample-active": _vm.isActive[2] },
-                            staticStyle: { "background-color": "#4F80E5" },
+                            staticStyle: {
+                              "background-color": "#90AFEE",
+                              opacity: "0.3"
+                            },
                             on: {
                               click: function($event) {
                                 return _vm.changeColor(2)
@@ -19656,7 +19674,10 @@ var render = function() {
                             staticClass:
                               "uk-card uk-card-default uk-card-body uk-border-rounded",
                             class: { "sample-active": _vm.isActive[3] },
-                            staticStyle: { "background-color": "#9355E6" },
+                            staticStyle: {
+                              "background-color": "#C8AAF2",
+                              opacity: "0.3"
+                            },
                             on: {
                               click: function($event) {
                                 return _vm.changeColor(3)
@@ -19670,7 +19691,10 @@ var render = function() {
                             staticClass:
                               "uk-card uk-card-default uk-card-body uk-border-rounded",
                             class: { "sample-active": _vm.isActive[4] },
-                            staticStyle: { "background-color": "#51CFCF" },
+                            staticStyle: {
+                              "background-color": "#8BDEDE",
+                              opacity: "0.3"
+                            },
                             on: {
                               click: function($event) {
                                 return _vm.changeColor(4)
@@ -19684,7 +19708,10 @@ var render = function() {
                             staticClass:
                               "uk-card uk-card-default uk-card-body uk-border-rounded",
                             class: { "sample-active": _vm.isActive[5] },
-                            staticStyle: { "background-color": "#FF6666" },
+                            staticStyle: {
+                              "background-color": "#FF9999",
+                              opacity: "0.3"
+                            },
                             on: {
                               click: function($event) {
                                 return _vm.changeColor(5)
