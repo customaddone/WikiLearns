@@ -225,14 +225,6 @@ __webpack_require__.r(__webpack_exports__);
 //
 //
 //
-//
-//
-//
-//
-//
-//
-//
-//
 /* harmony default export */ __webpack_exports__["default"] = ({
   data: function data() {
     return {
@@ -412,9 +404,12 @@ __webpack_require__.r(__webpack_exports__);
     },
     // wiki記事を取り込む
     editArticle: function editArticle() {
+      // 現在のhtmlの文字列からナビ部分とボタンの文字列を削除
+      this.nowpage = document.body.innerHTML.replace(/<div id="inport.+<div data-v-3916c6b8=\"\"><div data-v-3916c6b8=\"\">/, '').replace(/<script src="http.+cle.js"><\/script>/, '').replace(/<\/div><\/div><\/div><\/div>/, '').slice(0, -15); //絶対１５じゃないと思うんだけど
+
       axios.post('/api/edit', {
         id: this.articleId,
-        article: this.article
+        article: this.nowpage
       }).then(function (response) {
         alert('編集しました！！');
       })["catch"](function (response) {
@@ -721,26 +716,6 @@ var render = function() {
           : _vm._e()
       ]),
       _vm._v(" "),
-      _c("p", [_vm._v("右下のボタンでモードを切り替えてください")]),
-      _vm._v(" "),
-      _c("p", [
-        _vm._v(
-          "単語検索モード：単語１wordを範囲指定して適当な場所を押すと検索結果が右上に出ます"
-        )
-      ]),
-      _vm._v(" "),
-      _c("p", [
-        _vm._v(
-          "ハイライトモード：範囲指定して適当な場所を軽くタッチするとハイライトが付きます"
-        )
-      ]),
-      _vm._v(" "),
-      _c("p", [
-        _vm._v(
-          "長押ししてハイライトの周りをグリグリするとして小さく指をずらすとハイライトが消えます（割と広範囲\n        が消えます）"
-        )
-      ]),
-      _vm._v(" "),
       _c("div", { staticClass: "showSwitchButton" }, [
         _vm.switchFunctionKey % 3 == 0
           ? _c("div", [
@@ -815,7 +790,7 @@ var staticRenderFns = [
         _c(
           "div",
           { staticStyle: { "font-size": "30px", "font-family": "Droid Sans" } },
-          [_vm._v("\n                        WikiLearns\n                    ")]
+          [_vm._v("WikiLearns")]
         )
       ])
     ])

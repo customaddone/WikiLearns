@@ -9,9 +9,7 @@
                 <!-- たとえcomponentだろうとRouterのbindの影響は及ぶ -->
                 <router-link to="/" class="uk-navbar-item">
                     <div style="font-size: 30px; font-family: Droid Sans;
-                        ">
-                        WikiLearns
-                    </div>
+                        ">WikiLearns</div>
                 </router-link>
             </div>
             <div class="uk-navbar-right">

@@ -11,9 +11,7 @@
                 <div class="uk-navbar-center">
                     <a href="/" class="uk-navbar-item">
                     <div style="font-size: 30px; font-family: Droid Sans;
-                        ">
-                        WikiLearns
-                    </div>
+                        ">WikiLearns</div>
                     </a>
                 </div>
                 <div class="uk-navbar-right">
@@ -30,7 +28,6 @@
             </nav>
         </div>
     </div>
-
     <div class="showInportBox">
         <div v-if="inportArticleButton" class="uk-card uk-card-default uk-margin" style="width: 250px;">
             <div class="uk-card-media-top">
@@ -106,12 +103,6 @@
             </div>
         </div>
 
-        <p>右下のボタンでモードを切り替えてください</p>
-        <p>単語検索モード：単語１wordを範囲指定して適当な場所を押すと検索結果が右上に出ます</p>
-        <p>ハイライトモード：範囲指定して適当な場所を軽くタッチするとハイライトが付きます</p>
-        <p>長押ししてハイライトの周りをグリグリするとして小さく指をずらすとハイライトが消えます（割と広範囲
-        が消えます）</p>
-
         <!-- 単語モード、ハイライトモード、標準モードを切り替えるためのボタン -->
         <div class="showSwitchButton">
             <div v-if="switchFunctionKey % 3 == 0">
@@ -131,6 +122,7 @@
             "selected" @click="switchWordFunction">
 
             <div v-html="article"></div>
+
         </div>
     </div>
 </div>
@@ -170,6 +162,7 @@ export default {
 
       // 記事取り込み用スイッチ
       inportArticleButton: false,
+
     }
   },
   /* ページを開いた時に前のページからパスを受け取り、axiosでwikiの記事を引っ張ってくる */
@@ -328,9 +321,17 @@ export default {
 
      // wiki記事を取り込む
      editArticle: function () {
+
+       // 現在のhtmlの文字列からナビ部分とボタンの文字列を削除
+       this.nowpage = document.body.innerHTML
+       .replace(/<div id="inport.+<div data-v-3916c6b8=\"\"><div data-v-3916c6b8=\"\">/, '')
+       .replace(/<script src="http.+cle.js"><\/script>/, '')
+       .replace(/<\/div><\/div><\/div><\/div>/, '')
+       .slice( 0, -15 ); //絶対１５じゃないと思うんだけど
+
        axios.post('/api/edit',{
          id: this.articleId,
-         article: this.article,
+         article: this.nowpage,
        }).then((response) => {
          alert('編集しました！！')
        }).catch((response) => {

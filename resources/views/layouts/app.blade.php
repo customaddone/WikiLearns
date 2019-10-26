@@ -27,6 +27,8 @@
     <link href="{{ asset('css/wikicss.css') }}" rel="stylesheet">
     <!-- 単語検索、ハイライト用css-->
     <link href="{{ asset('css/floatContents.css') }}" rel="stylesheet">
+    <!-- 単語カード用　-->
+    <link href="{{ asset('css/floatContents.css') }}" rel="stylesheet">
 </head>
 <body>
     @yield('content')
