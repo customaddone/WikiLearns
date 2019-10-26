@@ -122,7 +122,7 @@ export default {
       // ハイライトの色切り替えのためのスイッチ
       isActive: [true, false, false, false, false, false],
       // ハイライトの色
-      nowHighlightColor: "#c000c0",
+      nowHighlightColor: "#FF89FF",
       // ハイライトの色の配列
       highlightColor: ["#FF89FF", "#89DB89", "#90AFEE", "	#C8AAF2", "#8BDEDE", "#FF9999"]
     }
