@@ -3,10 +3,10 @@
 @section('content')
 
 
-   @component('components.navShow')
-   @endcomponent
+    @component('components.navShow')
+    @endcomponent
 
-   <div id="articlesShow">
+    <div id="articlesShow">
        <div class="uk-container">
            <wiki-show></wiki-show>
         </div>

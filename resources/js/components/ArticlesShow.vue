@@ -14,6 +14,48 @@
                 </div>
             </div>
         </div>
+
+        <!-- ハイライトのカラー選択 -->
+        <div class="showTextBox">
+            <div v-if="switchFunctionKey % 3 == 2" class="uk-card uk-card-default uk-margin" style="width: 250px;">
+                <div class="uk-card-media-top">
+                    <div class="uk-cover-container">
+                    </div>
+                    <div class="uk-card-body" style="padding: 5px;">
+                        <h3 class="uk-card-title">カラー選択</h3>
+                        <div class="uk-grid-small uk-text-center" uk-grid
+                            style="padding-left: 12px;">
+                            <div>
+                                <div v-bind:class="{ 'sample-active' : isActive }" v-on:click="changeColor"
+                                    class="uk-card uk-card-default uk-card-body uk-border-rounded"
+                                    style="background-color: #c000c0;"></div>
+                            </div>
+                            <div>
+                                <div class="uk-card uk-card-default uk-card-body uk-border-rounded"
+                                    style="background-color: #3EC63E;"></div>
+                            </div>
+                            <div>
+                                <div class="uk-card uk-card-default uk-card-body uk-border-rounded"
+                                    style="background-color: #4F80E5;"></div>
+                            </div>
+                            <div>
+                                <div class="uk-card uk-card-default uk-card-body uk-border-rounded"
+                                    style="background-color: #9355E6;"></div>
+                            </div>
+                            <div>
+                                <div class="uk-card uk-card-default uk-card-body uk-border-rounded"
+                                    style="background-color: #51CFCF;"></div>
+                            </div>
+                            <div>
+                                <div class="uk-card uk-card-default uk-card-body uk-border-rounded"
+                                    style="background-color: #FF6666;"></div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
         <p>右下のボタンでモードを切り替えてください</p>
         <p>単語検索モード：単語１wordを範囲指定して適当な場所を押すと検索結果が右上に出ます</p>
         <p>ハイライトモード：範囲指定して適当な場所を軽くタッチするとハイライトが付きます</p>
@@ -72,6 +114,7 @@ export default {
       searchWordId: "",
       translated: "「単語検索」のボタンで表示切り替え、範囲指定＋適当なところをタッチで単語検索",
 
+      isActive: false,
     }
   },
   /* ページを開いた時に前のページからパスを受け取り、axiosでwikiの記事を引っ張ってくる */
@@ -90,7 +133,7 @@ export default {
             this.article = response.data.parse.text["*"]
              .replace(
              /<a href="\/wiki\/((?!File:).*?)".*?>(.+?)<\/a>/g,
-             '<a href="./wiki/$1">$2</a>')
+             '<a href="./$1">$2</a>')
              .replace(
              /<a href="\/w\/index.*?".*?>(.*?)<\/a>/g,
              '$1'
@@ -227,6 +270,9 @@ export default {
 
        }
      },
+     changeColor: function () {
+       this.isActive = !this.isActive
+     }
   },
 }
 </script>

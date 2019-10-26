@@ -1883,6 +1883,48 @@ __webpack_require__.r(__webpack_exports__);
 //
 //
 //
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
 /* harmony default export */ __webpack_exports__["default"] = ({
   data: function data() {
     return {
@@ -1908,7 +1950,8 @@ __webpack_require__.r(__webpack_exports__);
       translatingWord: "",
       selectedText: "使い方",
       searchWordId: "",
-      translated: "「単語検索」のボタンで表示切り替え、範囲指定＋適当なところをタッチで単語検索"
+      translated: "「単語検索」のボタンで表示切り替え、範囲指定＋適当なところをタッチで単語検索",
+      isActive: false
     };
   },
 
@@ -2047,6 +2090,9 @@ __webpack_require__.r(__webpack_exports__);
 
         child = child.nextSibling;
       }
+    },
+    changeColor: function changeColor() {
+      this.isActive = !this.isActive;
     }
   }
 });
@@ -19526,6 +19572,66 @@ var render = function() {
         : _vm._e()
     ]),
     _vm._v(" "),
+    _c("div", { staticClass: "showTextBox" }, [
+      _vm.switchFunctionKey % 3 == 2
+        ? _c(
+            "div",
+            {
+              staticClass: "uk-card uk-card-default uk-margin",
+              staticStyle: { width: "250px" }
+            },
+            [
+              _c("div", { staticClass: "uk-card-media-top" }, [
+                _c("div", { staticClass: "uk-cover-container" }),
+                _vm._v(" "),
+                _c(
+                  "div",
+                  {
+                    staticClass: "uk-card-body",
+                    staticStyle: { padding: "5px" }
+                  },
+                  [
+                    _c("h3", { staticClass: "uk-card-title" }, [
+                      _vm._v("カラー選択")
+                    ]),
+                    _vm._v(" "),
+                    _c(
+                      "div",
+                      {
+                        staticClass: "uk-grid-small uk-text-center",
+                        staticStyle: { "padding-left": "12px" },
+                        attrs: { "uk-grid": "" }
+                      },
+                      [
+                        _c("div", [
+                          _c("div", {
+                            staticClass:
+                              "uk-card uk-card-default uk-card-body uk-border-rounded",
+                            class: { "sample-active": _vm.isActive },
+                            staticStyle: { "background-color": "#c000c0" },
+                            on: { click: _vm.changeColor }
+                          })
+                        ]),
+                        _vm._v(" "),
+                        _vm._m(1),
+                        _vm._v(" "),
+                        _vm._m(2),
+                        _vm._v(" "),
+                        _vm._m(3),
+                        _vm._v(" "),
+                        _vm._m(4),
+                        _vm._v(" "),
+                        _vm._m(5)
+                      ]
+                    )
+                  ]
+                )
+              ])
+            ]
+          )
+        : _vm._e()
+    ]),
+    _vm._v(" "),
     _c("p", [_vm._v("右下のボタンでモードを切り替えてください")]),
     _vm._v(" "),
     _c("p", [
@@ -19612,6 +19718,61 @@ var staticRenderFns = [
         ])
       ]
     )
+  },
+  function() {
+    var _vm = this
+    var _h = _vm.$createElement
+    var _c = _vm._self._c || _h
+    return _c("div", [
+      _c("div", {
+        staticClass: "uk-card uk-card-default uk-card-body uk-border-rounded",
+        staticStyle: { "background-color": "#3EC63E" }
+      })
+    ])
+  },
+  function() {
+    var _vm = this
+    var _h = _vm.$createElement
+    var _c = _vm._self._c || _h
+    return _c("div", [
+      _c("div", {
+        staticClass: "uk-card uk-card-default uk-card-body uk-border-rounded",
+        staticStyle: { "background-color": "#4F80E5" }
+      })
+    ])
+  },
+  function() {
+    var _vm = this
+    var _h = _vm.$createElement
+    var _c = _vm._self._c || _h
+    return _c("div", [
+      _c("div", {
+        staticClass: "uk-card uk-card-default uk-card-body uk-border-rounded",
+        staticStyle: { "background-color": "#9355E6" }
+      })
+    ])
+  },
+  function() {
+    var _vm = this
+    var _h = _vm.$createElement
+    var _c = _vm._self._c || _h
+    return _c("div", [
+      _c("div", {
+        staticClass: "uk-card uk-card-default uk-card-body uk-border-rounded",
+        staticStyle: { "background-color": "#51CFCF" }
+      })
+    ])
+  },
+  function() {
+    var _vm = this
+    var _h = _vm.$createElement
+    var _c = _vm._self._c || _h
+    return _c("div", [
+      _c("div", {
+        staticClass: "uk-card uk-card-default uk-card-body uk-border-rounded",
+        staticStyle: { "background-color": "#FF6666" }
+      })
+    ])
   }
 ]
 render._withStripped = true
@@ -21061,8 +21222,8 @@ __webpack_require__.r(__webpack_exports__);
 /*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
 
-__webpack_require__(/*! /var/www/resources/js/app.js */"./resources/js/app.js");
-module.exports = __webpack_require__(/*! /var/www/resources/sass/app.scss */"./resources/sass/app.scss");
+__webpack_require__(/*! /Users/fujisawakenyuu/sampleapp/laravel/wikiLearns/resources/js/app.js */"./resources/js/app.js");
+module.exports = __webpack_require__(/*! /Users/fujisawakenyuu/sampleapp/laravel/wikiLearns/resources/sass/app.scss */"./resources/sass/app.scss");
 
 
 /***/ })
