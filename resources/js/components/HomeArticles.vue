@@ -52,10 +52,10 @@
                             <a href="../" uk-icon="icon: tag" class="uk-navbar-item uk-logo">
                             </a>
                         </div>
-                        <div class="uk-width-3-4">
+                        <a :href="'articles/' + articles[0].id" class="uk-width-3-4">
                             <h2 class="uk-h3">{{ articles[0].title}}</h2>
                             <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>
-                        </div>
+                        </a>
                     </div>
                 </div>
                 <hr>

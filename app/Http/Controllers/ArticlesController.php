@@ -11,12 +11,28 @@ class ArticlesController extends Controller
         $articles = Article::limit(3)->get();
         return $articles;
     }
+
+    public function find($id) {
+        $article = Article::find($id);
+        return $article;
+    }
+
+    public function show ($id) {
+        return response()->view('articles.showInportArticle');
+    }
+
     public function store(Request $request) {
         $article = new Article;
         $article->title = $request->title;
         $article->userId = $request->userId;
         $article->article = $request->article;
         $article->status = $request->status;
+        $article->save();
+    }
+
+    public function edit(Request $request) {
+        $article = Article::find($request->id);
+        $article->article = $request->article;
         $article->save();
     }
 

@@ -17,16 +17,18 @@ Route::middleware('auth:api')->get('/user', function (Request $request) {
     return $request->user();
 });
 
-// wiki記事検索用
-Route::get("/homeSearch/{pass}", "WikiSearchController@homeSearch");
 
-// 辞書機能使用用
-Route::get("/data/{pass}", "ArticlesController@dict");
-Route::get("/datashow/{passId}", "ArticlesController@dictshow");
-// 記事ページ移動用
-Route::get("/articlesShow/{pass}", "WikiSearchController@articlesShow");
-// 記事のインポート用
 Route::group(['middleware' => 'api'], function() {
-  Route::get('get',  'ArticlesController@index');
-  Route::post('add',  'ArticlesController@store');  //←追記
+  // wiki記事検索用
+  Route::get("/homeSearch/{pass}", "WikiSearchController@homeSearch");
+  // 辞書機能使用用
+  Route::get("/data/{pass}", "ArticlesController@dict");
+  Route::get("/datashow/{passId}", "ArticlesController@dictshow");
+  // 記事ページ移動用
+  Route::get("/articlesShow/{pass}", "WikiSearchController@articlesShow");
+  // 記事のインポート用
+  Route::get('/get',  'ArticlesController@index');
+  Route::get('/find/{id?}',  'ArticlesController@find');
+  Route::post('/add',  'ArticlesController@store');  //←追記
+  Route::post('/edit',  'ArticlesController@edit'); 
 });

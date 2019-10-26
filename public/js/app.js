@@ -2008,8 +2008,8 @@ __webpack_require__.r(__webpack_exports__);
       nowHighlightColor: "#FF89FF",
       // ハイライトの色の配列
       highlightColor: ["#FF89FF", "#89DB89", "#90AFEE", "	#C8AAF2", "#8BDEDE", "#FF9999"],
-      // 記事取り込み用ボタン
-      inportArticleButton: true
+      // 記事取り込み用スイッチ
+      inportArticleButton: false
     };
   },
 
@@ -20166,17 +20166,24 @@ var render = function() {
             _c("div", { staticClass: "uk-grid uk-grid-small" }, [
               _vm._m(2),
               _vm._v(" "),
-              _c("div", { staticClass: "uk-width-3-4" }, [
-                _c("h2", { staticClass: "uk-h3" }, [
-                  _vm._v(_vm._s(_vm.articles[0].title))
-                ]),
-                _vm._v(" "),
-                _c("p", [
-                  _vm._v(
-                    "Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua."
-                  )
-                ])
-              ])
+              _c(
+                "a",
+                {
+                  staticClass: "uk-width-3-4",
+                  attrs: { href: "articles/" + _vm.articles[0].id }
+                },
+                [
+                  _c("h2", { staticClass: "uk-h3" }, [
+                    _vm._v(_vm._s(_vm.articles[0].title))
+                  ]),
+                  _vm._v(" "),
+                  _c("p", [
+                    _vm._v(
+                      "Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua."
+                    )
+                  ])
+                ]
+              )
             ])
           ]),
           _vm._v(" "),
@@ -21331,15 +21338,14 @@ __webpack_require__.r(__webpack_exports__);
 /*!**************************************************!*\
   !*** ./resources/js/components/HomeArticles.vue ***!
   \**************************************************/
-/*! no static exports found */
+/*! exports provided: default */
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
 __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _HomeArticles_vue_vue_type_template_id_3ca7d227___WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./HomeArticles.vue?vue&type=template&id=3ca7d227& */ "./resources/js/components/HomeArticles.vue?vue&type=template&id=3ca7d227&");
 /* harmony import */ var _HomeArticles_vue_vue_type_script_lang_js___WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./HomeArticles.vue?vue&type=script&lang=js& */ "./resources/js/components/HomeArticles.vue?vue&type=script&lang=js&");
-/* harmony reexport (unknown) */ for(var __WEBPACK_IMPORT_KEY__ in _HomeArticles_vue_vue_type_script_lang_js___WEBPACK_IMPORTED_MODULE_1__) if(__WEBPACK_IMPORT_KEY__ !== 'default') (function(key) { __webpack_require__.d(__webpack_exports__, key, function() { return _HomeArticles_vue_vue_type_script_lang_js___WEBPACK_IMPORTED_MODULE_1__[key]; }) }(__WEBPACK_IMPORT_KEY__));
-/* harmony import */ var _node_modules_vue_loader_lib_runtime_componentNormalizer_js__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ../../../node_modules/vue-loader/lib/runtime/componentNormalizer.js */ "./node_modules/vue-loader/lib/runtime/componentNormalizer.js");
+/* empty/unused harmony star reexport *//* harmony import */ var _node_modules_vue_loader_lib_runtime_componentNormalizer_js__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ../../../node_modules/vue-loader/lib/runtime/componentNormalizer.js */ "./node_modules/vue-loader/lib/runtime/componentNormalizer.js");
 
 
 
@@ -21369,7 +21375,7 @@ component.options.__file = "resources/js/components/HomeArticles.vue"
 /*!***************************************************************************!*\
   !*** ./resources/js/components/HomeArticles.vue?vue&type=script&lang=js& ***!
   \***************************************************************************/
-/*! no static exports found */
+/*! exports provided: default */
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";

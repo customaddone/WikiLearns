@@ -37,7 +37,7 @@
                 <div class="uk-cover-container">
                 </div>
                 <div class="uk-card-body" style="padding: 5px;">
-                    <a class="uk-card-title" v-on:click="inportArticle">インポート</a>
+                    <a class="uk-card-title" v-on:click="editArticle">エディット</a>
                     <p style="height: 105px; overflow: hidden;">{{ translated }}</p>
                 </div>
             </div>
@@ -143,13 +143,9 @@ export default {
 
       /* mount時にwikiの記事を引っ張ってくるためのquery */
       article: "",
-      showquery: {
-        format: 'json',
-        action: 'parse',
-        origin: '*',
-        page: "",
-      },
-      url: "https://en.wikipedia.org/w/api.php",
+
+      /* インポートした記事のID */
+      articleId: 0,
 
       /* 単語検索モード、ハイライトモード、標準モードを切り替える際のキー */
       switchFunctionKey: 0,
@@ -180,28 +176,16 @@ export default {
   mounted: function () {
 
     /* 前のページからパス(wikiのページのタイトル)を受け取る */
-    var pathname= location.pathname;
+   var pathname= location.pathname;
    var searchname = pathname.split("/");
-   var underVarJoin = searchname[3].split("%20").join('_')
-   this.showquery.page = (searchname.length == 4) ? encodeURI(underVarJoin) : "";
+   this.articleId = searchname[2];
 
     /* axiosで記事を引っ張ってくる。その際、記事上のaリンクを加工する(./任意のタイトルでページを
        開けるように) */
-    axios.get(this.url, {params: this.showquery})
-         .then((response) => {
-            this.article = response.data.parse.text["*"]
-             .replace(
-             /<a href="\/wiki\/((?!File:).*?)".*?>(.+?)<\/a>/g,
-             '<a href="./$1">$2</a>')
-             .replace(
-             /<a href="\/w\/index.*?".*?>(.*?)<\/a>/g,
-             '$1'
-             )
-             .replace(
-             /<a href="((?=Help).*?)".*?>(.*?)<\/a>/g,
-             '$2'
-             );
-         })
+    axios.get('/api/find/' + this.articleId
+    ).then((response) => {
+      this.article = response.data.article;
+    })
     .catch(response => console.log(response));
   },
 
@@ -343,18 +327,12 @@ export default {
      },
 
      // wiki記事を取り込む
-     inportArticle: function () {
-       axios.post('/api/add',{
-         title: this.showquery.page,
-         userId: 1,
-         // wikiの記事のaリンクを消す replaceは非破壊的メソッド
-         article: this.article
-         .replace(
-         /<a.*?>(.+?)<\/a>/g,
-         '$1'),
-         status: 'wiki',
+     editArticle: function () {
+       axios.post('/api/edit',{
+         id: this.articleId,
+         article: this.article,
        }).then((response) => {
-         alert('インポートしました！！')
+         alert('編集しました！！')
        }).catch((response) => {
 
          console.log(response);
