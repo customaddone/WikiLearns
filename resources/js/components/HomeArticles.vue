@@ -53,7 +53,7 @@
                             </a>
                         </div>
                         <div class="uk-width-3-4">
-                            <h2 class="uk-h3">Sample Heading</h2>
+                            <h2 class="uk-h3">{{ articles[0].title}}</h2>
                             <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>
                         </div>
                     </div>
@@ -93,3 +93,19 @@
         </div>
     </div>
 </template>
+
+<script>
+export default {
+  data: function () {
+    return {
+      articles: [],
+    }
+  },
+  mounted: function () {
+    axios.get('/api/get'
+    ).then((response) => {
+      this.articles = response.data;
+    })
+  }
+}
+</script>

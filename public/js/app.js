@@ -2162,8 +2162,6 @@ __webpack_require__.r(__webpack_exports__);
     },
     // wiki記事を取り込む
     inportArticle: function inportArticle() {
-      var _this4 = this;
-
       axios.post('/api/add', {
         title: this.showquery.page,
         userId: 1,
@@ -2171,12 +2169,133 @@ __webpack_require__.r(__webpack_exports__);
         article: this.article.replace(/<a.*?>(.+?)<\/a>/g, '$1'),
         status: 'wiki'
       }).then(function (response) {
-        alert(_this4.article.length);
-        alert(_this4.article.replace(/<a.*?>(.+?)<\/a>/g, '$1').length);
+        alert('インポートしました！！');
       })["catch"](function (response) {
         console.log(response);
       });
     }
+  }
+});
+
+/***/ }),
+
+/***/ "./node_modules/babel-loader/lib/index.js?!./node_modules/vue-loader/lib/index.js?!./resources/js/components/HomeArticles.vue?vue&type=script&lang=js&":
+/*!***********************************************************************************************************************************************************************!*\
+  !*** ./node_modules/babel-loader/lib??ref--4-0!./node_modules/vue-loader/lib??vue-loader-options!./resources/js/components/HomeArticles.vue?vue&type=script&lang=js& ***!
+  \***********************************************************************************************************************************************************************/
+/*! exports provided: default */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+/* harmony default export */ __webpack_exports__["default"] = ({
+  data: function data() {
+    return {
+      articles: []
+    };
+  },
+  mounted: function mounted() {
+    var _this = this;
+
+    axios.get('/api/get').then(function (response) {
+      _this.articles = response.data;
+    });
   }
 });
 
@@ -20031,242 +20150,239 @@ var render = function() {
   var _vm = this
   var _h = _vm.$createElement
   var _c = _vm._self._c || _h
-  return _vm._m(0)
+  return _c(
+    "div",
+    { staticClass: "uk-section-primary uk-section-xsmall uk-container" },
+    [
+      _vm._m(0),
+      _vm._v(" "),
+      _vm._m(1),
+      _vm._v(" "),
+      _c(
+        "div",
+        { staticClass: "uk-grid-small", attrs: { "data-uk-grid-margin": "" } },
+        [
+          _c("div", { staticClass: "uk-width-medium-1-3 uk-row-first" }, [
+            _c("div", { staticClass: "uk-grid uk-grid-small" }, [
+              _vm._m(2),
+              _vm._v(" "),
+              _c("div", { staticClass: "uk-width-3-4" }, [
+                _c("h2", { staticClass: "uk-h3" }, [
+                  _vm._v(_vm._s(_vm.articles[0].title))
+                ]),
+                _vm._v(" "),
+                _c("p", [
+                  _vm._v(
+                    "Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua."
+                  )
+                ])
+              ])
+            ])
+          ]),
+          _vm._v(" "),
+          _c("hr"),
+          _vm._v(" "),
+          _vm._m(3),
+          _vm._v(" "),
+          _c("hr"),
+          _vm._v(" "),
+          _vm._m(4),
+          _vm._v(" "),
+          _c("hr")
+        ]
+      )
+    ]
+  )
 }
 var staticRenderFns = [
   function() {
     var _vm = this
     var _h = _vm.$createElement
     var _c = _vm._self._c || _h
-    return _c(
-      "div",
-      { staticClass: "uk-section-primary uk-section-xsmall uk-container" },
-      [
-        _c("div", { staticClass: "uk-margin" }, [
-          _c(
-            "h1",
-            {
-              staticClass: "uk-text-center uk-text-primary ",
-              staticStyle: {
-                "font-size": "30px",
-                "font-family": "'Pacifico', cursive"
-              }
-            },
-            [_vm._v("\n                ~Articles~\n            ")]
-          ),
-          _vm._v(" "),
-          _c("p", { staticClass: "uk-text-lead" }, [_vm._v("・Top Hit")]),
-          _vm._v(" "),
-          _c("div", { staticClass: "uk-first-column" }, [
-            _c(
-              "div",
-              {
-                staticClass:
-                  "uk-card uk-card-default uk-margin uk-border-rounded",
-                staticStyle: { border: "solid 1px #fff" }
-              },
-              [
-                _c(
-                  "div",
-                  { staticClass: "uk-card-header uk-section-primary" },
-                  [
-                    _c(
-                      "div",
-                      {
-                        staticClass: "uk-grid-small uk-flex-middle uk-grid",
-                        attrs: { "uk-grid": "" }
-                      },
-                      [
-                        _c(
-                          "div",
-                          { staticClass: "uk-width-auto uk-first-column" },
-                          [
-                            _c("div", { staticClass: "uk-cover-container" }, [
-                              _c("img", {
-                                staticClass: "uk-cover",
-                                staticStyle: { width: "107px", height: "80px" },
-                                attrs: {
-                                  src:
-                                    "https://tapittalk.com/wp-content/uploads/2018/10/be46dc68a2c32d89451ff8e6006216f3.jpg",
-                                  alt: "*",
-                                  "uk-cover": ""
-                                }
-                              }),
-                              _vm._v(" "),
-                              _c("canvas", {
-                                attrs: { width: "80", height: "80" }
-                              })
-                            ])
-                          ]
-                        ),
-                        _vm._v(" "),
-                        _c("div", { staticClass: "uk-width-expand " }, [
-                          _c(
-                            "h3",
-                            {
-                              staticClass:
-                                "uk-card-title uk-margin-remove-bottom"
-                            },
-                            [_vm._v("夏目漱石")]
-                          ),
-                          _vm._v(" "),
-                          _c("p", { staticClass: "uk-text-meta" }, [
-                            _c("time", [_vm._v("April 01, 2017")])
-                          ])
-                        ])
-                      ]
-                    )
-                  ]
-                ),
-                _vm._v(" "),
-                _c("div", { staticClass: "uk-card-body uk-section-primary" }, [
-                  _c("p", [
-                    _vm._v(
-                      "智ちに働けば角かどが立つ。情じょうに棹さおさせば流される。意地を通とおせば窮屈きゅうくつだ。とかくに人の世は住みにくい。"
-                    )
-                  ])
-                ]),
-                _vm._v(" "),
-                _c(
-                  "div",
-                  { staticClass: "uk-card-footer uk-section-primary" },
-                  [
-                    _c(
-                      "a",
-                      {
-                        staticClass: "uk-button uk-button-text",
-                        attrs: { href: "#" }
-                      },
-                      [_vm._v("Read More")]
-                    )
-                  ]
-                )
-              ]
-            )
-          ])
-        ]),
-        _vm._v(" "),
-        _c(
-          "div",
-          { staticClass: "uk-child-width-1-2", attrs: { "uk-grid": "" } },
-          [
-            _c(
-              "p",
-              { staticClass: "uk-text-lead uk-text-left uk-text-primary" },
-              [_vm._v("・Articles")]
-            ),
-            _vm._v(" "),
-            _c(
-              "p",
-              {
-                staticClass: "uk-text-right uk-text-primary",
-                staticStyle: { "margin-top": "10px" }
-              },
-              [_vm._v("see more...")]
-            )
-          ]
-        ),
-        _vm._v(" "),
+    return _c("div", { staticClass: "uk-margin" }, [
+      _c(
+        "h1",
+        {
+          staticClass: "uk-text-center uk-text-primary ",
+          staticStyle: {
+            "font-size": "30px",
+            "font-family": "'Pacifico', cursive"
+          }
+        },
+        [_vm._v("\n                ~Articles~\n            ")]
+      ),
+      _vm._v(" "),
+      _c("p", { staticClass: "uk-text-lead" }, [_vm._v("・Top Hit")]),
+      _vm._v(" "),
+      _c("div", { staticClass: "uk-first-column" }, [
         _c(
           "div",
           {
-            staticClass: "uk-grid-small",
-            attrs: { "data-uk-grid-margin": "" }
+            staticClass: "uk-card uk-card-default uk-margin uk-border-rounded",
+            staticStyle: { border: "solid 1px #fff" }
           },
           [
-            _c("div", { staticClass: "uk-width-medium-1-3 uk-row-first" }, [
-              _c("div", { staticClass: "uk-grid uk-grid-small" }, [
-                _c("div", { staticClass: "uk-width-1-4" }, [
-                  _c("a", {
-                    staticClass: "uk-navbar-item uk-logo",
-                    attrs: { href: "../", "uk-icon": "icon: tag" }
-                  }),
-                  _vm._v(" "),
-                  _c("a", {
-                    staticClass: "uk-navbar-item uk-logo",
-                    attrs: { href: "../", "uk-icon": "icon: tag" }
-                  })
-                ]),
-                _vm._v(" "),
-                _c("div", { staticClass: "uk-width-3-4" }, [
-                  _c("h2", { staticClass: "uk-h3" }, [
-                    _vm._v("Sample Heading")
+            _c("div", { staticClass: "uk-card-header uk-section-primary" }, [
+              _c(
+                "div",
+                {
+                  staticClass: "uk-grid-small uk-flex-middle uk-grid",
+                  attrs: { "uk-grid": "" }
+                },
+                [
+                  _c("div", { staticClass: "uk-width-auto uk-first-column" }, [
+                    _c("div", { staticClass: "uk-cover-container" }, [
+                      _c("img", {
+                        staticClass: "uk-cover",
+                        staticStyle: { width: "107px", height: "80px" },
+                        attrs: {
+                          src:
+                            "https://tapittalk.com/wp-content/uploads/2018/10/be46dc68a2c32d89451ff8e6006216f3.jpg",
+                          alt: "*",
+                          "uk-cover": ""
+                        }
+                      }),
+                      _vm._v(" "),
+                      _c("canvas", { attrs: { width: "80", height: "80" } })
+                    ])
                   ]),
                   _vm._v(" "),
-                  _c("p", [
-                    _vm._v(
-                      "Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua."
-                    )
+                  _c("div", { staticClass: "uk-width-expand " }, [
+                    _c(
+                      "h3",
+                      { staticClass: "uk-card-title uk-margin-remove-bottom" },
+                      [_vm._v("夏目漱石")]
+                    ),
+                    _vm._v(" "),
+                    _c("p", { staticClass: "uk-text-meta" }, [
+                      _c("time", [_vm._v("April 01, 2017")])
+                    ])
                   ])
-                ])
+                ]
+              )
+            ]),
+            _vm._v(" "),
+            _c("div", { staticClass: "uk-card-body uk-section-primary" }, [
+              _c("p", [
+                _vm._v(
+                  "智ちに働けば角かどが立つ。情じょうに棹さおさせば流される。意地を通とおせば窮屈きゅうくつだ。とかくに人の世は住みにくい。"
+                )
               ])
             ]),
             _vm._v(" "),
-            _c("hr"),
-            _vm._v(" "),
-            _c("div", { staticClass: "uk-width-medium-1-3 uk-row-first" }, [
-              _c("div", { staticClass: "uk-grid uk-grid-small" }, [
-                _c("div", { staticClass: "uk-width-1-4" }, [
-                  _c("a", {
-                    staticClass: "uk-navbar-item uk-logo",
-                    attrs: { href: "../", "uk-icon": "icon: tag" }
-                  }),
-                  _vm._v(" "),
-                  _c("a", {
-                    staticClass: "uk-navbar-item uk-logo",
-                    attrs: { href: "../", "uk-icon": "icon: tag" }
-                  })
-                ]),
-                _vm._v(" "),
-                _c("div", { staticClass: "uk-width-3-4" }, [
-                  _c("h2", { staticClass: "uk-h3" }, [
-                    _vm._v("Sample Heading")
-                  ]),
-                  _vm._v(" "),
-                  _c("p", [
-                    _vm._v(
-                      "Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua."
-                    )
-                  ])
-                ])
-              ])
-            ]),
-            _vm._v(" "),
-            _c("hr"),
-            _vm._v(" "),
-            _c("div", { staticClass: "uk-width-medium-1-3 uk-row-first" }, [
-              _c("div", { staticClass: "uk-grid uk-grid-small" }, [
-                _c("div", { staticClass: "uk-width-1-4" }, [
-                  _c("a", {
-                    staticClass: "uk-navbar-item uk-logo",
-                    attrs: { href: "../", "uk-icon": "icon: tag" }
-                  }),
-                  _vm._v(" "),
-                  _c("a", {
-                    staticClass: "uk-navbar-item uk-logo",
-                    attrs: { href: "../", "uk-icon": "icon: tag" }
-                  })
-                ]),
-                _vm._v(" "),
-                _c("div", { staticClass: "uk-width-3-4" }, [
-                  _c("h2", { staticClass: "uk-h3" }, [
-                    _vm._v("Sample Heading")
-                  ]),
-                  _vm._v(" "),
-                  _c("p", [
-                    _vm._v(
-                      "Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua."
-                    )
-                  ])
-                ])
-              ])
-            ]),
-            _vm._v(" "),
-            _c("hr")
+            _c("div", { staticClass: "uk-card-footer uk-section-primary" }, [
+              _c(
+                "a",
+                {
+                  staticClass: "uk-button uk-button-text",
+                  attrs: { href: "#" }
+                },
+                [_vm._v("Read More")]
+              )
+            ])
           ]
+        )
+      ])
+    ])
+  },
+  function() {
+    var _vm = this
+    var _h = _vm.$createElement
+    var _c = _vm._self._c || _h
+    return _c(
+      "div",
+      { staticClass: "uk-child-width-1-2", attrs: { "uk-grid": "" } },
+      [
+        _c("p", { staticClass: "uk-text-lead uk-text-left uk-text-primary" }, [
+          _vm._v("・Articles")
+        ]),
+        _vm._v(" "),
+        _c(
+          "p",
+          {
+            staticClass: "uk-text-right uk-text-primary",
+            staticStyle: { "margin-top": "10px" }
+          },
+          [_vm._v("see more...")]
         )
       ]
     )
+  },
+  function() {
+    var _vm = this
+    var _h = _vm.$createElement
+    var _c = _vm._self._c || _h
+    return _c("div", { staticClass: "uk-width-1-4" }, [
+      _c("a", {
+        staticClass: "uk-navbar-item uk-logo",
+        attrs: { href: "../", "uk-icon": "icon: tag" }
+      }),
+      _vm._v(" "),
+      _c("a", {
+        staticClass: "uk-navbar-item uk-logo",
+        attrs: { href: "../", "uk-icon": "icon: tag" }
+      })
+    ])
+  },
+  function() {
+    var _vm = this
+    var _h = _vm.$createElement
+    var _c = _vm._self._c || _h
+    return _c("div", { staticClass: "uk-width-medium-1-3 uk-row-first" }, [
+      _c("div", { staticClass: "uk-grid uk-grid-small" }, [
+        _c("div", { staticClass: "uk-width-1-4" }, [
+          _c("a", {
+            staticClass: "uk-navbar-item uk-logo",
+            attrs: { href: "../", "uk-icon": "icon: tag" }
+          }),
+          _vm._v(" "),
+          _c("a", {
+            staticClass: "uk-navbar-item uk-logo",
+            attrs: { href: "../", "uk-icon": "icon: tag" }
+          })
+        ]),
+        _vm._v(" "),
+        _c("div", { staticClass: "uk-width-3-4" }, [
+          _c("h2", { staticClass: "uk-h3" }, [_vm._v("Sample Heading")]),
+          _vm._v(" "),
+          _c("p", [
+            _vm._v(
+              "Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua."
+            )
+          ])
+        ])
+      ])
+    ])
+  },
+  function() {
+    var _vm = this
+    var _h = _vm.$createElement
+    var _c = _vm._self._c || _h
+    return _c("div", { staticClass: "uk-width-medium-1-3 uk-row-first" }, [
+      _c("div", { staticClass: "uk-grid uk-grid-small" }, [
+        _c("div", { staticClass: "uk-width-1-4" }, [
+          _c("a", {
+            staticClass: "uk-navbar-item uk-logo",
+            attrs: { href: "../", "uk-icon": "icon: tag" }
+          }),
+          _vm._v(" "),
+          _c("a", {
+            staticClass: "uk-navbar-item uk-logo",
+            attrs: { href: "../", "uk-icon": "icon: tag" }
+          })
+        ]),
+        _vm._v(" "),
+        _c("div", { staticClass: "uk-width-3-4" }, [
+          _c("h2", { staticClass: "uk-h3" }, [_vm._v("Sample Heading")]),
+          _vm._v(" "),
+          _c("p", [
+            _vm._v(
+              "Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua."
+            )
+          ])
+        ])
+      ])
+    ])
   }
 ]
 render._withStripped = true
@@ -21215,21 +21331,24 @@ __webpack_require__.r(__webpack_exports__);
 /*!**************************************************!*\
   !*** ./resources/js/components/HomeArticles.vue ***!
   \**************************************************/
-/*! exports provided: default */
+/*! no static exports found */
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
 __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _HomeArticles_vue_vue_type_template_id_3ca7d227___WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./HomeArticles.vue?vue&type=template&id=3ca7d227& */ "./resources/js/components/HomeArticles.vue?vue&type=template&id=3ca7d227&");
-/* harmony import */ var _node_modules_vue_loader_lib_runtime_componentNormalizer_js__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ../../../node_modules/vue-loader/lib/runtime/componentNormalizer.js */ "./node_modules/vue-loader/lib/runtime/componentNormalizer.js");
+/* harmony import */ var _HomeArticles_vue_vue_type_script_lang_js___WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./HomeArticles.vue?vue&type=script&lang=js& */ "./resources/js/components/HomeArticles.vue?vue&type=script&lang=js&");
+/* harmony reexport (unknown) */ for(var __WEBPACK_IMPORT_KEY__ in _HomeArticles_vue_vue_type_script_lang_js___WEBPACK_IMPORTED_MODULE_1__) if(__WEBPACK_IMPORT_KEY__ !== 'default') (function(key) { __webpack_require__.d(__webpack_exports__, key, function() { return _HomeArticles_vue_vue_type_script_lang_js___WEBPACK_IMPORTED_MODULE_1__[key]; }) }(__WEBPACK_IMPORT_KEY__));
+/* harmony import */ var _node_modules_vue_loader_lib_runtime_componentNormalizer_js__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ../../../node_modules/vue-loader/lib/runtime/componentNormalizer.js */ "./node_modules/vue-loader/lib/runtime/componentNormalizer.js");
 
-var script = {}
+
+
 
 
 /* normalize component */
 
-var component = Object(_node_modules_vue_loader_lib_runtime_componentNormalizer_js__WEBPACK_IMPORTED_MODULE_1__["default"])(
-  script,
+var component = Object(_node_modules_vue_loader_lib_runtime_componentNormalizer_js__WEBPACK_IMPORTED_MODULE_2__["default"])(
+  _HomeArticles_vue_vue_type_script_lang_js___WEBPACK_IMPORTED_MODULE_1__["default"],
   _HomeArticles_vue_vue_type_template_id_3ca7d227___WEBPACK_IMPORTED_MODULE_0__["render"],
   _HomeArticles_vue_vue_type_template_id_3ca7d227___WEBPACK_IMPORTED_MODULE_0__["staticRenderFns"],
   false,
@@ -21243,6 +21362,20 @@ var component = Object(_node_modules_vue_loader_lib_runtime_componentNormalizer_
 if (false) { var api; }
 component.options.__file = "resources/js/components/HomeArticles.vue"
 /* harmony default export */ __webpack_exports__["default"] = (component.exports);
+
+/***/ }),
+
+/***/ "./resources/js/components/HomeArticles.vue?vue&type=script&lang=js&":
+/*!***************************************************************************!*\
+  !*** ./resources/js/components/HomeArticles.vue?vue&type=script&lang=js& ***!
+  \***************************************************************************/
+/*! no static exports found */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony import */ var _node_modules_babel_loader_lib_index_js_ref_4_0_node_modules_vue_loader_lib_index_js_vue_loader_options_HomeArticles_vue_vue_type_script_lang_js___WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! -!../../../node_modules/babel-loader/lib??ref--4-0!../../../node_modules/vue-loader/lib??vue-loader-options!./HomeArticles.vue?vue&type=script&lang=js& */ "./node_modules/babel-loader/lib/index.js?!./node_modules/vue-loader/lib/index.js?!./resources/js/components/HomeArticles.vue?vue&type=script&lang=js&");
+/* empty/unused harmony star reexport */ /* harmony default export */ __webpack_exports__["default"] = (_node_modules_babel_loader_lib_index_js_ref_4_0_node_modules_vue_loader_lib_index_js_vue_loader_options_HomeArticles_vue_vue_type_script_lang_js___WEBPACK_IMPORTED_MODULE_0__["default"]); 
 
 /***/ }),
 

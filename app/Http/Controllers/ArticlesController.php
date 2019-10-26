@@ -7,7 +7,10 @@ use Illuminate\Http\Request;
 
 class ArticlesController extends Controller
 {
-
+    public function index() {
+        $articles = Article::limit(3)->get();
+        return $articles;
+    }
     public function store(Request $request) {
         $article = new Article;
         $article->title = $request->title;

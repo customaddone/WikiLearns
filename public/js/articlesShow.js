@@ -419,8 +419,6 @@ __webpack_require__.r(__webpack_exports__);
     },
     // wiki記事を取り込む
     inportArticle: function inportArticle() {
-      var _this4 = this;
-
       axios.post('/api/add', {
         title: this.showquery.page,
         userId: 1,
@@ -428,8 +426,7 @@ __webpack_require__.r(__webpack_exports__);
         article: this.article.replace(/<a.*?>(.+?)<\/a>/g, '$1'),
         status: 'wiki'
       }).then(function (response) {
-        alert(_this4.article.length);
-        alert(_this4.article.replace(/<a.*?>(.+?)<\/a>/g, '$1').length);
+        alert('インポートしました！！');
       })["catch"](function (response) {
         console.log(response);
       });
