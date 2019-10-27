@@ -5,7 +5,6 @@ import HomeTop from './components/HomeTop.vue'
 import HomeArticles from './components/HomeArticles.vue'
 import HomeSearch from './components/HomeSearch.vue'
 import HomeVocabula from './components/HomeVocabula.vue'
-import ArticlesShow from './components/ArticlesShow.vue'
 
 var router = new VueRouter({
 
