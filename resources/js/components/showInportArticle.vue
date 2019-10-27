@@ -121,7 +121,7 @@
         <div @select="selected" @touchstart="switchWordFunction" @touchmove='switchUnhighlight' @blur="selected" @keyup=
             "selected" @click="switchWordFunction">
 
-            <div v-html="article"></div>
+                <div v-html="article"></div>
 
         </div>
     </div>

@@ -345,14 +345,17 @@ export default {
      // wiki記事を取り込む
      inportArticle: function () {
        axios.post('/api/add',{
+
          title: this.showquery.page,
          userId: 1,
          // wikiの記事のaリンクを消す replaceは非破壊的メソッド
+
          article: this.article
-         .replace(
-         /<a.*?>(.+?)<\/a>/g,
-         '$1'),
+         .replace(/<a[\s\S]*?>/g, '')
+         .replace(/<\/a>/g, ''),
+
          status: 'wiki',
+
        }).then((response) => {
          alert('インポートしました！！')
        }).catch(function (error) {

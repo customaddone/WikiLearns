@@ -423,7 +423,7 @@ __webpack_require__.r(__webpack_exports__);
         title: this.showquery.page,
         userId: 1,
         // wikiの記事のaリンクを消す replaceは非破壊的メソッド
-        article: this.article.replace(/<a.*?>(.+?)<\/a>/g, '$1'),
+        article: this.article.replace(/<a[\s\S]*?>/g, '').replace(/<\/a>/g, ''),
         status: 'wiki'
       }).then(function (response) {
         alert('インポートしました！！');
