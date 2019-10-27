@@ -357,10 +357,7 @@ export default {
          alert('インポートしました！！')
        }).catch(function (error) {
 
-       console.log(error.response.data);
-     console.log(error.response.status);      // 例：400
-     console.log(error.response.statusText);  // Bad Request
-     console.log(error.response.headers);
+       console.log(error);
 
        });
      }
