@@ -35,4 +35,6 @@ Route::group(['middleware' => 'api'], function() {
   ->middleware('modify');  //←追記
   Route::match(["post", "options"], '/edit',  'ArticlesController@edit')
   ->middleware('modify');
+  Route::match(["delete", "options"], '/del/{id}',  'ArticlesController@del')
+  ->middleware('modify');
 });

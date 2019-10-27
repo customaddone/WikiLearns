@@ -427,8 +427,8 @@ __webpack_require__.r(__webpack_exports__);
         status: 'wiki'
       }).then(function (response) {
         alert('インポートしました！！');
-      })["catch"](function (response) {
-        console.log(response);
+      })["catch"](function (error) {
+        console.log(error);
       });
     }
   }

@@ -2170,8 +2170,8 @@ __webpack_require__.r(__webpack_exports__);
         status: 'wiki'
       }).then(function (response) {
         alert('インポートしました！！');
-      })["catch"](function (response) {
-        console.log(response);
+      })["catch"](function (error) {
+        console.log(error);
       });
     }
   }
@@ -2290,12 +2290,33 @@ __webpack_require__.r(__webpack_exports__);
       articles: []
     };
   },
+  // 記事表示
   mounted: function mounted() {
     var _this = this;
 
     axios.get('/api/get').then(function (response) {
-      _this.articles = response.data;
+      _this.articles = [];
+      _this.articles = response.data; // 記事が３つ未満の場合は空のデータをarticlesに入れる
+
+      if (_this.articles.length < 3) {
+        for (var i = 0; i < 3 - _this.articles.length; i++) {
+          _this.articles.push({
+            id: 0,
+            title: 'No data'
+          });
+        }
+      }
     });
+  },
+  methods: {
+    articleDelete: function articleDelete(articleId) {
+      confirm('are you sure?');
+      axios["delete"]('api/del/' + articleId).then(function () {
+        alert('削除しました!');
+      })["catch"](function (response) {
+        console.log(response);
+      });
+    }
   }
 });
 
@@ -20164,7 +20185,22 @@ var render = function() {
         [
           _c("div", { staticClass: "uk-width-medium-1-3 uk-row-first" }, [
             _c("div", { staticClass: "uk-grid uk-grid-small" }, [
-              _vm._m(2),
+              _c("div", { staticClass: "uk-width-1-4" }, [
+                _c("a", {
+                  staticClass: "uk-navbar-item uk-logo",
+                  attrs: { href: "../", "uk-icon": "icon: tag" }
+                }),
+                _vm._v(" "),
+                _c("a", {
+                  staticClass: "uk-navbar-item uk-logo",
+                  attrs: { href: "../", "uk-icon": "icon: tag" },
+                  on: {
+                    click: function($event) {
+                      return _vm.articleDelete(_vm.articles[0].id)
+                    }
+                  }
+                })
+              ]),
               _vm._v(" "),
               _c(
                 "a",
@@ -20189,11 +20225,87 @@ var render = function() {
           _vm._v(" "),
           _c("hr"),
           _vm._v(" "),
-          _vm._m(3),
+          _c("div", { staticClass: "uk-width-medium-1-3 uk-row-first" }, [
+            _c("div", { staticClass: "uk-grid uk-grid-small" }, [
+              _c("div", { staticClass: "uk-width-1-4" }, [
+                _c("a", {
+                  staticClass: "uk-navbar-item uk-logo",
+                  attrs: { href: "../", "uk-icon": "icon: tag" }
+                }),
+                _vm._v(" "),
+                _c("a", {
+                  staticClass: "uk-navbar-item uk-logo",
+                  attrs: { href: "../", "uk-icon": "icon: tag" },
+                  on: {
+                    click: function($event) {
+                      return _vm.articleDelete(_vm.articles[1].id)
+                    }
+                  }
+                })
+              ]),
+              _vm._v(" "),
+              _c(
+                "a",
+                {
+                  staticClass: "uk-width-3-4",
+                  attrs: { href: "articles/" + _vm.articles[1].id }
+                },
+                [
+                  _c("h2", { staticClass: "uk-h3" }, [
+                    _vm._v(_vm._s(_vm.articles[1].title))
+                  ]),
+                  _vm._v(" "),
+                  _c("p", [
+                    _vm._v(
+                      "Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua."
+                    )
+                  ])
+                ]
+              )
+            ])
+          ]),
           _vm._v(" "),
           _c("hr"),
           _vm._v(" "),
-          _vm._m(4),
+          _c("div", { staticClass: "uk-width-medium-1-3 uk-row-first" }, [
+            _c("div", { staticClass: "uk-grid uk-grid-small" }, [
+              _c("div", { staticClass: "uk-width-1-4" }, [
+                _c("a", {
+                  staticClass: "uk-navbar-item uk-logo",
+                  attrs: { href: "../", "uk-icon": "icon: tag" }
+                }),
+                _vm._v(" "),
+                _c("a", {
+                  staticClass: "uk-navbar-item uk-logo",
+                  attrs: { href: "../", "uk-icon": "icon: tag" },
+                  on: {
+                    click: function($event) {
+                      return _vm.articleDelete(_vm.articles[2].id)
+                    }
+                  }
+                })
+              ]),
+              _vm._v(" "),
+              _c(
+                "a",
+                {
+                  staticClass: "uk-width-3-4",
+                  attrs: { href: "articles/" + _vm.articles[2].id }
+                },
+                [
+                  _c("h2", { staticClass: "uk-h3" }, [
+                    _vm._v(_vm._s(_vm.articles[2].title))
+                  ]),
+                  _vm._v(" "),
+                  _c("p", [
+                    _vm._v(
+                      "Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua."
+                    )
+                  ])
+                ]
+              )
+            ])
+          ]),
           _vm._v(" "),
           _c("hr")
         ]
@@ -20314,82 +20426,6 @@ var staticRenderFns = [
         )
       ]
     )
-  },
-  function() {
-    var _vm = this
-    var _h = _vm.$createElement
-    var _c = _vm._self._c || _h
-    return _c("div", { staticClass: "uk-width-1-4" }, [
-      _c("a", {
-        staticClass: "uk-navbar-item uk-logo",
-        attrs: { href: "../", "uk-icon": "icon: tag" }
-      }),
-      _vm._v(" "),
-      _c("a", {
-        staticClass: "uk-navbar-item uk-logo",
-        attrs: { href: "../", "uk-icon": "icon: tag" }
-      })
-    ])
-  },
-  function() {
-    var _vm = this
-    var _h = _vm.$createElement
-    var _c = _vm._self._c || _h
-    return _c("div", { staticClass: "uk-width-medium-1-3 uk-row-first" }, [
-      _c("div", { staticClass: "uk-grid uk-grid-small" }, [
-        _c("div", { staticClass: "uk-width-1-4" }, [
-          _c("a", {
-            staticClass: "uk-navbar-item uk-logo",
-            attrs: { href: "../", "uk-icon": "icon: tag" }
-          }),
-          _vm._v(" "),
-          _c("a", {
-            staticClass: "uk-navbar-item uk-logo",
-            attrs: { href: "../", "uk-icon": "icon: tag" }
-          })
-        ]),
-        _vm._v(" "),
-        _c("div", { staticClass: "uk-width-3-4" }, [
-          _c("h2", { staticClass: "uk-h3" }, [_vm._v("Sample Heading")]),
-          _vm._v(" "),
-          _c("p", [
-            _vm._v(
-              "Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua."
-            )
-          ])
-        ])
-      ])
-    ])
-  },
-  function() {
-    var _vm = this
-    var _h = _vm.$createElement
-    var _c = _vm._self._c || _h
-    return _c("div", { staticClass: "uk-width-medium-1-3 uk-row-first" }, [
-      _c("div", { staticClass: "uk-grid uk-grid-small" }, [
-        _c("div", { staticClass: "uk-width-1-4" }, [
-          _c("a", {
-            staticClass: "uk-navbar-item uk-logo",
-            attrs: { href: "../", "uk-icon": "icon: tag" }
-          }),
-          _vm._v(" "),
-          _c("a", {
-            staticClass: "uk-navbar-item uk-logo",
-            attrs: { href: "../", "uk-icon": "icon: tag" }
-          })
-        ]),
-        _vm._v(" "),
-        _c("div", { staticClass: "uk-width-3-4" }, [
-          _c("h2", { staticClass: "uk-h3" }, [_vm._v("Sample Heading")]),
-          _vm._v(" "),
-          _c("p", [
-            _vm._v(
-              "Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua."
-            )
-          ])
-        ])
-      ])
-    ])
   }
 ]
 render._withStripped = true

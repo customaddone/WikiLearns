@@ -36,11 +36,16 @@ class ArticlesController extends Controller
         $article->save();
     }
 
+    public function del($id) {
+        $article = Article::find($id)->delete();
+    }
+    // wiki詳細記事表示用　データはフロント側が取ってくれる
     public function wikishow(Request $request)
     {
         return response()->view('articles.show');
     }
 
+    // 英単語辞書使用用
     public function dict($pass)
     {
         $client = new \GuzzleHttp\Client();

@@ -49,7 +49,7 @@
                         <div class="uk-width-1-4">
                             <a href="../" uk-icon="icon: tag" class="uk-navbar-item uk-logo">
                             </a>
-                            <a href="../" uk-icon="icon: tag" class="uk-navbar-item uk-logo">
+                            <a v-on:click="articleDelete(articles[0].id)" href="../" uk-icon="icon: tag" class="uk-navbar-item uk-logo">
                             </a>
                         </div>
                         <a :href="'articles/' + articles[0].id" class="uk-width-3-4">
@@ -64,13 +64,13 @@
                         <div class="uk-width-1-4">
                             <a href="../" uk-icon="icon: tag" class="uk-navbar-item uk-logo">
                             </a>
-                            <a href="../" uk-icon="icon: tag" class="uk-navbar-item uk-logo">
+                            <a v-on:click="articleDelete(articles[1].id)" href="../" uk-icon="icon: tag" class="uk-navbar-item uk-logo">
                             </a>
                         </div>
-                        <div class="uk-width-3-4">
-                            <h2 class="uk-h3">Sample Heading</h2>
+                        <a :href="'articles/' + articles[1].id" class="uk-width-3-4">
+                            <h2 class="uk-h3">{{ articles[1].title}}</h2>
                             <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>
-                        </div>
+                        </a>
                     </div>
                 </div>
                 <hr>
@@ -79,13 +79,13 @@
                         <div class="uk-width-1-4">
                             <a href="../" uk-icon="icon: tag" class="uk-navbar-item uk-logo">
                             </a>
-                            <a href="../" uk-icon="icon: tag" class="uk-navbar-item uk-logo">
+                            <a v-on:click="articleDelete(articles[2].id)" href="../" uk-icon="icon: tag" class="uk-navbar-item uk-logo">
                             </a>
                         </div>
-                        <div class="uk-width-3-4">
-                            <h2 class="uk-h3">Sample Heading</h2>
+                        <a :href="'articles/' + articles[2].id" class="uk-width-3-4">
+                            <h2 class="uk-h3">{{ articles[2].title}}</h2>
                             <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>
-                        </div>
+                        </a>
                     </div>
                 </div>
                 <hr>
@@ -101,11 +101,32 @@ export default {
       articles: [],
     }
   },
+  // 記事表示
   mounted: function () {
     axios.get('/api/get'
     ).then((response) => {
+      this.articles = [];
       this.articles = response.data;
+      // 記事が３つ未満の場合は空のデータをarticlesに入れる
+      if (this.articles.length < 3) {
+        for ( let i = 0; i < (3 - this.articles.length); i++ ) {
+          this.articles.push({ id: 0, title: 'No data', })
+        }
+      }
     })
+  },
+  methods : {
+
+    articleDelete: function (articleId) {
+      confirm('are you sure?');
+
+      axios.delete('api/del/' + articleId)
+      .then(() => {
+        alert('削除しました!');
+      }).catch((response) => {
+        console.log(response);
+      });
+    }
   }
 }
 </script>
