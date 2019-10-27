@@ -7,8 +7,10 @@ use Illuminate\Http\Request;
 
 class ArticlesController extends Controller
 {
+    // インポート記事用
     public function index() {
-        $articles = Article::limit(3)->get();
+        // idとタイトルだけgetする
+        $articles = Article::limit(3)->get(['id', 'title']);
         return $articles;
     }
 
