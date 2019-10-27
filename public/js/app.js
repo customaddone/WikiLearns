@@ -2299,7 +2299,7 @@ __webpack_require__.r(__webpack_exports__);
       _this.articles = response.data; // 記事が３つ未満の場合は空のデータをarticlesに入れる
 
       if (_this.articles.length < 3) {
-        for (var i = 0; i < 3 - _this.articles.length; i++) {
+        for (var i = 0; i < 3; i++) {
           _this.articles.push({
             id: 0,
             title: 'No data'
@@ -2311,9 +2311,7 @@ __webpack_require__.r(__webpack_exports__);
   methods: {
     articleDelete: function articleDelete(articleId) {
       confirm('are you sure?');
-      axios["delete"]('api/del/' + articleId).then(function () {
-        alert('削除しました!');
-      })["catch"](function (response) {
+      axios["delete"]('api/del/' + articleId).then(function () {})["catch"](function (response) {
         console.log(response);
       });
     }

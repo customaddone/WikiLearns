@@ -107,9 +107,10 @@ export default {
     ).then((response) => {
       this.articles = [];
       this.articles = response.data;
+
       // 記事が３つ未満の場合は空のデータをarticlesに入れる
       if (this.articles.length < 3) {
-        for ( let i = 0; i < (3 - this.articles.length); i++ ) {
+        for ( let i = 0; i < 3; i++ ) {
           this.articles.push({ id: 0, title: 'No data', })
         }
       }
@@ -122,7 +123,7 @@ export default {
 
       axios.delete('api/del/' + articleId)
       .then(() => {
-        alert('削除しました!');
+
       }).catch((response) => {
         console.log(response);
       });
