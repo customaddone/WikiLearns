@@ -5,11 +5,19 @@ var vm = new Vue({
 
       /* mount時にwikiの記事を引っ張ってくるためのquery */
       article: "",
+      articleDetail: "",
       showquery: {
         format: 'json',
         action: 'parse',
         origin: '*',
         page: "",
+      },
+      showDetailQuery: {
+        format: 'json',
+        action: 'query',
+        prop: 'extracts',
+        origin: '*',
+        titles: "",
       },
       url: "https://en.wikipedia.org/w/api.php",
 
@@ -43,9 +51,10 @@ var vm = new Vue({
 
     /* 前のページからパス(wikiのページのタイトル)を受け取る */
     var pathname= location.pathname;
-   var searchname = pathname.split("/");
-   var underVarJoin = searchname[3].split("%20").join('_')
-   this.showquery.page = (searchname.length == 4) ? encodeURI(underVarJoin) : "";
+    var searchname = pathname.split("/");
+    var underVarJoin = searchname[3].split("%20").join('_')
+    this.showquery.page = (searchname.length == 4) ? encodeURI(underVarJoin) : "";
+    this.showDetailQuery.titles = this.showquery.page;
 
     /* axiosで記事を引っ張ってくる。その際、記事上のaリンクを加工する(./任意のタイトルでページを
        開けるように) */
@@ -63,6 +72,14 @@ var vm = new Vue({
              /<a href="((?=Help).*?)".*?>(.*?)<\/a>/g,
              '$2'
              );
+         })
+    .catch(response => console.log(response));
+    axios.get(this.url, {params: this.showDetailQuery})
+         .then((response) => {
+            var keyId = Object.keys(response.data.query.pages)
+            this.articleDetail = response.data.query.pages[keyId].extract
+            .replace(/<.+?>/g, "")
+            .slice(0, 300);
          })
     .catch(response => console.log(response));
   },

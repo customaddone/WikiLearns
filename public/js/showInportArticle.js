@@ -198,8 +198,8 @@ var vm = new Vue({
        .replace(/<script src="http.+cle.js"><\/script>/, '')
        .replace(/<\/div><\/div><\/div><\/div>/, '')
        .slice(16)
-       .slice( 0, -23 )
-
+       .slice( 0, -8 )
+       .replace(/<\/div><\/div><\/div><\/div>/, '')
 
        axios.post('/api/edit',{
          id: this.articleId,
