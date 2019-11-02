@@ -1,6 +1,6 @@
 <template>
 <!-- uk-container 横にpadding uk-section 縦にpadding -->
-    <div class="uk-section-primary uk-section-xsmall uk-container">
+    <div class=" uk-section-xsmall uk-container">
         <div class="uk-margin">
 
             <!-- タイトル -->
@@ -10,10 +10,10 @@
             </h1>
 
             <!-- TopHit -->
-            <p class='uk-text-lead'>・Top Hit</p>
             <div class="uk-first-column">
                 <div class="uk-card uk-card-default uk-margin uk-border-rounded" style="border: solid 1px #fff;">
-                    <div class="uk-card-header uk-section-primary">
+                    <p>・Top Hit</p>
+                    <div class="uk-card-header">
                         <div class="uk-grid-small uk-flex-middle uk-grid" uk-grid="">
                             <div class="uk-width-auto uk-first-column">
                                 <div class="uk-cover-container"><img src="https://tapittalk.com/wp-content/uploads/2018/10/be46dc68a2c32d89451ff8e6006216f3.jpg" alt="*" uk-cover="" class="uk-cover" style="width: 107px; height: 80px;">
@@ -28,10 +28,10 @@
                             </div>
                         </div>
                     </div>
-                    <div class="uk-card-body uk-section-primary">
+                    <div class="uk-card-body">
                         <p>智ちに働けば角かどが立つ。情じょうに棹さおさせば流される。意地を通とおせば窮屈きゅうくつだ。とかくに人の世は住みにくい。</p>
                     </div>
-                    <div class="uk-card-footer uk-section-primary">
+                    <div class="uk-card-footer ">
                         <a class="uk-button uk-button-text" href="#">Read More</a>
                     </div>
                 </div>
@@ -40,56 +40,56 @@
             <!-- 各記事 -->
             </div>
             <div class="uk-child-width-1-2" uk-grid>
-                <p class="uk-text-lead uk-text-left uk-text-primary">・Articles</p>
-                <p class="uk-text-right uk-text-primary" style="margin-top: 10px;">see more...</p>
+                <p>Articles</p>
+                <p class="uk-text-right ">see more...</p>
             </div>
-            <div class="uk-grid-small" data-uk-grid-margin="">
-                <div class="uk-width-medium-1-3 uk-row-first">
-                    <div class="uk-grid uk-grid-small">
-                        <div class="uk-width-1-4">
-                            <a href="../" uk-icon="icon: tag" class="uk-navbar-item uk-logo">
-                            </a>
-                            <a v-on:click="articleDelete(articles[0].id)" href="../" uk-icon="icon: tag" class="uk-navbar-item uk-logo">
-                            </a>
+            <ul>
+                <li class="uk-section-xsmall">
+                    <div class="uk-card uk-card-default uk-card-body uk-width-1-2@m">
+                        <div>
+                            <a v-on:click="articleDelete(articles[0].id)" href="../" uk-icon="icon: trash" style="float: right; margin-left: 15px;"></a>
+                            <a :href="'articles/' + articles[0].id"  uk-icon="icon: pencil" style="float: right;"></a>
                         </div>
-                        <a :href="'articles/' + articles[0].id" class="uk-width-3-4">
-                            <h2 class="uk-h3">{{ articles[0].title}}</h2>
-                            <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>
-                        </a>
-                    </div>
-                </div>
-                <hr>
-                <div class="uk-width-medium-1-3 uk-row-first">
-                    <div class="uk-grid uk-grid-small">
-                        <div class="uk-width-1-4">
-                            <a href="../" uk-icon="icon: tag" class="uk-navbar-item uk-logo">
-                            </a>
-                            <a v-on:click="articleDelete(articles[1].id)" href="../" uk-icon="icon: tag" class="uk-navbar-item uk-logo">
-                            </a>
+                        <h1 class="uk-card-title">{{ articles[0].title}}</h1>
+                        <div class="uk-child-width-1-2" uk-grid style="margin-top: 10px;">
+                            <p>author: user</p>
+                            <p>status: wiki</p>
                         </div>
-                        <a :href="'articles/' + articles[1].id" class="uk-width-3-4">
-                            <h2 class="uk-h3">{{ articles[1].title}}</h2>
-                            <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>
-                        </a>
+                        <hr>
+                        <p>Lorem ipsum <a href="#">dolor</a> sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>
                     </div>
-                </div>
-                <hr>
-                <div class="uk-width-medium-1-3 uk-row-first">
-                    <div class="uk-grid uk-grid-small">
-                        <div class="uk-width-1-4">
-                            <a href="../" uk-icon="icon: tag" class="uk-navbar-item uk-logo">
-                            </a>
-                            <a v-on:click="articleDelete(articles[2].id)" href="../" uk-icon="icon: tag" class="uk-navbar-item uk-logo">
-                            </a>
+                </li>
+                <li>
+                    <div class="uk-card uk-card-default uk-card-body uk-width-1-2@m">
+                        <div>
+                            <a v-on:click="articleDelete(articles[1].id)" href="../" uk-icon="icon: trash" style="float: right; margin-left: 15px;"></a>
+                            <a :href="'articles/' + articles[1].id"  uk-icon="icon: pencil" style="float: right;"></a>
                         </div>
-                        <a :href="'articles/' + articles[2].id" class="uk-width-3-4">
-                            <h2 class="uk-h3">{{ articles[2].title}}</h2>
-                            <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>
-                        </a>
+                        <h1 class="uk-card-title">{{ articles[1].title}}</h1>
+                        <div class="uk-child-width-1-2" uk-grid style="margin-top: 10px;">
+                            <p>author: user</p>
+                            <p>status: wiki</p>
+                        </div>
+                        <hr>
+                        <p>Lorem ipsum <a href="#">dolor</a> sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>
                     </div>
-                </div>
-                <hr>
-            </div>
+                </li>
+                <li class="uk-section-xsmall">
+                    <div class="uk-card uk-card-default uk-card-body uk-width-1-2@m">
+                        <div>
+                            <a v-on:click="articleDelete(articles[2].id)" href="../" uk-icon="icon: trash" style="float: right; margin-left: 15px;"></a>
+                            <a :href="'articles/' + articles[2].id"  uk-icon="icon: pencil" style="float: right;"></a>
+                        </div>
+                        <h1 class="uk-card-title">{{ articles[2].title}}</h1>
+                        <div class="uk-child-width-1-2" uk-grid style="margin-top: 10px;">
+                            <p>author: user</p>
+                            <p>status: wiki</p>
+                        </div>
+                        <hr>
+                        <p>Lorem ipsum <a href="#">dolor</a> sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>
+                    </div>
+                </li>
+            </ul>
         </div>
     </div>
 </template>

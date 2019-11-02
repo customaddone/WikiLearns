@@ -1,6 +1,6 @@
 <template>
     <!-- uk-container 横にpadding uk-section 縦にpadding -->
-      <div class="uk-section-primary uk-section-xsmall uk-container">
+      <div class="uk-section-xsmall uk-container">
         <div class="uk-margin">
 
             <!-- タイトル -->
@@ -20,7 +20,7 @@
                     <li aria-expanded="false"><a href="#">ITEM 4</a></li>
                 </ul>
                 <ul class="uk-switcher uk-margin">
-                    <li class="uk-background-primary" style="">
+                    <li>
                         <h1>Title</h1>
                         タブパネル
                         Lorem ipsum dolor sit amet, consectetur adipisicing elit. Aliquid ducimus voluptate quae, maxime incidunt fuga saepe fugit sapiente cupiditate vel magni, amet sint! Laboriosam fugit nesciunt, repudiandae debitis, minima doloribus.
@@ -58,7 +58,7 @@
                             </div>
                         </div>
                     </li>
-                    <li class="uk-background-primary" style="">
+                    <li>
                         <h1>Title</h1>
                         タブパネル
                         Lorem ipsum dolor sit amet, consectetur adipisicing elit. Aliquid ducimus voluptate quae, maxime incidunt fuga saepe fugit sapiente cupiditate vel magni, amet sint! Laboriosam fugit nesciunt, repudiandae debitis, minima doloribus.
@@ -94,7 +94,7 @@
                             </div>
                         </div>
                     </li>
-                    <li class="uk-background-primary" style="">
+                    <li>
                         <h1>Title</h1>
                         タブパネル
                         Lorem ipsum dolor sit amet, consectetur adipisicing elit. Aliquid ducimus voluptate quae, maxime incidunt fuga saepe fugit sapiente cupiditate vel magni, amet sint! Laboriosam fugit nesciunt, repudiandae debitis, minima doloribus.
@@ -130,7 +130,7 @@
                             </div>
                         </div>
                     </li>
-                    <li class="uk-background-primary" style="">
+                    <li>
                         <h1>Title</h1>
                         タブパネル
                         Lorem ipsum dolor sit amet, consectetur adipisicing elit. Aliquid ducimus voluptate quae, maxime incidunt fuga saepe fugit sapiente cupiditate vel magni, amet sint! Laboriosam fugit nesciunt, repudiandae debitis, minima doloribus.

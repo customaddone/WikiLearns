@@ -1,0 +1,21 @@
+p {
+  font-family: sans-serif;
+}
+
+h1 {
+  font-family: sans-serif;
+  color: #666666;
+}
+/* aリンクの色変更*/
+a:link { color: #186cc0; }
+a:visited { color: #186cc0; }
+a:hover { color: #186cc0; }
+a:active { color: #186cc0; }
+
+.button-border {
+   border: solid 1px #1e87f0;
+}
+
+.button-border-grey {
+   border: solid 1px #0f4378;
+}

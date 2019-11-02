@@ -80,22 +80,16 @@
             </div>
         </div>
 
-        <p>右下のボタンでモードを切り替えてください</p>
-        <p>単語検索モード：単語１wordを範囲指定して適当な場所を押すと検索結果が右上に出ます</p>
-        <p>ハイライトモード：範囲指定して適当な場所を軽くタッチするとハイライトが付きます</p>
-        <p>長押ししてハイライトの周りをグリグリするとして小さく指をずらすとハイライトが消えます（割と広範囲
-            が消えます）</p>
-
         <!-- 単語モード、ハイライトモード、標準モードを切り替えるためのボタン -->
-        <div class="showSwitchButton">
+        <div class="showSwitchButton uk-border-circle" @click="switchKeyValue">
             <div v-if="switchFunctionKey % 3 == 0">
-                <button @click="switchKeyValue" class="uk-button uk-button-muted">標準</button>
+                <div uk-icon="icon: bookmark; ratio: 1.5" style="margin-left: 10px; margin-top: 10px;"></div>
             </div>
             <div v-else-if="switchFunctionKey % 3 == 1">
-                <button @click="switchKeyValue" class="uk-button uk-button-primary">単語検索</button>
+                <div uk-icon="icon: album" style="margin-left: 10px; margin-top: 10px;"></div>
             </div>
             <div v-else>
-                <button @click="switchKeyValue" class="uk-button" style="backgroundColor: yellow;">ライト</button>
+                <div uk-icon="icon: italic" style="margin-left: 10px; margin-top: 10px;"></div>
             </div>
         </div>
 

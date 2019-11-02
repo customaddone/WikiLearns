@@ -19404,147 +19404,133 @@ var render = function() {
   var _vm = this
   var _h = _vm.$createElement
   var _c = _vm._self._c || _h
-  return _c(
-    "div",
-    { staticClass: "uk-section-primary uk-section-xsmall uk-container" },
-    [
-      _vm._m(0),
+  return _c("div", { staticClass: " uk-section-xsmall uk-container" }, [
+    _vm._m(0),
+    _vm._v(" "),
+    _vm._m(1),
+    _vm._v(" "),
+    _c("ul", [
+      _c("li", { staticClass: "uk-section-xsmall" }, [
+        _c(
+          "div",
+          {
+            staticClass: "uk-card uk-card-default uk-card-body uk-width-1-2@m"
+          },
+          [
+            _c("div", [
+              _c("a", {
+                staticStyle: { float: "right", "margin-left": "15px" },
+                attrs: { href: "../", "uk-icon": "icon: trash" },
+                on: {
+                  click: function($event) {
+                    return _vm.articleDelete(_vm.articles[0].id)
+                  }
+                }
+              }),
+              _vm._v(" "),
+              _c("a", {
+                staticStyle: { float: "right" },
+                attrs: {
+                  href: "articles/" + _vm.articles[0].id,
+                  "uk-icon": "icon: pencil"
+                }
+              })
+            ]),
+            _vm._v(" "),
+            _c("h1", { staticClass: "uk-card-title" }, [
+              _vm._v(_vm._s(_vm.articles[0].title))
+            ]),
+            _vm._v(" "),
+            _vm._m(2),
+            _vm._v(" "),
+            _c("hr"),
+            _vm._v(" "),
+            _vm._m(3)
+          ]
+        )
+      ]),
       _vm._v(" "),
-      _vm._m(1),
+      _c("li", [
+        _c(
+          "div",
+          {
+            staticClass: "uk-card uk-card-default uk-card-body uk-width-1-2@m"
+          },
+          [
+            _c("div", [
+              _c("a", {
+                staticStyle: { float: "right", "margin-left": "15px" },
+                attrs: { href: "../", "uk-icon": "icon: trash" },
+                on: {
+                  click: function($event) {
+                    return _vm.articleDelete(_vm.articles[1].id)
+                  }
+                }
+              }),
+              _vm._v(" "),
+              _c("a", {
+                staticStyle: { float: "right" },
+                attrs: {
+                  href: "articles/" + _vm.articles[1].id,
+                  "uk-icon": "icon: pencil"
+                }
+              })
+            ]),
+            _vm._v(" "),
+            _c("h1", { staticClass: "uk-card-title" }, [
+              _vm._v(_vm._s(_vm.articles[1].title))
+            ]),
+            _vm._v(" "),
+            _vm._m(4),
+            _vm._v(" "),
+            _c("hr"),
+            _vm._v(" "),
+            _vm._m(5)
+          ]
+        )
+      ]),
       _vm._v(" "),
-      _c(
-        "div",
-        { staticClass: "uk-grid-small", attrs: { "data-uk-grid-margin": "" } },
-        [
-          _c("div", { staticClass: "uk-width-medium-1-3 uk-row-first" }, [
-            _c("div", { staticClass: "uk-grid uk-grid-small" }, [
-              _c("div", { staticClass: "uk-width-1-4" }, [
-                _c("a", {
-                  staticClass: "uk-navbar-item uk-logo",
-                  attrs: { href: "../", "uk-icon": "icon: tag" }
-                }),
-                _vm._v(" "),
-                _c("a", {
-                  staticClass: "uk-navbar-item uk-logo",
-                  attrs: { href: "../", "uk-icon": "icon: tag" },
-                  on: {
-                    click: function($event) {
-                      return _vm.articleDelete(_vm.articles[0].id)
-                    }
+      _c("li", { staticClass: "uk-section-xsmall" }, [
+        _c(
+          "div",
+          {
+            staticClass: "uk-card uk-card-default uk-card-body uk-width-1-2@m"
+          },
+          [
+            _c("div", [
+              _c("a", {
+                staticStyle: { float: "right", "margin-left": "15px" },
+                attrs: { href: "../", "uk-icon": "icon: trash" },
+                on: {
+                  click: function($event) {
+                    return _vm.articleDelete(_vm.articles[2].id)
                   }
-                })
-              ]),
+                }
+              }),
               _vm._v(" "),
-              _c(
-                "a",
-                {
-                  staticClass: "uk-width-3-4",
-                  attrs: { href: "articles/" + _vm.articles[0].id }
-                },
-                [
-                  _c("h2", { staticClass: "uk-h3" }, [
-                    _vm._v(_vm._s(_vm.articles[0].title))
-                  ]),
-                  _vm._v(" "),
-                  _c("p", [
-                    _vm._v(
-                      "Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua."
-                    )
-                  ])
-                ]
-              )
-            ])
-          ]),
-          _vm._v(" "),
-          _c("hr"),
-          _vm._v(" "),
-          _c("div", { staticClass: "uk-width-medium-1-3 uk-row-first" }, [
-            _c("div", { staticClass: "uk-grid uk-grid-small" }, [
-              _c("div", { staticClass: "uk-width-1-4" }, [
-                _c("a", {
-                  staticClass: "uk-navbar-item uk-logo",
-                  attrs: { href: "../", "uk-icon": "icon: tag" }
-                }),
-                _vm._v(" "),
-                _c("a", {
-                  staticClass: "uk-navbar-item uk-logo",
-                  attrs: { href: "../", "uk-icon": "icon: tag" },
-                  on: {
-                    click: function($event) {
-                      return _vm.articleDelete(_vm.articles[1].id)
-                    }
-                  }
-                })
-              ]),
-              _vm._v(" "),
-              _c(
-                "a",
-                {
-                  staticClass: "uk-width-3-4",
-                  attrs: { href: "articles/" + _vm.articles[1].id }
-                },
-                [
-                  _c("h2", { staticClass: "uk-h3" }, [
-                    _vm._v(_vm._s(_vm.articles[1].title))
-                  ]),
-                  _vm._v(" "),
-                  _c("p", [
-                    _vm._v(
-                      "Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua."
-                    )
-                  ])
-                ]
-              )
-            ])
-          ]),
-          _vm._v(" "),
-          _c("hr"),
-          _vm._v(" "),
-          _c("div", { staticClass: "uk-width-medium-1-3 uk-row-first" }, [
-            _c("div", { staticClass: "uk-grid uk-grid-small" }, [
-              _c("div", { staticClass: "uk-width-1-4" }, [
-                _c("a", {
-                  staticClass: "uk-navbar-item uk-logo",
-                  attrs: { href: "../", "uk-icon": "icon: tag" }
-                }),
-                _vm._v(" "),
-                _c("a", {
-                  staticClass: "uk-navbar-item uk-logo",
-                  attrs: { href: "../", "uk-icon": "icon: tag" },
-                  on: {
-                    click: function($event) {
-                      return _vm.articleDelete(_vm.articles[2].id)
-                    }
-                  }
-                })
-              ]),
-              _vm._v(" "),
-              _c(
-                "a",
-                {
-                  staticClass: "uk-width-3-4",
-                  attrs: { href: "articles/" + _vm.articles[2].id }
-                },
-                [
-                  _c("h2", { staticClass: "uk-h3" }, [
-                    _vm._v(_vm._s(_vm.articles[2].title))
-                  ]),
-                  _vm._v(" "),
-                  _c("p", [
-                    _vm._v(
-                      "Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua."
-                    )
-                  ])
-                ]
-              )
-            ])
-          ]),
-          _vm._v(" "),
-          _c("hr")
-        ]
-      )
-    ]
-  )
+              _c("a", {
+                staticStyle: { float: "right" },
+                attrs: {
+                  href: "articles/" + _vm.articles[2].id,
+                  "uk-icon": "icon: pencil"
+                }
+              })
+            ]),
+            _vm._v(" "),
+            _c("h1", { staticClass: "uk-card-title" }, [
+              _vm._v(_vm._s(_vm.articles[2].title))
+            ]),
+            _vm._v(" "),
+            _vm._m(6),
+            _vm._v(" "),
+            _c("hr"),
+            _vm._v(" "),
+            _vm._m(7)
+          ]
+        )
+      ])
+    ])
+  ])
 }
 var staticRenderFns = [
   function() {
@@ -19564,8 +19550,6 @@ var staticRenderFns = [
         [_vm._v("\n                ~Articles~\n            ")]
       ),
       _vm._v(" "),
-      _c("p", { staticClass: "uk-text-lead" }, [_vm._v("・Top Hit")]),
-      _vm._v(" "),
       _c("div", { staticClass: "uk-first-column" }, [
         _c(
           "div",
@@ -19574,7 +19558,9 @@ var staticRenderFns = [
             staticStyle: { border: "solid 1px #fff" }
           },
           [
-            _c("div", { staticClass: "uk-card-header uk-section-primary" }, [
+            _c("p", [_vm._v("・Top Hit")]),
+            _vm._v(" "),
+            _c("div", { staticClass: "uk-card-header" }, [
               _c(
                 "div",
                 {
@@ -19614,7 +19600,7 @@ var staticRenderFns = [
               )
             ]),
             _vm._v(" "),
-            _c("div", { staticClass: "uk-card-body uk-section-primary" }, [
+            _c("div", { staticClass: "uk-card-body" }, [
               _c("p", [
                 _vm._v(
                   "智ちに働けば角かどが立つ。情じょうに棹さおさせば流される。意地を通とおせば窮屈きゅうくつだ。とかくに人の世は住みにくい。"
@@ -19622,7 +19608,7 @@ var staticRenderFns = [
               ])
             ]),
             _vm._v(" "),
-            _c("div", { staticClass: "uk-card-footer uk-section-primary" }, [
+            _c("div", { staticClass: "uk-card-footer " }, [
               _c(
                 "a",
                 {
@@ -19645,20 +19631,101 @@ var staticRenderFns = [
       "div",
       { staticClass: "uk-child-width-1-2", attrs: { "uk-grid": "" } },
       [
-        _c("p", { staticClass: "uk-text-lead uk-text-left uk-text-primary" }, [
-          _vm._v("・Articles")
-        ]),
+        _c("p", [_vm._v("Articles")]),
         _vm._v(" "),
-        _c(
-          "p",
-          {
-            staticClass: "uk-text-right uk-text-primary",
-            staticStyle: { "margin-top": "10px" }
-          },
-          [_vm._v("see more...")]
-        )
+        _c("p", { staticClass: "uk-text-right " }, [_vm._v("see more...")])
       ]
     )
+  },
+  function() {
+    var _vm = this
+    var _h = _vm.$createElement
+    var _c = _vm._self._c || _h
+    return _c(
+      "div",
+      {
+        staticClass: "uk-child-width-1-2",
+        staticStyle: { "margin-top": "10px" },
+        attrs: { "uk-grid": "" }
+      },
+      [
+        _c("p", [_vm._v("author: user")]),
+        _vm._v(" "),
+        _c("p", [_vm._v("status: wiki")])
+      ]
+    )
+  },
+  function() {
+    var _vm = this
+    var _h = _vm.$createElement
+    var _c = _vm._self._c || _h
+    return _c("p", [
+      _vm._v("Lorem ipsum "),
+      _c("a", { attrs: { href: "#" } }, [_vm._v("dolor")]),
+      _vm._v(
+        " sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua."
+      )
+    ])
+  },
+  function() {
+    var _vm = this
+    var _h = _vm.$createElement
+    var _c = _vm._self._c || _h
+    return _c(
+      "div",
+      {
+        staticClass: "uk-child-width-1-2",
+        staticStyle: { "margin-top": "10px" },
+        attrs: { "uk-grid": "" }
+      },
+      [
+        _c("p", [_vm._v("author: user")]),
+        _vm._v(" "),
+        _c("p", [_vm._v("status: wiki")])
+      ]
+    )
+  },
+  function() {
+    var _vm = this
+    var _h = _vm.$createElement
+    var _c = _vm._self._c || _h
+    return _c("p", [
+      _vm._v("Lorem ipsum "),
+      _c("a", { attrs: { href: "#" } }, [_vm._v("dolor")]),
+      _vm._v(
+        " sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua."
+      )
+    ])
+  },
+  function() {
+    var _vm = this
+    var _h = _vm.$createElement
+    var _c = _vm._self._c || _h
+    return _c(
+      "div",
+      {
+        staticClass: "uk-child-width-1-2",
+        staticStyle: { "margin-top": "10px" },
+        attrs: { "uk-grid": "" }
+      },
+      [
+        _c("p", [_vm._v("author: user")]),
+        _vm._v(" "),
+        _c("p", [_vm._v("status: wiki")])
+      ]
+    )
+  },
+  function() {
+    var _vm = this
+    var _h = _vm.$createElement
+    var _c = _vm._self._c || _h
+    return _c("p", [
+      _vm._v("Lorem ipsum "),
+      _c("a", { attrs: { href: "#" } }, [_vm._v("dolor")]),
+      _vm._v(
+        " sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua."
+      )
+    ])
   }
 ]
 render._withStripped = true
@@ -19682,106 +19749,97 @@ var render = function() {
   var _vm = this
   var _h = _vm.$createElement
   var _c = _vm._self._c || _h
-  return _c(
-    "div",
-    { staticClass: "uk-section-primary uk-section-xsmall uk-container" },
-    [
-      _c(
-        "div",
-        { staticClass: "uk-margin" },
-        [
-          _c("div", [
-            _c(
-              "h1",
-              {
-                staticClass: "uk-text-center uk-text-primary",
-                staticStyle: {
-                  "font-size": "30px",
-                  "font-family": "'Pacifico', cursive"
-                }
-              },
-              [_vm._v("\n               ~Search~\n            ")]
-            ),
-            _vm._v(" "),
-            _c(
-              "div",
-              {
-                staticClass: "uk-search uk-search-default",
-                staticStyle: { width: "100%" }
-              },
-              [
-                _c("a", { attrs: { href: "", "uk-search-icon": "" } }),
-                _vm._v(" "),
-                _c("input", {
-                  directives: [
-                    {
-                      name: "model",
-                      rawName: "v-model",
-                      value: _vm.searchword,
-                      expression: "searchword"
-                    }
-                  ],
-                  staticClass: "uk-search-input ",
-                  attrs: { type: "search", placeholder: "Search..." },
-                  domProps: { value: _vm.searchword },
-                  on: {
-                    input: function($event) {
-                      if ($event.target.composing) {
-                        return
-                      }
-                      _vm.searchword = $event.target.value
-                    }
-                  }
-                })
-              ]
-            )
-          ]),
+  return _c("div", { staticClass: " uk-section-xsmall uk-container" }, [
+    _c(
+      "div",
+      { staticClass: "uk-margin" },
+      [
+        _c("div", [
+          _c(
+            "h1",
+            {
+              staticClass: "uk-text-center uk-text-primary",
+              staticStyle: {
+                "font-size": "30px",
+                "font-family": "'Pacifico', cursive"
+              }
+            },
+            [_vm._v("\n               ~Search~\n            ")]
+          ),
           _vm._v(" "),
-          _vm._l(_vm.searchResults, function(searchResult, index) {
-            return _c("div", { key: index }, [
-              searchResult
-                ? _c("div", { staticStyle: { padding: "5px 5px" } }, [
-                    _c(
-                      "a",
-                      {
-                        attrs: {
-                          href: "articles/wikishow/" + searchResult.title
-                        }
-                      },
-                      [
-                        _c(
-                          "div",
-                          {
-                            staticClass:
-                              "uk-card uk-card-header uk-card-primary uk-width-1-2@m uk-border-rounded ",
-                            staticStyle: {
-                              height: "200px",
-                              border: "solid 1px #fff"
+          _c(
+            "div",
+            {
+              staticClass: "uk-search uk-search-default button-border-grey",
+              staticStyle: { width: "100%" }
+            },
+            [
+              _c("a", { attrs: { href: "", "uk-search-icon": "" } }),
+              _vm._v(" "),
+              _c("input", {
+                directives: [
+                  {
+                    name: "model",
+                    rawName: "v-model",
+                    value: _vm.searchword,
+                    expression: "searchword"
+                  }
+                ],
+                staticClass: "uk-search-input ",
+                attrs: { type: "search", placeholder: "Search..." },
+                domProps: { value: _vm.searchword },
+                on: {
+                  input: function($event) {
+                    if ($event.target.composing) {
+                      return
+                    }
+                    _vm.searchword = $event.target.value
+                  }
+                }
+              })
+            ]
+          )
+        ]),
+        _vm._v(" "),
+        _vm._l(_vm.searchResults, function(searchResult, index) {
+          return _c("div", { key: index }, [
+            searchResult
+              ? _c("div", { staticStyle: { padding: "5px 5px" } }, [
+                  _c(
+                    "a",
+                    {
+                      attrs: { href: "articles/wikishow/" + searchResult.title }
+                    },
+                    [
+                      _c(
+                        "div",
+                        {
+                          staticClass:
+                            "uk-card uk-card-header uk-width-1-2@m uk-border-rounded button-border-grey",
+                          staticStyle: { height: "200px" }
+                        },
+                        [
+                          _c("p", [
+                            _c("strong", [_vm._v(_vm._s(searchResult.title))])
+                          ]),
+                          _vm._v(" "),
+                          _c("div", {
+                            domProps: {
+                              innerHTML: _vm._s(searchResult.snippet)
                             }
-                          },
-                          [
-                            _c("p", [
-                              _c("strong", [_vm._v(_vm._s(searchResult.title))])
-                            ]),
-                            _vm._v(" "),
-                            _c("div", {
-                              domProps: {
-                                innerHTML: _vm._s(searchResult.snippet)
-                              }
-                            })
-                          ]
-                        )
-                      ]
-                    )
-                  ])
-                : _vm._e()
-            ])
-          })
-        ],
-        2
-      )
-    ]
-  )
+                          })
+                        ]
+                      )
+                    ]
+                  )
+                ])
+              : _vm._e()
+          ])
+        })
+      ],
+      2
+    )
+  ])
 }
 var staticRenderFns = []
 render._withStripped = true
@@ -19808,7 +19866,7 @@ var render = function() {
   return _c(
     "div",
     {
-      staticClass: "uk-section-primary uk-section-small  uk-text-center",
+      staticClass: "uk-section-small  uk-text-center",
       attrs: { "uk-height-viewport": "offset-top: true; offset-bottom: true" }
     },
     [
@@ -19817,41 +19875,26 @@ var render = function() {
           _c(
             "h1",
             {
-              staticClass: "uk-heading-large",
+              staticClass: "uk-text-primary uk-heading-large",
               staticStyle: { "font-family": "'Pacifico', cursive" }
             },
             [_vm._v("\n                ~WikiLearns~\n            ")]
           ),
           _vm._v(" "),
-          _c("p", [
-            _c(
-              "svg",
-              {
-                staticClass: " uk-svg",
-                staticStyle: { color: "rgb(255, 255, 255)" },
-                attrs: {
-                  width: "168",
-                  height: "155",
-                  viewBox: "0 0 168 155",
-                  xmlns: "http://www.w3.org/2000/svg",
-                  "data-svg": "./images/uikit-logo-large.svg"
-                }
-              },
-              [
-                _c("path", {
-                  attrs: {
-                    fill: "#fff",
-                    d:
-                      "M117.4 33.3L93.3 47.9l27.8 15.8v41.5L83.8 126l-36.7-20.8V73L23 60.7v58.9l59.9 35.2 62.1-35.2V49.2l-27.6-15.9zM106.2 27.5L82.9 14 58.6 29.1l23.6 13z"
-                  }
-                })
-              ]
-            )
-          ]),
+          _c("p", { staticStyle: { padding: "80px" } }),
           _vm._v(" "),
-          _c("p", { staticClass: "uk-text-lead" }, [
-            _vm._v("\n                For reading wiki articles\n            ")
-          ]),
+          _c(
+            "p",
+            {
+              staticClass: "uk-text-lead uk-text-primary",
+              staticStyle: { "font-family": "'Pacifico', cursive" }
+            },
+            [
+              _vm._v(
+                "\n                For reading wiki articles\n            "
+              )
+            ]
+          ),
           _vm._v(" "),
           _c(
             "div",
@@ -19869,7 +19912,7 @@ var render = function() {
                     "router-link",
                     {
                       staticClass:
-                        "uk-border-rounded uk-button\n                      uk-button-default tm-button-default uk-button-large tm-button-large",
+                        "uk-border-rounded uk-button\n                      uk-button-default tm-button-default uk-button-large tm-button-large button-border",
                       attrs: { to: "/search" }
                     },
                     [_vm._v("Findings")]
@@ -19885,7 +19928,7 @@ var render = function() {
                     "router-link",
                     {
                       staticClass:
-                        "uk-border-rounded uk-button\n                      uk-button-default tm-button-default uk-button-large tm-button-large",
+                        "uk-border-rounded uk-button\n                      uk-button-default tm-button-default uk-button-large tm-button-large button-border",
                       attrs: { to: "/articles" }
                     },
                     [_vm._v("Articles")]
@@ -19902,7 +19945,7 @@ var render = function() {
                     "router-link",
                     {
                       staticClass:
-                        "uk-border-rounded uk-button\n                      uk-button-default tm-button-default uk-button-large tm-button-large",
+                        "uk-border-rounded uk-button\n                      uk-button-default tm-button-default uk-button-large tm-button-large button-border",
                       attrs: { to: "/vocabula" }
                     },
                     [_vm._v("Vocabla")]
@@ -19929,7 +19972,7 @@ var staticRenderFns = [
         "a",
         {
           staticClass:
-            "uk-border-rounded uk-button uk-button-default tm-button-default uk-button-large tm-button-large"
+            "uk-border-rounded uk-button uk-button-default tm-button-default uk-button-large tm-button-large button-border"
         },
         [_vm._v("settings")]
       )
@@ -19964,320 +20007,316 @@ var staticRenderFns = [
     var _vm = this
     var _h = _vm.$createElement
     var _c = _vm._self._c || _h
-    return _c(
-      "div",
-      { staticClass: "uk-section-primary uk-section-xsmall uk-container" },
-      [
-        _c("div", { staticClass: "uk-margin" }, [
+    return _c("div", { staticClass: "uk-section-xsmall uk-container" }, [
+      _c("div", { staticClass: "uk-margin" }, [
+        _c(
+          "h1",
+          {
+            staticClass: "uk-text-center uk-text-primary ",
+            staticStyle: {
+              "font-size": "30px",
+              "font-family": "'Pacifico', cursive"
+            }
+          },
+          [_vm._v("\n            ~Vocabulary~\n        ")]
+        ),
+        _vm._v(" "),
+        _c("hr"),
+        _vm._v(" "),
+        _c("p", [_vm._v("Articles and related words")]),
+        _vm._v(" "),
+        _c("div", [
           _c(
-            "h1",
+            "ul",
             {
-              staticClass: "uk-text-center uk-text-primary ",
-              staticStyle: {
-                "font-size": "30px",
-                "font-family": "'Pacifico', cursive"
-              }
+              staticClass: "uk-child-width-expand uk-tab",
+              attrs: { "uk-tab": "animation: uk-animation-fade" }
             },
-            [_vm._v("\n            ~Vocabulary~\n        ")]
+            [
+              _c("li", { attrs: { "aria-expanded": "false" } }, [
+                _c("a", { attrs: { href: "#" } }, [_vm._v("ITEM 1")])
+              ]),
+              _vm._v(" "),
+              _c(
+                "li",
+                {
+                  staticClass: "uk-active",
+                  attrs: { "aria-expanded": "true" }
+                },
+                [_c("a", { attrs: { href: "#" } }, [_vm._v("ITEM 2")])]
+              ),
+              _vm._v(" "),
+              _c("li", { attrs: { "aria-expanded": "false" } }, [
+                _c("a", { attrs: { href: "#" } }, [_vm._v("ITEM 3")])
+              ]),
+              _vm._v(" "),
+              _c("li", { attrs: { "aria-expanded": "false" } }, [
+                _c("a", { attrs: { href: "#" } }, [_vm._v("ITEM 4")])
+              ])
+            ]
           ),
           _vm._v(" "),
-          _c("hr"),
-          _vm._v(" "),
-          _c("p", [_vm._v("Articles and related words")]),
-          _vm._v(" "),
-          _c("div", [
-            _c(
-              "ul",
-              {
-                staticClass: "uk-child-width-expand uk-tab",
-                attrs: { "uk-tab": "animation: uk-animation-fade" }
-              },
-              [
-                _c("li", { attrs: { "aria-expanded": "false" } }, [
-                  _c("a", { attrs: { href: "#" } }, [_vm._v("ITEM 1")])
-                ]),
+          _c("ul", { staticClass: "uk-switcher uk-margin" }, [
+            _c("li", [
+              _c("h1", [_vm._v("Title")]),
+              _vm._v(
+                "\n                    タブパネル\n                    Lorem ipsum dolor sit amet, consectetur adipisicing elit. Aliquid ducimus voluptate quae, maxime incidunt fuga saepe fugit sapiente cupiditate vel magni, amet sint! Laboriosam fugit nesciunt, repudiandae debitis, minima doloribus.\n\n                    "
+              ),
+              _vm._v(" "),
+              _c("p", [_c("strong", [_vm._v("・related words")])]),
+              _vm._v(" "),
+              _c("div", { staticClass: "uk-container" }, [
+                _c(
+                  "div",
+                  {
+                    staticClass: "uk-child-width-1-3 uk-text-center",
+                    attrs: { "uk-grid": "" }
+                  },
+                  [
+                    _c("div", [
+                      _c("p", [_vm._v("sample")]),
+                      _vm._v(" "),
+                      _c("p", [_vm._v("例、サンプル")])
+                    ]),
+                    _vm._v(" "),
+                    _c("div", [
+                      _c("p", [_vm._v("sample")]),
+                      _vm._v(" "),
+                      _c("p", [_vm._v("例、サンプル")])
+                    ]),
+                    _vm._v(" "),
+                    _c("div", [
+                      _c("p", [_vm._v("sample")]),
+                      _vm._v(" "),
+                      _c("p", [_vm._v("例、サンプル")])
+                    ])
+                  ]
+                ),
                 _vm._v(" "),
                 _c(
-                  "li",
+                  "div",
                   {
-                    staticClass: "uk-active",
-                    attrs: { "aria-expanded": "true" }
+                    staticClass: "uk-child-width-1-3 uk-text-center",
+                    attrs: { "uk-grid": "" }
                   },
-                  [_c("a", { attrs: { href: "#" } }, [_vm._v("ITEM 2")])]
-                ),
-                _vm._v(" "),
-                _c("li", { attrs: { "aria-expanded": "false" } }, [
-                  _c("a", { attrs: { href: "#" } }, [_vm._v("ITEM 3")])
-                ]),
-                _vm._v(" "),
-                _c("li", { attrs: { "aria-expanded": "false" } }, [
-                  _c("a", { attrs: { href: "#" } }, [_vm._v("ITEM 4")])
-                ])
-              ]
-            ),
+                  [
+                    _c("div", [
+                      _c("p", [_vm._v("sample")]),
+                      _vm._v(" "),
+                      _c("p", [_vm._v("例、サンプル")])
+                    ]),
+                    _vm._v(" "),
+                    _c("div", [
+                      _c("p", [_vm._v("sample")]),
+                      _vm._v(" "),
+                      _c("p", [_vm._v("例、サンプル")])
+                    ]),
+                    _vm._v(" "),
+                    _c("div", [
+                      _c("p", [_vm._v("sample")]),
+                      _vm._v(" "),
+                      _c("p", [_vm._v("例、サンプル")])
+                    ])
+                  ]
+                )
+              ])
+            ]),
             _vm._v(" "),
-            _c("ul", { staticClass: "uk-switcher uk-margin" }, [
-              _c("li", { staticClass: "uk-background-primary" }, [
-                _c("h1", [_vm._v("Title")]),
-                _vm._v(
-                  "\n                    タブパネル\n                    Lorem ipsum dolor sit amet, consectetur adipisicing elit. Aliquid ducimus voluptate quae, maxime incidunt fuga saepe fugit sapiente cupiditate vel magni, amet sint! Laboriosam fugit nesciunt, repudiandae debitis, minima doloribus.\n\n                    "
-                ),
-                _vm._v(" "),
-                _c("p", [_c("strong", [_vm._v("・related words")])]),
-                _vm._v(" "),
-                _c("div", { staticClass: "uk-container" }, [
-                  _c(
-                    "div",
-                    {
-                      staticClass: "uk-child-width-1-3 uk-text-center",
-                      attrs: { "uk-grid": "" }
-                    },
-                    [
-                      _c("div", [
-                        _c("p", [_vm._v("sample")]),
-                        _vm._v(" "),
-                        _c("p", [_vm._v("例、サンプル")])
-                      ]),
-                      _vm._v(" "),
-                      _c("div", [
-                        _c("p", [_vm._v("sample")]),
-                        _vm._v(" "),
-                        _c("p", [_vm._v("例、サンプル")])
-                      ]),
-                      _vm._v(" "),
-                      _c("div", [
-                        _c("p", [_vm._v("sample")]),
-                        _vm._v(" "),
-                        _c("p", [_vm._v("例、サンプル")])
-                      ])
-                    ]
-                  ),
-                  _vm._v(" "),
-                  _c(
-                    "div",
-                    {
-                      staticClass: "uk-child-width-1-3 uk-text-center",
-                      attrs: { "uk-grid": "" }
-                    },
-                    [
-                      _c("div", [
-                        _c("p", [_vm._v("sample")]),
-                        _vm._v(" "),
-                        _c("p", [_vm._v("例、サンプル")])
-                      ]),
-                      _vm._v(" "),
-                      _c("div", [
-                        _c("p", [_vm._v("sample")]),
-                        _vm._v(" "),
-                        _c("p", [_vm._v("例、サンプル")])
-                      ]),
-                      _vm._v(" "),
-                      _c("div", [
-                        _c("p", [_vm._v("sample")]),
-                        _vm._v(" "),
-                        _c("p", [_vm._v("例、サンプル")])
-                      ])
-                    ]
-                  )
-                ])
-              ]),
+            _c("li", [
+              _c("h1", [_vm._v("Title")]),
+              _vm._v(
+                "\n                    タブパネル\n                    Lorem ipsum dolor sit amet, consectetur adipisicing elit. Aliquid ducimus voluptate quae, maxime incidunt fuga saepe fugit sapiente cupiditate vel magni, amet sint! Laboriosam fugit nesciunt, repudiandae debitis, minima doloribus.\n                    "
+              ),
+              _c("p", [_c("strong", [_vm._v("・related words")])]),
               _vm._v(" "),
-              _c("li", { staticClass: "uk-background-primary" }, [
-                _c("h1", [_vm._v("Title")]),
-                _vm._v(
-                  "\n                    タブパネル\n                    Lorem ipsum dolor sit amet, consectetur adipisicing elit. Aliquid ducimus voluptate quae, maxime incidunt fuga saepe fugit sapiente cupiditate vel magni, amet sint! Laboriosam fugit nesciunt, repudiandae debitis, minima doloribus.\n                    "
+              _c("div", { staticClass: "uk-container" }, [
+                _c(
+                  "div",
+                  {
+                    staticClass: "uk-child-width-1-3 uk-text-center",
+                    attrs: { "uk-grid": "" }
+                  },
+                  [
+                    _c("div", [
+                      _c("p", [_vm._v("sample")]),
+                      _vm._v(" "),
+                      _c("p", [_vm._v("例、サンプル")])
+                    ]),
+                    _vm._v(" "),
+                    _c("div", [
+                      _c("p", [_vm._v("sample")]),
+                      _vm._v(" "),
+                      _c("p", [_vm._v("例、サンプル")])
+                    ]),
+                    _vm._v(" "),
+                    _c("div", [
+                      _c("p", [_vm._v("sample")]),
+                      _vm._v(" "),
+                      _c("p", [_vm._v("例、サンプル")])
+                    ])
+                  ]
                 ),
-                _c("p", [_c("strong", [_vm._v("・related words")])]),
                 _vm._v(" "),
-                _c("div", { staticClass: "uk-container" }, [
-                  _c(
-                    "div",
-                    {
-                      staticClass: "uk-child-width-1-3 uk-text-center",
-                      attrs: { "uk-grid": "" }
-                    },
-                    [
-                      _c("div", [
-                        _c("p", [_vm._v("sample")]),
-                        _vm._v(" "),
-                        _c("p", [_vm._v("例、サンプル")])
-                      ]),
+                _c(
+                  "div",
+                  {
+                    staticClass: "uk-child-width-1-3 uk-text-center",
+                    attrs: { "uk-grid": "" }
+                  },
+                  [
+                    _c("div", [
+                      _c("p", [_vm._v("sample")]),
                       _vm._v(" "),
-                      _c("div", [
-                        _c("p", [_vm._v("sample")]),
-                        _vm._v(" "),
-                        _c("p", [_vm._v("例、サンプル")])
-                      ]),
+                      _c("p", [_vm._v("例、サンプル")])
+                    ]),
+                    _vm._v(" "),
+                    _c("div", [
+                      _c("p", [_vm._v("sample")]),
                       _vm._v(" "),
-                      _c("div", [
-                        _c("p", [_vm._v("sample")]),
-                        _vm._v(" "),
-                        _c("p", [_vm._v("例、サンプル")])
-                      ])
-                    ]
-                  ),
-                  _vm._v(" "),
-                  _c(
-                    "div",
-                    {
-                      staticClass: "uk-child-width-1-3 uk-text-center",
-                      attrs: { "uk-grid": "" }
-                    },
-                    [
-                      _c("div", [
-                        _c("p", [_vm._v("sample")]),
-                        _vm._v(" "),
-                        _c("p", [_vm._v("例、サンプル")])
-                      ]),
+                      _c("p", [_vm._v("例、サンプル")])
+                    ]),
+                    _vm._v(" "),
+                    _c("div", [
+                      _c("p", [_vm._v("sample")]),
                       _vm._v(" "),
-                      _c("div", [
-                        _c("p", [_vm._v("sample")]),
-                        _vm._v(" "),
-                        _c("p", [_vm._v("例、サンプル")])
-                      ]),
-                      _vm._v(" "),
-                      _c("div", [
-                        _c("p", [_vm._v("sample")]),
-                        _vm._v(" "),
-                        _c("p", [_vm._v("例、サンプル")])
-                      ])
-                    ]
-                  )
-                ])
-              ]),
+                      _c("p", [_vm._v("例、サンプル")])
+                    ])
+                  ]
+                )
+              ])
+            ]),
+            _vm._v(" "),
+            _c("li", [
+              _c("h1", [_vm._v("Title")]),
+              _vm._v(
+                "\n                    タブパネル\n                    Lorem ipsum dolor sit amet, consectetur adipisicing elit. Aliquid ducimus voluptate quae, maxime incidunt fuga saepe fugit sapiente cupiditate vel magni, amet sint! Laboriosam fugit nesciunt, repudiandae debitis, minima doloribus.\n                    "
+              ),
+              _c("p", [_c("strong", [_vm._v("・related words")])]),
               _vm._v(" "),
-              _c("li", { staticClass: "uk-background-primary" }, [
-                _c("h1", [_vm._v("Title")]),
-                _vm._v(
-                  "\n                    タブパネル\n                    Lorem ipsum dolor sit amet, consectetur adipisicing elit. Aliquid ducimus voluptate quae, maxime incidunt fuga saepe fugit sapiente cupiditate vel magni, amet sint! Laboriosam fugit nesciunt, repudiandae debitis, minima doloribus.\n                    "
+              _c("div", { staticClass: "uk-container" }, [
+                _c(
+                  "div",
+                  {
+                    staticClass: "uk-child-width-1-3 uk-text-center",
+                    attrs: { "uk-grid": "" }
+                  },
+                  [
+                    _c("div", [
+                      _c("p", [_vm._v("sample")]),
+                      _vm._v(" "),
+                      _c("p", [_vm._v("例、サンプル")])
+                    ]),
+                    _vm._v(" "),
+                    _c("div", [
+                      _c("p", [_vm._v("sample")]),
+                      _vm._v(" "),
+                      _c("p", [_vm._v("例、サンプル")])
+                    ]),
+                    _vm._v(" "),
+                    _c("div", [
+                      _c("p", [_vm._v("sample")]),
+                      _vm._v(" "),
+                      _c("p", [_vm._v("例、サンプル")])
+                    ])
+                  ]
                 ),
-                _c("p", [_c("strong", [_vm._v("・related words")])]),
                 _vm._v(" "),
-                _c("div", { staticClass: "uk-container" }, [
-                  _c(
-                    "div",
-                    {
-                      staticClass: "uk-child-width-1-3 uk-text-center",
-                      attrs: { "uk-grid": "" }
-                    },
-                    [
-                      _c("div", [
-                        _c("p", [_vm._v("sample")]),
-                        _vm._v(" "),
-                        _c("p", [_vm._v("例、サンプル")])
-                      ]),
+                _c(
+                  "div",
+                  {
+                    staticClass: "uk-child-width-1-3 uk-text-center",
+                    attrs: { "uk-grid": "" }
+                  },
+                  [
+                    _c("div", [
+                      _c("p", [_vm._v("sample")]),
                       _vm._v(" "),
-                      _c("div", [
-                        _c("p", [_vm._v("sample")]),
-                        _vm._v(" "),
-                        _c("p", [_vm._v("例、サンプル")])
-                      ]),
+                      _c("p", [_vm._v("例、サンプル")])
+                    ]),
+                    _vm._v(" "),
+                    _c("div", [
+                      _c("p", [_vm._v("sample")]),
                       _vm._v(" "),
-                      _c("div", [
-                        _c("p", [_vm._v("sample")]),
-                        _vm._v(" "),
-                        _c("p", [_vm._v("例、サンプル")])
-                      ])
-                    ]
-                  ),
-                  _vm._v(" "),
-                  _c(
-                    "div",
-                    {
-                      staticClass: "uk-child-width-1-3 uk-text-center",
-                      attrs: { "uk-grid": "" }
-                    },
-                    [
-                      _c("div", [
-                        _c("p", [_vm._v("sample")]),
-                        _vm._v(" "),
-                        _c("p", [_vm._v("例、サンプル")])
-                      ]),
+                      _c("p", [_vm._v("例、サンプル")])
+                    ]),
+                    _vm._v(" "),
+                    _c("div", [
+                      _c("p", [_vm._v("sample")]),
                       _vm._v(" "),
-                      _c("div", [
-                        _c("p", [_vm._v("sample")]),
-                        _vm._v(" "),
-                        _c("p", [_vm._v("例、サンプル")])
-                      ]),
-                      _vm._v(" "),
-                      _c("div", [
-                        _c("p", [_vm._v("sample")]),
-                        _vm._v(" "),
-                        _c("p", [_vm._v("例、サンプル")])
-                      ])
-                    ]
-                  )
-                ])
-              ]),
+                      _c("p", [_vm._v("例、サンプル")])
+                    ])
+                  ]
+                )
+              ])
+            ]),
+            _vm._v(" "),
+            _c("li", [
+              _c("h1", [_vm._v("Title")]),
+              _vm._v(
+                "\n                    タブパネル\n                    Lorem ipsum dolor sit amet, consectetur adipisicing elit. Aliquid ducimus voluptate quae, maxime incidunt fuga saepe fugit sapiente cupiditate vel magni, amet sint! Laboriosam fugit nesciunt, repudiandae debitis, minima doloribus.\n                    "
+              ),
+              _c("p", [_c("strong", [_vm._v("・related words")])]),
               _vm._v(" "),
-              _c("li", { staticClass: "uk-background-primary" }, [
-                _c("h1", [_vm._v("Title")]),
-                _vm._v(
-                  "\n                    タブパネル\n                    Lorem ipsum dolor sit amet, consectetur adipisicing elit. Aliquid ducimus voluptate quae, maxime incidunt fuga saepe fugit sapiente cupiditate vel magni, amet sint! Laboriosam fugit nesciunt, repudiandae debitis, minima doloribus.\n                    "
+              _c("div", { staticClass: "uk-container" }, [
+                _c(
+                  "div",
+                  {
+                    staticClass: "uk-child-width-1-3 uk-text-center",
+                    attrs: { "uk-grid": "" }
+                  },
+                  [
+                    _c("div", [
+                      _c("p", [_vm._v("sample")]),
+                      _vm._v(" "),
+                      _c("p", [_vm._v("例、サンプル")])
+                    ]),
+                    _vm._v(" "),
+                    _c("div", [
+                      _c("p", [_vm._v("sample")]),
+                      _vm._v(" "),
+                      _c("p", [_vm._v("例、サンプル")])
+                    ]),
+                    _vm._v(" "),
+                    _c("div", [
+                      _c("p", [_vm._v("sample")]),
+                      _vm._v(" "),
+                      _c("p", [_vm._v("例、サンプル")])
+                    ])
+                  ]
                 ),
-                _c("p", [_c("strong", [_vm._v("・related words")])]),
                 _vm._v(" "),
-                _c("div", { staticClass: "uk-container" }, [
-                  _c(
-                    "div",
-                    {
-                      staticClass: "uk-child-width-1-3 uk-text-center",
-                      attrs: { "uk-grid": "" }
-                    },
-                    [
-                      _c("div", [
-                        _c("p", [_vm._v("sample")]),
-                        _vm._v(" "),
-                        _c("p", [_vm._v("例、サンプル")])
-                      ]),
+                _c(
+                  "div",
+                  {
+                    staticClass: "uk-child-width-1-3 uk-text-center",
+                    attrs: { "uk-grid": "" }
+                  },
+                  [
+                    _c("div", [
+                      _c("p", [_vm._v("sample")]),
                       _vm._v(" "),
-                      _c("div", [
-                        _c("p", [_vm._v("sample")]),
-                        _vm._v(" "),
-                        _c("p", [_vm._v("例、サンプル")])
-                      ]),
+                      _c("p", [_vm._v("例、サンプル")])
+                    ]),
+                    _vm._v(" "),
+                    _c("div", [
+                      _c("p", [_vm._v("sample")]),
                       _vm._v(" "),
-                      _c("div", [
-                        _c("p", [_vm._v("sample")]),
-                        _vm._v(" "),
-                        _c("p", [_vm._v("例、サンプル")])
-                      ])
-                    ]
-                  ),
-                  _vm._v(" "),
-                  _c(
-                    "div",
-                    {
-                      staticClass: "uk-child-width-1-3 uk-text-center",
-                      attrs: { "uk-grid": "" }
-                    },
-                    [
-                      _c("div", [
-                        _c("p", [_vm._v("sample")]),
-                        _vm._v(" "),
-                        _c("p", [_vm._v("例、サンプル")])
-                      ]),
+                      _c("p", [_vm._v("例、サンプル")])
+                    ]),
+                    _vm._v(" "),
+                    _c("div", [
+                      _c("p", [_vm._v("sample")]),
                       _vm._v(" "),
-                      _c("div", [
-                        _c("p", [_vm._v("sample")]),
-                        _vm._v(" "),
-                        _c("p", [_vm._v("例、サンプル")])
-                      ]),
-                      _vm._v(" "),
-                      _c("div", [
-                        _c("p", [_vm._v("sample")]),
-                        _vm._v(" "),
-                        _c("p", [_vm._v("例、サンプル")])
-                      ])
-                    ]
-                  )
-                ])
+                      _c("p", [_vm._v("例、サンプル")])
+                    ])
+                  ]
+                )
               ])
             ])
           ])
         ])
-      ]
-    )
+      ])
+    ])
   }
 ]
 render._withStripped = true
