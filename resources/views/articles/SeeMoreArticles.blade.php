@@ -51,10 +51,11 @@
                 <li>
                     @foreach( $articles as $article )
                         <div class="uk-card uk-card-small uk-card-default uk-card-body">
-                            <p class="uk-card-title"><strong>{{ $article->title }}</strong></p>
+                            <a href="/articles/{{ $article->id }}" class="uk-card-title"><strong>{{ $article->title }}</strong></a>
                             <p>{{ $article->summary }}</p>
                         </div>
                     @endforeach
+                    {{ $articles->links() }}
                 </li>
                 <li>
                     <div class="uk-card uk-card-small uk-card-default uk-card-body">
