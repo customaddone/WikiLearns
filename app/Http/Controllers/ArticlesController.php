@@ -15,7 +15,7 @@ class ArticlesController extends Controller
     }
 
     public function seeMoreArticles() {
-        $articles = Article::limit(5)->get(['id', 'title','summary']);
+        $articles = Article::simplePaginate(5);
         return view('articles.seeMoreArticles', [ 'articles' => $articles ]);
     }
 

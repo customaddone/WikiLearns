@@ -19634,7 +19634,11 @@ var staticRenderFns = [
       [
         _c("p", [_vm._v("Articles")]),
         _vm._v(" "),
-        _c("p", { staticClass: "uk-text-right " }, [_vm._v("see more...")])
+        _c(
+          "a",
+          { staticClass: "uk-text-right", attrs: { href: "/seeMoreArticles" } },
+          [_vm._v("see more...")]
+        )
       ]
     )
   },

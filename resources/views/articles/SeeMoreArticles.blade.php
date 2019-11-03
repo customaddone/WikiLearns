@@ -7,7 +7,7 @@
 
     <div class="uk-container">
         <div class="uk-section-xsmal">
-           <p class="uk-h3 tm-heading-fragment">
+           <p class="uk-h3 tm-heading-fragment uk-text-muted">
                See Articles
            </p>
            <div class="uk-container">
@@ -49,7 +49,12 @@
                     </div>
                 </li>
                 <li>
-                    
+                    @foreach( $articles as $article )
+                        <div class="uk-card uk-card-small uk-card-default uk-card-body">
+                            <p class="uk-card-title"><strong>{{ $article->title }}</strong></p>
+                            <p>{{ $article->summary }}</p>
+                        </div>
+                    @endforeach
                 </li>
                 <li>
                     <div class="uk-card uk-card-small uk-card-default uk-card-body">

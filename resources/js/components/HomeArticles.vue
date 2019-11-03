@@ -41,7 +41,7 @@
             </div>
             <div class="uk-child-width-1-2" uk-grid>
                 <p>Articles</p>
-                <p class="uk-text-right ">see more...</p>
+                <a href="/seeMoreArticles" class="uk-text-right">see more...</a>
             </div>
             <ul>
                 <li class="uk-section-xsmall">
