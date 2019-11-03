@@ -223,7 +223,7 @@ var vm = new Vue({
 
      // wiki記事を取り込む
      inportArticle: function () {
-       alert(this.articleDetail)
+
        axios.post('/api/add',{
 
          title: this.showquery.page,
