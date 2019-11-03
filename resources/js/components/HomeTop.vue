@@ -32,7 +32,8 @@
                           uk-button-default tm-button-default uk-button-large tm-button-large button-border">Vocabla</router-link>
                     </div>
                     <div>
-                        <a class="uk-border-rounded uk-button uk-button-default tm-button-default uk-button-large tm-button-large button-border">settings</a>
+                        <router-link to="/settings" class="uk-border-rounded uk-button
+                          uk-button-default tm-button-default uk-button-large tm-button-large button-border">Settings</router-link>
                     </div>
                 </div>
             </div>

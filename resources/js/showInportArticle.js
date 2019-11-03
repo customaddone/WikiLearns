@@ -205,12 +205,27 @@ var vm = new Vue({
          id: this.articleId,
          article: this.nowpage,
        }).then((response) => {
-         alert('編集しました！！')
+
        }).catch((response) => {
 
          console.log(response);
 
        });
-     }
+     },
+
+     // 単語登録用
+     registerWord: function () {
+       axios.post('/api/words/add',{
+         articlesId: this.articleId,
+         word: this.translatingWord,
+         mean: this.translated,
+         status: 0,
+       }).then((response) => {
+         alert('編集しました！！')
+       }).catch((response) => {
+
+         console.log(response);
+       })
+    }
   },
 })

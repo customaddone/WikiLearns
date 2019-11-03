@@ -56,7 +56,7 @@
                             <p>status: wiki</p>
                         </div>
                         <hr>
-                        <p>Lorem ipsum <a href="#">dolor</a> sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>
+                        <p>{{ articles[0].summary }} ...</p>
                     </div>
                 </li>
                 <li>
@@ -71,7 +71,7 @@
                             <p>status: wiki</p>
                         </div>
                         <hr>
-                        <p>Lorem ipsum <a href="#">dolor</a> sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>
+                        <p>{{ articles[1].summary }} ...</p>
                     </div>
                 </li>
                 <li class="uk-section-xsmall">
@@ -80,13 +80,13 @@
                             <a v-on:click="articleDelete(articles[2].id)" href="../" uk-icon="icon: trash" style="float: right; margin-left: 15px;"></a>
                             <a :href="'articles/' + articles[2].id"  uk-icon="icon: pencil" style="float: right;"></a>
                         </div>
-                        <h1 class="uk-card-title">{{ articles[2].title}}</h1>
+                        <h1 class="uk-card-title">{{ articles[2].title }}</h1>
                         <div class="uk-child-width-1-2" uk-grid style="margin-top: 10px;">
                             <p>author: user</p>
                             <p>status: wiki</p>
                         </div>
                         <hr>
-                        <p>Lorem ipsum <a href="#">dolor</a> sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>
+                        <p>{{ articles[2].summary }} ...</p>
                     </div>
                 </li>
             </ul>
@@ -111,7 +111,11 @@ export default {
       // 記事が３つ未満の場合は空のデータをarticlesに入れる
       if (this.articles.length < 3) {
         for ( let i = 0; i < 3; i++ ) {
-          this.articles.push({ id: 0, title: 'No data', })
+          this.articles.push({
+            id: 0,
+            title: 'No data',
+            summary: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.',
+          })
         }
       }
     })

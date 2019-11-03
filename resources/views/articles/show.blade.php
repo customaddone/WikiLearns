@@ -86,10 +86,10 @@
                 <div uk-icon="icon: bookmark; ratio: 1.5" style="margin-left: 9px; margin-top: 10px;"></div>
             </div>
             <div v-else-if="switchFunctionKey % 3 == 1">
-                <div uk-icon="icon: album" style="margin-left: 9px; margin-top: 9px;"></div>
+                <div uk-icon="icon: album" style="margin-left: 10px; margin-top: 9px;"></div>
             </div>
             <div v-else>
-                <div uk-icon="icon: italic" style="margin-left: 9px; margin-top: 9px;"></div>
+                <div uk-icon="icon: italic" style="margin-left: 10px; margin-top: 9px;"></div>
             </div>
         </div>
 

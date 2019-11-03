@@ -10,7 +10,7 @@ class ArticlesController extends Controller
     // インポート記事用
     public function index() {
         // idとタイトルだけgetする
-        $articles = Article::limit(3)->get(['id', 'title']);
+        $articles = Article::limit(3)->get(['id', 'title','summary']);
         return $articles;
     }
 
@@ -28,6 +28,7 @@ class ArticlesController extends Controller
         $article->title = $request->title;
         $article->userId = $request->userId;
         $article->article = $request->article;
+        $article->summary = $request->summary;
         $article->status = $request->status;
         $article->save();
     }

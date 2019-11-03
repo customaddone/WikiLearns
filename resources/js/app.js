@@ -5,6 +5,7 @@ import HomeTop from './components/HomeTop.vue'
 import HomeArticles from './components/HomeArticles.vue'
 import HomeSearch from './components/HomeSearch.vue'
 import HomeVocabula from './components/HomeVocabula.vue'
+import HomeSettings from './components/HomeSettings.vue'
 
 var router = new VueRouter({
 
@@ -24,6 +25,10 @@ var router = new VueRouter({
     {
       path: '/vocabula',
       component: HomeVocabula
+    },
+    {
+      path: '/settings',
+      component: HomeSettings
     },
   ]
 })

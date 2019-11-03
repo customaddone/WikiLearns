@@ -4,7 +4,7 @@ use Illuminate\Database\Migrations\Migration;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Support\Facades\Schema;
 
-class CreateWordsTable extends Migration
+class AddSummaryToArticlesTable extends Migration
 {
     /**
      * Run the migrations.
@@ -13,13 +13,8 @@ class CreateWordsTable extends Migration
      */
     public function up()
     {
-        Schema::create('words', function (Blueprint $table) {
-            $table->bigIncrements('id');
-            $table->integer('articlesId');
-            $table->string('word');
-            $table->string('mean');
-            $table->integer('status');
-            $table->timestamps();
+        Schema::table('articles', function (Blueprint $table) {
+            $table->mediumText('summary');
         });
     }
 
@@ -30,6 +25,8 @@ class CreateWordsTable extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('words');
+        Schema::table('articles', function (Blueprint $table) {
+            $table->dropColumn('summary');
+        });
     }
 }

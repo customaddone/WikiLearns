@@ -37,4 +37,7 @@ Route::group(['middleware' => 'api'], function() {
   ->middleware('modify');
   Route::match(["delete", "options"], '/del/{id}',  'ArticlesController@del')
   ->middleware('modify');
+
+  Route::match(["post", "options"], '/words/add',  'WordsController@store')
+  ->middleware('modify');
 });

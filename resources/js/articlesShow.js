@@ -223,6 +223,7 @@ var vm = new Vue({
 
      // wiki記事を取り込む
      inportArticle: function () {
+       alert(this.articleDetail)
        axios.post('/api/add',{
 
          title: this.showquery.page,
@@ -233,13 +234,14 @@ var vm = new Vue({
          .replace(/<a[\s\S]*?>/g, '')
          .replace(/<\/a>/g, ''),
 
+         summary: this.articleDetail,
          status: 'wiki',
 
        }).then((response) => {
          alert('インポートしました！！')
        }).catch(function (error) {
 
-       console.log(error);
+         console.log(error);
 
        });
      }
