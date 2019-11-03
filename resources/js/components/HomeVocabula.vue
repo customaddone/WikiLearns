@@ -21,9 +21,8 @@
                 </ul>
                 <ul class="uk-switcher uk-margin">
                     <li>
-                        <h1>Title</h1>
-                        タブパネル
-                        Lorem ipsum dolor sit amet, consectetur adipisicing elit. Aliquid ducimus voluptate quae, maxime incidunt fuga saepe fugit sapiente cupiditate vel magni, amet sint! Laboriosam fugit nesciunt, repudiandae debitis, minima doloribus.
+                        <h1>{{ articles[0].title}}</h1>
+                        <p>{{ articles[0].summary }} ...</p>
 
                         <!-- 関連する単語 -->
                         <p><strong>・related words</strong></p>
@@ -59,9 +58,9 @@
                         </div>
                     </li>
                     <li>
-                        <h1>Title</h1>
-                        タブパネル
-                        Lorem ipsum dolor sit amet, consectetur adipisicing elit. Aliquid ducimus voluptate quae, maxime incidunt fuga saepe fugit sapiente cupiditate vel magni, amet sint! Laboriosam fugit nesciunt, repudiandae debitis, minima doloribus.
+                        <h1>{{ articles[1].title}}</h1>
+                        <p>{{ articles[1].summary }} ...</p>
+
                         <p><strong>・related words</strong></p>
                         <div class="uk-container">
                             <div class="uk-child-width-1-3 uk-text-center" uk-grid>
@@ -95,9 +94,9 @@
                         </div>
                     </li>
                     <li>
-                        <h1>Title</h1>
-                        タブパネル
-                        Lorem ipsum dolor sit amet, consectetur adipisicing elit. Aliquid ducimus voluptate quae, maxime incidunt fuga saepe fugit sapiente cupiditate vel magni, amet sint! Laboriosam fugit nesciunt, repudiandae debitis, minima doloribus.
+                        <h1>{{ articles[2].title}}</h1>
+                        <p>{{ articles[2].summary }} ...</p>
+
                         <p><strong>・related words</strong></p>
                         <div class="uk-container">
                             <div class="uk-child-width-1-3 uk-text-center" uk-grid>
@@ -131,9 +130,9 @@
                         </div>
                     </li>
                     <li>
-                        <h1>Title</h1>
-                        タブパネル
-                        Lorem ipsum dolor sit amet, consectetur adipisicing elit. Aliquid ducimus voluptate quae, maxime incidunt fuga saepe fugit sapiente cupiditate vel magni, amet sint! Laboriosam fugit nesciunt, repudiandae debitis, minima doloribus.
+                        <h1>{{ articles[3].title}}</h1>
+                        <p>{{ articles[3].summary }} ...</p>
+
                         <p><strong>・related words</strong></p>
                         <div class="uk-container">
                             <div class="uk-child-width-1-3 uk-text-center" uk-grid>
@@ -171,3 +170,32 @@
         </div>
     </div>
 </template>
+
+<script>
+export default {
+  data: function () {
+    return {
+      articles: [],
+    }
+  },
+  // 記事表示
+  mounted: function () {
+    axios.get('/api/get'
+    ).then((response) => {
+      this.articles = [];
+      this.articles = response.data;
+
+      // 記事が３つ未満の場合は空のデータをarticlesに入れる
+      if (this.articles.length < 4) {
+        for ( let i = 0; i < 4; i++ ) {
+          this.articles.push({
+            id: 0,
+            title: 'No data',
+            summary: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.',
+          })
+        }
+      }
+    })
+  },
+}
+</script>

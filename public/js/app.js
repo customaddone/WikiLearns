@@ -2057,6 +2057,217 @@ __webpack_require__.r(__webpack_exports__);
 
 /***/ }),
 
+/***/ "./node_modules/babel-loader/lib/index.js?!./node_modules/vue-loader/lib/index.js?!./resources/js/components/HomeVocabula.vue?vue&type=script&lang=js&":
+/*!***********************************************************************************************************************************************************************!*\
+  !*** ./node_modules/babel-loader/lib??ref--4-0!./node_modules/vue-loader/lib??vue-loader-options!./resources/js/components/HomeVocabula.vue?vue&type=script&lang=js& ***!
+  \***********************************************************************************************************************************************************************/
+/*! exports provided: default */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+/* harmony default export */ __webpack_exports__["default"] = ({
+  data: function data() {
+    return {
+      articles: []
+    };
+  },
+  // 記事表示
+  mounted: function mounted() {
+    var _this = this;
+
+    axios.get('/api/get').then(function (response) {
+      _this.articles = [];
+      _this.articles = response.data; // 記事が３つ未満の場合は空のデータをarticlesに入れる
+
+      if (_this.articles.length < 4) {
+        for (var i = 0; i < 4; i++) {
+          _this.articles.push({
+            id: 0,
+            title: 'No data',
+            summary: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.'
+          });
+        }
+      }
+    });
+  }
+});
+
+/***/ }),
+
 /***/ "./node_modules/is-buffer/index.js":
 /*!*****************************************!*\
   !*** ./node_modules/is-buffer/index.js ***!
@@ -19991,322 +20202,366 @@ var render = function() {
   var _vm = this
   var _h = _vm.$createElement
   var _c = _vm._self._c || _h
-  return _vm._m(0)
+  return _c("div", { staticClass: "uk-section-xsmall uk-container" }, [
+    _c("div", { staticClass: "uk-margin" }, [
+      _c(
+        "h1",
+        {
+          staticClass: "uk-text-center uk-text-primary ",
+          staticStyle: {
+            "font-size": "30px",
+            "font-family": "'Pacifico', cursive"
+          }
+        },
+        [_vm._v("\n            ~Vocabulary~\n        ")]
+      ),
+      _vm._v(" "),
+      _c("hr"),
+      _vm._v(" "),
+      _c("p", [_vm._v("Articles and related words")]),
+      _vm._v(" "),
+      _c("div", [
+        _vm._m(0),
+        _vm._v(" "),
+        _c("ul", { staticClass: "uk-switcher uk-margin" }, [
+          _c("li", [
+            _c("h1", [_vm._v(_vm._s(_vm.articles[0].title))]),
+            _vm._v(" "),
+            _c("p", [_vm._v(_vm._s(_vm.articles[0].summary) + " ...")]),
+            _vm._v(" "),
+            _vm._m(1),
+            _vm._v(" "),
+            _vm._m(2)
+          ]),
+          _vm._v(" "),
+          _c("li", [
+            _c("h1", [_vm._v(_vm._s(_vm.articles[1].title))]),
+            _vm._v(" "),
+            _c("p", [_vm._v(_vm._s(_vm.articles[1].summary) + " ...")]),
+            _vm._v(" "),
+            _vm._m(3),
+            _vm._v(" "),
+            _vm._m(4)
+          ]),
+          _vm._v(" "),
+          _c("li", [
+            _c("h1", [_vm._v(_vm._s(_vm.articles[2].title))]),
+            _vm._v(" "),
+            _c("p", [_vm._v(_vm._s(_vm.articles[2].summary) + " ...")]),
+            _vm._v(" "),
+            _vm._m(5),
+            _vm._v(" "),
+            _vm._m(6)
+          ]),
+          _vm._v(" "),
+          _c("li", [
+            _c("h1", [_vm._v(_vm._s(_vm.articles[3].title))]),
+            _vm._v(" "),
+            _c("p", [_vm._v(_vm._s(_vm.articles[3].summary) + " ...")]),
+            _vm._v(" "),
+            _vm._m(7),
+            _vm._v(" "),
+            _vm._m(8)
+          ])
+        ])
+      ])
+    ])
+  ])
 }
 var staticRenderFns = [
   function() {
     var _vm = this
     var _h = _vm.$createElement
     var _c = _vm._self._c || _h
-    return _c("div", { staticClass: "uk-section-xsmall uk-container" }, [
-      _c("div", { staticClass: "uk-margin" }, [
+    return _c(
+      "ul",
+      {
+        staticClass: "uk-child-width-expand uk-tab",
+        attrs: { "uk-tab": "animation: uk-animation-fade" }
+      },
+      [
+        _c("li", { attrs: { "aria-expanded": "false" } }, [
+          _c("a", { attrs: { href: "#" } }, [_vm._v("ITEM 1")])
+        ]),
+        _vm._v(" "),
         _c(
-          "h1",
-          {
-            staticClass: "uk-text-center uk-text-primary ",
-            staticStyle: {
-              "font-size": "30px",
-              "font-family": "'Pacifico', cursive"
-            }
-          },
-          [_vm._v("\n            ~Vocabulary~\n        ")]
+          "li",
+          { staticClass: "uk-active", attrs: { "aria-expanded": "true" } },
+          [_c("a", { attrs: { href: "#" } }, [_vm._v("ITEM 2")])]
         ),
         _vm._v(" "),
-        _c("hr"),
+        _c("li", { attrs: { "aria-expanded": "false" } }, [
+          _c("a", { attrs: { href: "#" } }, [_vm._v("ITEM 3")])
+        ]),
         _vm._v(" "),
-        _c("p", [_vm._v("Articles and related words")]),
-        _vm._v(" "),
-        _c("div", [
-          _c(
-            "ul",
-            {
-              staticClass: "uk-child-width-expand uk-tab",
-              attrs: { "uk-tab": "animation: uk-animation-fade" }
-            },
-            [
-              _c("li", { attrs: { "aria-expanded": "false" } }, [
-                _c("a", { attrs: { href: "#" } }, [_vm._v("ITEM 1")])
-              ]),
-              _vm._v(" "),
-              _c(
-                "li",
-                {
-                  staticClass: "uk-active",
-                  attrs: { "aria-expanded": "true" }
-                },
-                [_c("a", { attrs: { href: "#" } }, [_vm._v("ITEM 2")])]
-              ),
-              _vm._v(" "),
-              _c("li", { attrs: { "aria-expanded": "false" } }, [
-                _c("a", { attrs: { href: "#" } }, [_vm._v("ITEM 3")])
-              ]),
-              _vm._v(" "),
-              _c("li", { attrs: { "aria-expanded": "false" } }, [
-                _c("a", { attrs: { href: "#" } }, [_vm._v("ITEM 4")])
-              ])
-            ]
-          ),
-          _vm._v(" "),
-          _c("ul", { staticClass: "uk-switcher uk-margin" }, [
-            _c("li", [
-              _c("h1", [_vm._v("Title")]),
-              _vm._v(
-                "\n                    タブパネル\n                    Lorem ipsum dolor sit amet, consectetur adipisicing elit. Aliquid ducimus voluptate quae, maxime incidunt fuga saepe fugit sapiente cupiditate vel magni, amet sint! Laboriosam fugit nesciunt, repudiandae debitis, minima doloribus.\n\n                    "
-              ),
-              _vm._v(" "),
-              _c("p", [_c("strong", [_vm._v("・related words")])]),
-              _vm._v(" "),
-              _c("div", { staticClass: "uk-container" }, [
-                _c(
-                  "div",
-                  {
-                    staticClass: "uk-child-width-1-3 uk-text-center",
-                    attrs: { "uk-grid": "" }
-                  },
-                  [
-                    _c("div", [
-                      _c("p", [_vm._v("sample")]),
-                      _vm._v(" "),
-                      _c("p", [_vm._v("例、サンプル")])
-                    ]),
-                    _vm._v(" "),
-                    _c("div", [
-                      _c("p", [_vm._v("sample")]),
-                      _vm._v(" "),
-                      _c("p", [_vm._v("例、サンプル")])
-                    ]),
-                    _vm._v(" "),
-                    _c("div", [
-                      _c("p", [_vm._v("sample")]),
-                      _vm._v(" "),
-                      _c("p", [_vm._v("例、サンプル")])
-                    ])
-                  ]
-                ),
-                _vm._v(" "),
-                _c(
-                  "div",
-                  {
-                    staticClass: "uk-child-width-1-3 uk-text-center",
-                    attrs: { "uk-grid": "" }
-                  },
-                  [
-                    _c("div", [
-                      _c("p", [_vm._v("sample")]),
-                      _vm._v(" "),
-                      _c("p", [_vm._v("例、サンプル")])
-                    ]),
-                    _vm._v(" "),
-                    _c("div", [
-                      _c("p", [_vm._v("sample")]),
-                      _vm._v(" "),
-                      _c("p", [_vm._v("例、サンプル")])
-                    ]),
-                    _vm._v(" "),
-                    _c("div", [
-                      _c("p", [_vm._v("sample")]),
-                      _vm._v(" "),
-                      _c("p", [_vm._v("例、サンプル")])
-                    ])
-                  ]
-                )
-              ])
-            ]),
-            _vm._v(" "),
-            _c("li", [
-              _c("h1", [_vm._v("Title")]),
-              _vm._v(
-                "\n                    タブパネル\n                    Lorem ipsum dolor sit amet, consectetur adipisicing elit. Aliquid ducimus voluptate quae, maxime incidunt fuga saepe fugit sapiente cupiditate vel magni, amet sint! Laboriosam fugit nesciunt, repudiandae debitis, minima doloribus.\n                    "
-              ),
-              _c("p", [_c("strong", [_vm._v("・related words")])]),
-              _vm._v(" "),
-              _c("div", { staticClass: "uk-container" }, [
-                _c(
-                  "div",
-                  {
-                    staticClass: "uk-child-width-1-3 uk-text-center",
-                    attrs: { "uk-grid": "" }
-                  },
-                  [
-                    _c("div", [
-                      _c("p", [_vm._v("sample")]),
-                      _vm._v(" "),
-                      _c("p", [_vm._v("例、サンプル")])
-                    ]),
-                    _vm._v(" "),
-                    _c("div", [
-                      _c("p", [_vm._v("sample")]),
-                      _vm._v(" "),
-                      _c("p", [_vm._v("例、サンプル")])
-                    ]),
-                    _vm._v(" "),
-                    _c("div", [
-                      _c("p", [_vm._v("sample")]),
-                      _vm._v(" "),
-                      _c("p", [_vm._v("例、サンプル")])
-                    ])
-                  ]
-                ),
-                _vm._v(" "),
-                _c(
-                  "div",
-                  {
-                    staticClass: "uk-child-width-1-3 uk-text-center",
-                    attrs: { "uk-grid": "" }
-                  },
-                  [
-                    _c("div", [
-                      _c("p", [_vm._v("sample")]),
-                      _vm._v(" "),
-                      _c("p", [_vm._v("例、サンプル")])
-                    ]),
-                    _vm._v(" "),
-                    _c("div", [
-                      _c("p", [_vm._v("sample")]),
-                      _vm._v(" "),
-                      _c("p", [_vm._v("例、サンプル")])
-                    ]),
-                    _vm._v(" "),
-                    _c("div", [
-                      _c("p", [_vm._v("sample")]),
-                      _vm._v(" "),
-                      _c("p", [_vm._v("例、サンプル")])
-                    ])
-                  ]
-                )
-              ])
-            ]),
-            _vm._v(" "),
-            _c("li", [
-              _c("h1", [_vm._v("Title")]),
-              _vm._v(
-                "\n                    タブパネル\n                    Lorem ipsum dolor sit amet, consectetur adipisicing elit. Aliquid ducimus voluptate quae, maxime incidunt fuga saepe fugit sapiente cupiditate vel magni, amet sint! Laboriosam fugit nesciunt, repudiandae debitis, minima doloribus.\n                    "
-              ),
-              _c("p", [_c("strong", [_vm._v("・related words")])]),
-              _vm._v(" "),
-              _c("div", { staticClass: "uk-container" }, [
-                _c(
-                  "div",
-                  {
-                    staticClass: "uk-child-width-1-3 uk-text-center",
-                    attrs: { "uk-grid": "" }
-                  },
-                  [
-                    _c("div", [
-                      _c("p", [_vm._v("sample")]),
-                      _vm._v(" "),
-                      _c("p", [_vm._v("例、サンプル")])
-                    ]),
-                    _vm._v(" "),
-                    _c("div", [
-                      _c("p", [_vm._v("sample")]),
-                      _vm._v(" "),
-                      _c("p", [_vm._v("例、サンプル")])
-                    ]),
-                    _vm._v(" "),
-                    _c("div", [
-                      _c("p", [_vm._v("sample")]),
-                      _vm._v(" "),
-                      _c("p", [_vm._v("例、サンプル")])
-                    ])
-                  ]
-                ),
-                _vm._v(" "),
-                _c(
-                  "div",
-                  {
-                    staticClass: "uk-child-width-1-3 uk-text-center",
-                    attrs: { "uk-grid": "" }
-                  },
-                  [
-                    _c("div", [
-                      _c("p", [_vm._v("sample")]),
-                      _vm._v(" "),
-                      _c("p", [_vm._v("例、サンプル")])
-                    ]),
-                    _vm._v(" "),
-                    _c("div", [
-                      _c("p", [_vm._v("sample")]),
-                      _vm._v(" "),
-                      _c("p", [_vm._v("例、サンプル")])
-                    ]),
-                    _vm._v(" "),
-                    _c("div", [
-                      _c("p", [_vm._v("sample")]),
-                      _vm._v(" "),
-                      _c("p", [_vm._v("例、サンプル")])
-                    ])
-                  ]
-                )
-              ])
-            ]),
-            _vm._v(" "),
-            _c("li", [
-              _c("h1", [_vm._v("Title")]),
-              _vm._v(
-                "\n                    タブパネル\n                    Lorem ipsum dolor sit amet, consectetur adipisicing elit. Aliquid ducimus voluptate quae, maxime incidunt fuga saepe fugit sapiente cupiditate vel magni, amet sint! Laboriosam fugit nesciunt, repudiandae debitis, minima doloribus.\n                    "
-              ),
-              _c("p", [_c("strong", [_vm._v("・related words")])]),
-              _vm._v(" "),
-              _c("div", { staticClass: "uk-container" }, [
-                _c(
-                  "div",
-                  {
-                    staticClass: "uk-child-width-1-3 uk-text-center",
-                    attrs: { "uk-grid": "" }
-                  },
-                  [
-                    _c("div", [
-                      _c("p", [_vm._v("sample")]),
-                      _vm._v(" "),
-                      _c("p", [_vm._v("例、サンプル")])
-                    ]),
-                    _vm._v(" "),
-                    _c("div", [
-                      _c("p", [_vm._v("sample")]),
-                      _vm._v(" "),
-                      _c("p", [_vm._v("例、サンプル")])
-                    ]),
-                    _vm._v(" "),
-                    _c("div", [
-                      _c("p", [_vm._v("sample")]),
-                      _vm._v(" "),
-                      _c("p", [_vm._v("例、サンプル")])
-                    ])
-                  ]
-                ),
-                _vm._v(" "),
-                _c(
-                  "div",
-                  {
-                    staticClass: "uk-child-width-1-3 uk-text-center",
-                    attrs: { "uk-grid": "" }
-                  },
-                  [
-                    _c("div", [
-                      _c("p", [_vm._v("sample")]),
-                      _vm._v(" "),
-                      _c("p", [_vm._v("例、サンプル")])
-                    ]),
-                    _vm._v(" "),
-                    _c("div", [
-                      _c("p", [_vm._v("sample")]),
-                      _vm._v(" "),
-                      _c("p", [_vm._v("例、サンプル")])
-                    ]),
-                    _vm._v(" "),
-                    _c("div", [
-                      _c("p", [_vm._v("sample")]),
-                      _vm._v(" "),
-                      _c("p", [_vm._v("例、サンプル")])
-                    ])
-                  ]
-                )
-              ])
-            ])
-          ])
+        _c("li", { attrs: { "aria-expanded": "false" } }, [
+          _c("a", { attrs: { href: "#" } }, [_vm._v("ITEM 4")])
         ])
-      ])
+      ]
+    )
+  },
+  function() {
+    var _vm = this
+    var _h = _vm.$createElement
+    var _c = _vm._self._c || _h
+    return _c("p", [_c("strong", [_vm._v("・related words")])])
+  },
+  function() {
+    var _vm = this
+    var _h = _vm.$createElement
+    var _c = _vm._self._c || _h
+    return _c("div", { staticClass: "uk-container" }, [
+      _c(
+        "div",
+        {
+          staticClass: "uk-child-width-1-3 uk-text-center",
+          attrs: { "uk-grid": "" }
+        },
+        [
+          _c("div", [
+            _c("p", [_vm._v("sample")]),
+            _vm._v(" "),
+            _c("p", [_vm._v("例、サンプル")])
+          ]),
+          _vm._v(" "),
+          _c("div", [
+            _c("p", [_vm._v("sample")]),
+            _vm._v(" "),
+            _c("p", [_vm._v("例、サンプル")])
+          ]),
+          _vm._v(" "),
+          _c("div", [
+            _c("p", [_vm._v("sample")]),
+            _vm._v(" "),
+            _c("p", [_vm._v("例、サンプル")])
+          ])
+        ]
+      ),
+      _vm._v(" "),
+      _c(
+        "div",
+        {
+          staticClass: "uk-child-width-1-3 uk-text-center",
+          attrs: { "uk-grid": "" }
+        },
+        [
+          _c("div", [
+            _c("p", [_vm._v("sample")]),
+            _vm._v(" "),
+            _c("p", [_vm._v("例、サンプル")])
+          ]),
+          _vm._v(" "),
+          _c("div", [
+            _c("p", [_vm._v("sample")]),
+            _vm._v(" "),
+            _c("p", [_vm._v("例、サンプル")])
+          ]),
+          _vm._v(" "),
+          _c("div", [
+            _c("p", [_vm._v("sample")]),
+            _vm._v(" "),
+            _c("p", [_vm._v("例、サンプル")])
+          ])
+        ]
+      )
+    ])
+  },
+  function() {
+    var _vm = this
+    var _h = _vm.$createElement
+    var _c = _vm._self._c || _h
+    return _c("p", [_c("strong", [_vm._v("・related words")])])
+  },
+  function() {
+    var _vm = this
+    var _h = _vm.$createElement
+    var _c = _vm._self._c || _h
+    return _c("div", { staticClass: "uk-container" }, [
+      _c(
+        "div",
+        {
+          staticClass: "uk-child-width-1-3 uk-text-center",
+          attrs: { "uk-grid": "" }
+        },
+        [
+          _c("div", [
+            _c("p", [_vm._v("sample")]),
+            _vm._v(" "),
+            _c("p", [_vm._v("例、サンプル")])
+          ]),
+          _vm._v(" "),
+          _c("div", [
+            _c("p", [_vm._v("sample")]),
+            _vm._v(" "),
+            _c("p", [_vm._v("例、サンプル")])
+          ]),
+          _vm._v(" "),
+          _c("div", [
+            _c("p", [_vm._v("sample")]),
+            _vm._v(" "),
+            _c("p", [_vm._v("例、サンプル")])
+          ])
+        ]
+      ),
+      _vm._v(" "),
+      _c(
+        "div",
+        {
+          staticClass: "uk-child-width-1-3 uk-text-center",
+          attrs: { "uk-grid": "" }
+        },
+        [
+          _c("div", [
+            _c("p", [_vm._v("sample")]),
+            _vm._v(" "),
+            _c("p", [_vm._v("例、サンプル")])
+          ]),
+          _vm._v(" "),
+          _c("div", [
+            _c("p", [_vm._v("sample")]),
+            _vm._v(" "),
+            _c("p", [_vm._v("例、サンプル")])
+          ]),
+          _vm._v(" "),
+          _c("div", [
+            _c("p", [_vm._v("sample")]),
+            _vm._v(" "),
+            _c("p", [_vm._v("例、サンプル")])
+          ])
+        ]
+      )
+    ])
+  },
+  function() {
+    var _vm = this
+    var _h = _vm.$createElement
+    var _c = _vm._self._c || _h
+    return _c("p", [_c("strong", [_vm._v("・related words")])])
+  },
+  function() {
+    var _vm = this
+    var _h = _vm.$createElement
+    var _c = _vm._self._c || _h
+    return _c("div", { staticClass: "uk-container" }, [
+      _c(
+        "div",
+        {
+          staticClass: "uk-child-width-1-3 uk-text-center",
+          attrs: { "uk-grid": "" }
+        },
+        [
+          _c("div", [
+            _c("p", [_vm._v("sample")]),
+            _vm._v(" "),
+            _c("p", [_vm._v("例、サンプル")])
+          ]),
+          _vm._v(" "),
+          _c("div", [
+            _c("p", [_vm._v("sample")]),
+            _vm._v(" "),
+            _c("p", [_vm._v("例、サンプル")])
+          ]),
+          _vm._v(" "),
+          _c("div", [
+            _c("p", [_vm._v("sample")]),
+            _vm._v(" "),
+            _c("p", [_vm._v("例、サンプル")])
+          ])
+        ]
+      ),
+      _vm._v(" "),
+      _c(
+        "div",
+        {
+          staticClass: "uk-child-width-1-3 uk-text-center",
+          attrs: { "uk-grid": "" }
+        },
+        [
+          _c("div", [
+            _c("p", [_vm._v("sample")]),
+            _vm._v(" "),
+            _c("p", [_vm._v("例、サンプル")])
+          ]),
+          _vm._v(" "),
+          _c("div", [
+            _c("p", [_vm._v("sample")]),
+            _vm._v(" "),
+            _c("p", [_vm._v("例、サンプル")])
+          ]),
+          _vm._v(" "),
+          _c("div", [
+            _c("p", [_vm._v("sample")]),
+            _vm._v(" "),
+            _c("p", [_vm._v("例、サンプル")])
+          ])
+        ]
+      )
+    ])
+  },
+  function() {
+    var _vm = this
+    var _h = _vm.$createElement
+    var _c = _vm._self._c || _h
+    return _c("p", [_c("strong", [_vm._v("・related words")])])
+  },
+  function() {
+    var _vm = this
+    var _h = _vm.$createElement
+    var _c = _vm._self._c || _h
+    return _c("div", { staticClass: "uk-container" }, [
+      _c(
+        "div",
+        {
+          staticClass: "uk-child-width-1-3 uk-text-center",
+          attrs: { "uk-grid": "" }
+        },
+        [
+          _c("div", [
+            _c("p", [_vm._v("sample")]),
+            _vm._v(" "),
+            _c("p", [_vm._v("例、サンプル")])
+          ]),
+          _vm._v(" "),
+          _c("div", [
+            _c("p", [_vm._v("sample")]),
+            _vm._v(" "),
+            _c("p", [_vm._v("例、サンプル")])
+          ]),
+          _vm._v(" "),
+          _c("div", [
+            _c("p", [_vm._v("sample")]),
+            _vm._v(" "),
+            _c("p", [_vm._v("例、サンプル")])
+          ])
+        ]
+      ),
+      _vm._v(" "),
+      _c(
+        "div",
+        {
+          staticClass: "uk-child-width-1-3 uk-text-center",
+          attrs: { "uk-grid": "" }
+        },
+        [
+          _c("div", [
+            _c("p", [_vm._v("sample")]),
+            _vm._v(" "),
+            _c("p", [_vm._v("例、サンプル")])
+          ]),
+          _vm._v(" "),
+          _c("div", [
+            _c("p", [_vm._v("sample")]),
+            _vm._v(" "),
+            _c("p", [_vm._v("例、サンプル")])
+          ]),
+          _vm._v(" "),
+          _c("div", [
+            _c("p", [_vm._v("sample")]),
+            _vm._v(" "),
+            _c("p", [_vm._v("例、サンプル")])
+          ])
+        ]
+      )
     ])
   }
 ]
@@ -20821,15 +21076,17 @@ __webpack_require__.r(__webpack_exports__);
 "use strict";
 __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _HomeVocabula_vue_vue_type_template_id_7899056e___WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./HomeVocabula.vue?vue&type=template&id=7899056e& */ "./resources/js/components/HomeVocabula.vue?vue&type=template&id=7899056e&");
-/* harmony import */ var _node_modules_vue_loader_lib_runtime_componentNormalizer_js__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ../../../node_modules/vue-loader/lib/runtime/componentNormalizer.js */ "./node_modules/vue-loader/lib/runtime/componentNormalizer.js");
+/* harmony import */ var _HomeVocabula_vue_vue_type_script_lang_js___WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./HomeVocabula.vue?vue&type=script&lang=js& */ "./resources/js/components/HomeVocabula.vue?vue&type=script&lang=js&");
+/* empty/unused harmony star reexport *//* harmony import */ var _node_modules_vue_loader_lib_runtime_componentNormalizer_js__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ../../../node_modules/vue-loader/lib/runtime/componentNormalizer.js */ "./node_modules/vue-loader/lib/runtime/componentNormalizer.js");
 
-var script = {}
+
+
 
 
 /* normalize component */
 
-var component = Object(_node_modules_vue_loader_lib_runtime_componentNormalizer_js__WEBPACK_IMPORTED_MODULE_1__["default"])(
-  script,
+var component = Object(_node_modules_vue_loader_lib_runtime_componentNormalizer_js__WEBPACK_IMPORTED_MODULE_2__["default"])(
+  _HomeVocabula_vue_vue_type_script_lang_js___WEBPACK_IMPORTED_MODULE_1__["default"],
   _HomeVocabula_vue_vue_type_template_id_7899056e___WEBPACK_IMPORTED_MODULE_0__["render"],
   _HomeVocabula_vue_vue_type_template_id_7899056e___WEBPACK_IMPORTED_MODULE_0__["staticRenderFns"],
   false,
@@ -20843,6 +21100,20 @@ var component = Object(_node_modules_vue_loader_lib_runtime_componentNormalizer_
 if (false) { var api; }
 component.options.__file = "resources/js/components/HomeVocabula.vue"
 /* harmony default export */ __webpack_exports__["default"] = (component.exports);
+
+/***/ }),
+
+/***/ "./resources/js/components/HomeVocabula.vue?vue&type=script&lang=js&":
+/*!***************************************************************************!*\
+  !*** ./resources/js/components/HomeVocabula.vue?vue&type=script&lang=js& ***!
+  \***************************************************************************/
+/*! exports provided: default */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony import */ var _node_modules_babel_loader_lib_index_js_ref_4_0_node_modules_vue_loader_lib_index_js_vue_loader_options_HomeVocabula_vue_vue_type_script_lang_js___WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! -!../../../node_modules/babel-loader/lib??ref--4-0!../../../node_modules/vue-loader/lib??vue-loader-options!./HomeVocabula.vue?vue&type=script&lang=js& */ "./node_modules/babel-loader/lib/index.js?!./node_modules/vue-loader/lib/index.js?!./resources/js/components/HomeVocabula.vue?vue&type=script&lang=js&");
+/* empty/unused harmony star reexport */ /* harmony default export */ __webpack_exports__["default"] = (_node_modules_babel_loader_lib_index_js_ref_4_0_node_modules_vue_loader_lib_index_js_vue_loader_options_HomeVocabula_vue_vue_type_script_lang_js___WEBPACK_IMPORTED_MODULE_0__["default"]); 
 
 /***/ }),
 
