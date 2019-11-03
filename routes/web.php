@@ -20,3 +20,5 @@ Route::match(["get", "options"],'/articles/wikishow/{pass?}', 'ArticlesControlle
 Route::resource('/articles', 'ArticlesController');
 
 Route::get('/seeMoreArticles', 'ArticlesController@seeMoreArticles');
+
+Auth::routes();

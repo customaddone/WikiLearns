@@ -12,8 +12,4 @@ const mix = require('laravel-mix');
  */
 
 mix.js('resources/js/app.js', 'public/js')
-　　.js('resources/js/HomePageWave.js', 'public/js')
-    // 記事表示用 末尾のsを忘れないように
-    .scripts('resources/js/articlesShow.js', 'public/js/articlesShow.js')
-    .scripts('resources/js/showInportArticle.js', 'public/js/showInportArticle.js')
-    .sass('resources/sass/app.scss', 'public/css');
+   .sass('resources/sass/app.scss', 'public/css');
