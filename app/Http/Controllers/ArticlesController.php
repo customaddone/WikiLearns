@@ -16,7 +16,7 @@ class ArticlesController extends Controller
 
     public function seeMoreArticles() {
         $articles = Article::select(['id', 'title','summary'])->orderBy('id', 'desc')
-        ->simplePaginate(5);
+        ->paginate(5);
         return view('articles.seeMoreArticles', [ 'articles' => $articles ]);
     }
 

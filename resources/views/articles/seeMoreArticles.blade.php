@@ -55,7 +55,11 @@
                             <p>{{ $article->summary }}</p>
                         </div>
                     @endforeach
-                    {{ $articles->links() }}
+                    <div class="uk-section-xsmall">
+                        <ul class="uk-pagination uk-flex-center">
+                            {{ $articles->links() }}
+                        </ul>
+                    </div>
                 </li>
                 <li>
                     <div class="uk-card uk-card-small uk-card-default uk-card-body">
