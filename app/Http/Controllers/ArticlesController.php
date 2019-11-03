@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use App\Article;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Auth;
 
 class ArticlesController extends Controller
 {
@@ -32,7 +33,7 @@ class ArticlesController extends Controller
     public function store(Request $request) {
         $article = new Article;
         $article->title = $request->title;
-        $article->userId = $request->userId;
+        $article->userId = ( Auth::check() )? Auth::id() : 0;
         $article->article = $request->article;
         $article->summary = $request->summary;
         $article->status = $request->status;
