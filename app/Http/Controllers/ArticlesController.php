@@ -14,6 +14,11 @@ class ArticlesController extends Controller
         return $articles;
     }
 
+    public function seeMoreArticles() {
+        $articles = Article::limit(5)->get(['id', 'title','summary']);
+        return view('articles.seeMoreArticles', [ 'articles' => $articles ]);
+    }
+
     public function find($id) {
         $article = Article::find($id);
         return $article;
