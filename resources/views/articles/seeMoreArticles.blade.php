@@ -22,7 +22,7 @@
                 <li class="" aria-expanded="false"><a href="#">finding</a></li>
                 <li aria-expanded="true" class="uk-active"><a href="#">public</a></li>
                 <li aria-expanded="false"><a href="#">users</a></li>
-                <li aria-expanded="false"><a href="#">ITEM 4</a></li>
+                <li aria-expanded="false"><a href="#">likes</a></li>
             </ul>
             <hr>
             <ul class="uk-switcher uk-margin">
