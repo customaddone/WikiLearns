@@ -4,7 +4,7 @@
 <div id="articlesShow">
     @component('components.showNav')
     @endcomponent
-
+    
     <div class="showInportBox">
         <div v-if="inportArticleButton" class="uk-card uk-card-default uk-margin" style="width: 250px;">
             <div class="uk-card-media-top">

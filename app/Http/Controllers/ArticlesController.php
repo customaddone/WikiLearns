@@ -36,7 +36,7 @@ class ArticlesController extends Controller
     public function store(Request $request) {
         $article = new Article;
         $article->title = $request->title;
-        $article->user_id = ( Auth::check() )? Auth::id() : 1;
+        $article->user_id = Auth::id();
         $article->article = $request->article;
         $article->summary = $request->summary;
         $article->status = $request->status;

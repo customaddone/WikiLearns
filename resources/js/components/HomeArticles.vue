@@ -105,7 +105,6 @@ export default {
   mounted: function () {
     axios.get('/api/get'
     ).then((response) => {
-      alert(JSON.stringify(response.data));
       this.articles = [];
       this.articles = response.data;
 

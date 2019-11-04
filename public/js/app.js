@@ -1945,7 +1945,6 @@ __webpack_require__.r(__webpack_exports__);
     var _this = this;
 
     axios.get('/api/get').then(function (response) {
-      alert(JSON.stringify(response.data));
       _this.articles = [];
       _this.articles = response.data; // 記事が３つ未満の場合は空のデータをarticlesに入れる
 

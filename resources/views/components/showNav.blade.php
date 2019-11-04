@@ -3,8 +3,16 @@
     <div class="uk-container">
         <nav class="uk-navbar">
             <div class="uk-navbar-left">
-                <a href="../" uk-icon="icon: tag" class="uk-navbar-item uk-logo">
-                </a>
+                @if( Auth::check() )
+                    <form action="/logout" method="POST">
+                        <button uk-icon="icon: user; ratio: 1.5" class="uk-navbar-item uk-logo">
+                        </button>
+                        @csrf
+                    </form>
+                @else
+                    <a href="/login" uk-icon="icon: sign-in; ratio: 1.5" class="uk-navbar-item uk-logo">
+                    </a>
+                @endif
             </div>
             <div class="uk-navbar-center">
                 <a href="/" class="uk-navbar-item">
