@@ -227,7 +227,6 @@ var vm = new Vue({
        axios.post('/api/add',{
 
          title: this.showquery.page,
-         userId: 1,
          // wikiの記事のaリンクを消す replaceは非破壊的メソッド
 
          article: this.article

@@ -52,7 +52,7 @@
                         </div>
                         <h1 class="uk-card-title">{{ articles[0].title}}</h1>
                         <div class="uk-child-width-1-2" uk-grid style="margin-top: 10px;">
-                            <p>author: user</p>
+                            <p>author: {{ articles[0].name }}</p>
                             <p>status: wiki</p>
                         </div>
                         <hr>
@@ -105,6 +105,7 @@ export default {
   mounted: function () {
     axios.get('/api/get'
     ).then((response) => {
+      alert(JSON.stringify(response.data));
       this.articles = [];
       this.articles = response.data;
 
@@ -113,6 +114,7 @@ export default {
         for ( let i = 0; i < 3; i++ ) {
           this.articles.push({
             id: 0,
+            name: 'guest',
             title: 'No data',
             summary: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.',
           })

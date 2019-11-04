@@ -11,8 +11,11 @@ class ArticlesController extends Controller
     // インポート記事用
     public function index() {
         // idとタイトルだけgetする
-        $articles = Article::limit(3)->get(['id', 'title','summary']);
-        return $articles;
+        // idの前にはテーブルの名前をつける
+       $articles = Article::join('users','users.id','=','articles.user_id')
+           ->select('articles.id', 'title', 'summary', 'name')
+           ->get();
+       return $articles;
     }
 
     public function seeMoreArticles() {
@@ -33,7 +36,7 @@ class ArticlesController extends Controller
     public function store(Request $request) {
         $article = new Article;
         $article->title = $request->title;
-        $article->userId = ( Auth::check() )? Auth::id() : 0;
+        $article->user_id = ( Auth::check() )? Auth::id() : 1;
         $article->article = $request->article;
         $article->summary = $request->summary;
         $article->status = $request->status;

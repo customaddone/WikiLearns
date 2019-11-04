@@ -1945,6 +1945,7 @@ __webpack_require__.r(__webpack_exports__);
     var _this = this;
 
     axios.get('/api/get').then(function (response) {
+      alert(JSON.stringify(response.data));
       _this.articles = [];
       _this.articles = response.data; // 記事が３つ未満の場合は空のデータをarticlesに入れる
 
@@ -1952,6 +1953,7 @@ __webpack_require__.r(__webpack_exports__);
         for (var i = 0; i < 3; i++) {
           _this.articles.push({
             id: 0,
+            name: 'guest',
             title: 'No data',
             summary: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.'
           });
@@ -19653,7 +19655,19 @@ var render = function() {
               _vm._v(_vm._s(_vm.articles[0].title))
             ]),
             _vm._v(" "),
-            _vm._m(2),
+            _c(
+              "div",
+              {
+                staticClass: "uk-child-width-1-2",
+                staticStyle: { "margin-top": "10px" },
+                attrs: { "uk-grid": "" }
+              },
+              [
+                _c("p", [_vm._v("author: " + _vm._s(_vm.articles[0].name))]),
+                _vm._v(" "),
+                _c("p", [_vm._v("status: wiki")])
+              ]
+            ),
             _vm._v(" "),
             _c("hr"),
             _vm._v(" "),
@@ -19693,7 +19707,7 @@ var render = function() {
               _vm._v(_vm._s(_vm.articles[1].title))
             ]),
             _vm._v(" "),
-            _vm._m(3),
+            _vm._m(2),
             _vm._v(" "),
             _c("hr"),
             _vm._v(" "),
@@ -19733,7 +19747,7 @@ var render = function() {
               _vm._v(_vm._s(_vm.articles[2].title))
             ]),
             _vm._v(" "),
-            _vm._m(4),
+            _vm._m(3),
             _vm._v(" "),
             _c("hr"),
             _vm._v(" "),
@@ -19850,24 +19864,6 @@ var staticRenderFns = [
           { staticClass: "uk-text-right", attrs: { href: "/seeMoreArticles" } },
           [_vm._v("see more...")]
         )
-      ]
-    )
-  },
-  function() {
-    var _vm = this
-    var _h = _vm.$createElement
-    var _c = _vm._self._c || _h
-    return _c(
-      "div",
-      {
-        staticClass: "uk-child-width-1-2",
-        staticStyle: { "margin-top": "10px" },
-        attrs: { "uk-grid": "" }
-      },
-      [
-        _c("p", [_vm._v("author: user")]),
-        _vm._v(" "),
-        _c("p", [_vm._v("status: wiki")])
       ]
     )
   },
@@ -20798,6 +20794,12 @@ var app = new Vue({
 /***/ (function(module, exports, __webpack_require__) {
 
 window._ = __webpack_require__(/*! lodash */ "./node_modules/lodash/lodash.js");
+/**
+ * We'll load jQuery and the Bootstrap jQuery plugin which provides support
+ * for JavaScript based Bootstrap features such as modals and tabs. This
+ * code may be modified to fit the specific needs of your application.
+ */
+
 /**
  * We'll load the axios HTTP library which allows us to easily issue requests
  * to our Laravel back-end. This library automatically handles sending the
