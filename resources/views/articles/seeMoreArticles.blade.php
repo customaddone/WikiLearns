@@ -49,38 +49,29 @@
                     </div>
                 </li>
                 <li>
-                    @foreach( $articles as $article )
+                    @foreach( $publicArticles as $publicArticle )
                         <div class="uk-card uk-card-small uk-card-default uk-card-body">
-                            <a href="/articles/{{ $article->id }}" class="uk-card-title"><strong>{{ $article->title }}</strong></a>
-                            <p>{{ $article->summary }}</p>
+                            <a href="/articles/{{ $publicArticle->id }}" class="uk-card-title"><strong>{{ $publicArticle->title }}</strong></a>
+                            <p>{{ $publicArticle->summary }}</p>
                         </div>
                     @endforeach
                     <div class="uk-section-xsmall">
                         <ul class="uk-pagination uk-flex-center">
-                            {{ $articles->links() }}
+                            {{ $publicArticles->links() }}
                         </ul>
                     </div>
                 </li>
                 <li>
-                    <div class="uk-card uk-card-small uk-card-default uk-card-body">
-                        <p class="uk-card-title"><strong>あ</strong></p>
-                        <p>あああ</p>
-                    </div>
-                    <div class="uk-card uk-card-small uk-card-default uk-card-body">
-                        <p class="uk-card-title"><strong>あ</strong></p>
-                        <p>あああ</p>
-                    </div>
-                    <div class="uk-card uk-card-small uk-card-default uk-card-body">
-                        <p class="uk-card-title"><strong>あ</strong></p>
-                        <p>あああ</p>
-                    </div>
-                    <div class="uk-card uk-card-small uk-card-default uk-card-body">
-                        <p class="uk-card-title"><strong>あ</strong></p>
-                        <p>あああ</p>
-                    </div>
-                    <div class="uk-card uk-card-small uk-card-default uk-card-body">
-                        <p class="uk-card-title"><strong>あ</strong></p>
-                        <p>あああ</p>
+                    @foreach( $usersArticles as $usersArticle )
+                        <div class="uk-card uk-card-small uk-card-default uk-card-body">
+                            <a href="/articles/{{ $usersArticle->id }}" class="uk-card-title"><strong>{{ $usersArticle->title }}</strong></a>
+                            <p>{{ $usersArticle->summary }}</p>
+                        </div>
+                    @endforeach
+                    <div class="uk-section-xsmall">
+                        <ul class="uk-pagination uk-flex-center">
+                            {{ $usersArticles->links() }}
+                        </ul>
                     </div>
                 </li>
                 <li>

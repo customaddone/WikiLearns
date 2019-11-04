@@ -19,9 +19,14 @@ class ArticlesController extends Controller
     }
 
     public function seeMoreArticles() {
-        $articles = Article::select(['id', 'title','summary'])->orderBy('id', 'desc')
-        ->paginate(5);
-        return view('articles.seeMoreArticles', [ 'articles' => $articles ]);
+
+        $publicArticles = Article::where('user_id', '=', 1)->select(['id', 'title','summary'])
+        ->orderBy('id', 'desc')->paginate(5);
+        $usersArticles = Article::where('user_id', '=', Auth::id())->select(['id', 'title','summary'])
+        ->orderBy('id', 'desc')->paginate(5);
+
+        return view('articles.seeMoreArticles', [ 'publicArticles' => $publicArticles,
+        'usersArticles' => $usersArticles]);
     }
 
     public function find($id) {
@@ -37,7 +42,7 @@ class ArticlesController extends Controller
     public function store(Request $request) {
         $article = new Article;
         $article->title = $request->title;
-        $article->user_id = Auth::id();
+        $article->user_id = ( Auth::check() ) ? Auth::id(): 1;
         $article->article = $request->article;
         $article->summary = $request->summary;
         $article->status = $request->status;

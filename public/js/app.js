@@ -19705,7 +19705,19 @@ var render = function() {
               _vm._v(_vm._s(_vm.articles[1].title))
             ]),
             _vm._v(" "),
-            _vm._m(2),
+            _c(
+              "div",
+              {
+                staticClass: "uk-child-width-1-2",
+                staticStyle: { "margin-top": "10px" },
+                attrs: { "uk-grid": "" }
+              },
+              [
+                _c("p", [_vm._v("author: " + _vm._s(_vm.articles[1].name))]),
+                _vm._v(" "),
+                _c("p", [_vm._v("status: wiki")])
+              ]
+            ),
             _vm._v(" "),
             _c("hr"),
             _vm._v(" "),
@@ -19745,7 +19757,19 @@ var render = function() {
               _vm._v(_vm._s(_vm.articles[2].title))
             ]),
             _vm._v(" "),
-            _vm._m(3),
+            _c(
+              "div",
+              {
+                staticClass: "uk-child-width-1-2",
+                staticStyle: { "margin-top": "10px" },
+                attrs: { "uk-grid": "" }
+              },
+              [
+                _c("p", [_vm._v("author: " + _vm._s(_vm.articles[2].name))]),
+                _vm._v(" "),
+                _c("p", [_vm._v("status: wiki")])
+              ]
+            ),
             _vm._v(" "),
             _c("hr"),
             _vm._v(" "),
@@ -19862,42 +19886,6 @@ var staticRenderFns = [
           { staticClass: "uk-text-right", attrs: { href: "/seeMoreArticles" } },
           [_vm._v("see more...")]
         )
-      ]
-    )
-  },
-  function() {
-    var _vm = this
-    var _h = _vm.$createElement
-    var _c = _vm._self._c || _h
-    return _c(
-      "div",
-      {
-        staticClass: "uk-child-width-1-2",
-        staticStyle: { "margin-top": "10px" },
-        attrs: { "uk-grid": "" }
-      },
-      [
-        _c("p", [_vm._v("author: user")]),
-        _vm._v(" "),
-        _c("p", [_vm._v("status: wiki")])
-      ]
-    )
-  },
-  function() {
-    var _vm = this
-    var _h = _vm.$createElement
-    var _c = _vm._self._c || _h
-    return _c(
-      "div",
-      {
-        staticClass: "uk-child-width-1-2",
-        staticStyle: { "margin-top": "10px" },
-        attrs: { "uk-grid": "" }
-      },
-      [
-        _c("p", [_vm._v("author: user")]),
-        _vm._v(" "),
-        _c("p", [_vm._v("status: wiki")])
       ]
     )
   }

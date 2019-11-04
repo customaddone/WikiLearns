@@ -67,7 +67,7 @@
                         </div>
                         <h1 class="uk-card-title">{{ articles[1].title}}</h1>
                         <div class="uk-child-width-1-2" uk-grid style="margin-top: 10px;">
-                            <p>author: user</p>
+                            <p>author: {{ articles[1].name }}</p>
                             <p>status: wiki</p>
                         </div>
                         <hr>
@@ -82,7 +82,7 @@
                         </div>
                         <h1 class="uk-card-title">{{ articles[2].title }}</h1>
                         <div class="uk-child-width-1-2" uk-grid style="margin-top: 10px;">
-                            <p>author: user</p>
+                            <p>author: {{ articles[2].name }}</p>
                             <p>status: wiki</p>
                         </div>
                         <hr>
