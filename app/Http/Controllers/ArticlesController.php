@@ -33,6 +33,7 @@ class ArticlesController extends Controller
         return response()->view('articles.showInportArticle');
     }
 
+    // ただトークン用のカラムを用意していなかっただけでは...
     public function store(Request $request) {
         $article = new Article;
         $article->title = $request->title;

@@ -82,6 +82,11 @@ var vm = new Vue({
             .slice(0, 150);
          })
     .catch(response => console.log(response));
+
+  /*  axios.get('/api/user?api_token=xVIgyVhqvSHV9HKR9o8BtLwM05ua97Lx2b75q2ouMkT4iqHI9uYQGkbl6Ms4')
+         .then((response) => {
+           alert(JSON.stringify(response.data))
+         }).catch(response => console.log(response)); */
   },
 
   methods: {

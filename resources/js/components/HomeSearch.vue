@@ -2,7 +2,6 @@
     <div class=" uk-section-xsmall uk-container">
         <div class="uk-margin">
             <div>
-
                 <!-- タイトル -->
                 <h1 class="uk-text-center uk-text-primary" style="font-size: 30px; font-family: 'Pacifico', cursive;">
                    ~Search~
