@@ -205,7 +205,7 @@ var vm = new Vue({
          id: this.articleId,
          article: this.nowpage,
        }).then((response) => {
-
+         alert('エディットしました！！');
        }).catch((response) => {
 
          console.log(response);
@@ -221,7 +221,7 @@ var vm = new Vue({
          mean: this.translated,
          status: 0,
        }).then((response) => {
-         alert('編集しました！！')
+         alert('登録しました！！')
        }).catch((response) => {
 
          console.log(response);

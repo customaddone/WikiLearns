@@ -205,7 +205,7 @@ var vm = new Vue({
          id: this.articleId,
          article: this.nowpage,
        }).then((response) => {
-         alert('エディットしました！！')
+         alert('エディットしました！！');
        }).catch((response) => {
 
          console.log(response);
