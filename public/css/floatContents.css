@@ -39,7 +39,7 @@
 #canvas {
   position:fixed;
   /* 出典 Ulysees */
-  background-image: url("/storage/images/topPage.jpg");
+  background-image: url("https://wikilearns.s3-ap-northeast-1.amazonaws.com/hoge.jpg");
   background-color:rgba(255,255,255,0.8);
   background-blend-mode:lighten;
   top:0;
