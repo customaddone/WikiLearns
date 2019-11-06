@@ -22,3 +22,9 @@ Route::resource('/articles', 'ArticlesController');
 Route::get('/seeMoreArticles', 'ArticlesController@seeMoreArticles');
 
 Auth::routes();
+
+Route::get('/images', function () {
+    return view('image.create');
+});
+
+Route::post('/images/create', 'ImagesController@create');
