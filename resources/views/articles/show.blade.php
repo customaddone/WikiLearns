@@ -74,10 +74,10 @@
             <div v-html="article"></div>
         </div>
 
-        @component('components.footer')
-        @endcomponent
-
     </div>
+
+    @component('components.footer')
+    @endcomponent
 </div>
 
 <script src="{{ asset('js/articlesShow.js') }}"></script>

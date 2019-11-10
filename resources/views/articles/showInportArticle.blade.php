@@ -77,10 +77,10 @@
 
         </div>
 
-        @component('components.articleFooter')
-        @endcomponent
-
     </div>
+
+    @component('components.articleFooter')
+    @endcomponent
 </div>
 <script src="{{ asset('js/showInportArticle.js') }}"></script>
 
