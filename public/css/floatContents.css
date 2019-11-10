@@ -23,10 +23,9 @@
 
 .article-footer {
   position: fixed;
-  display: flex;
-  z-index: 999;
   bottom: 0px;
   left: 0px;
+  z-index: 999;
 }
 
 /* 波設置のため */
