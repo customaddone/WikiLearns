@@ -55,8 +55,19 @@ var vm = new Vue({
   methods: {
     /* ボタンで単語検索モード、ハイライトモード、標準モードを切り替えて、touchstart,
        touchmove, clickの挙動を変える */
-    switchKeyValue: function () {
-      this.switchFunctionKey += 1
+    switchKeyDictValue: function () {
+      if (this.switchFunctionKey % 3 == 1) {
+        this.switchFunctionKey = 0;
+      } else {
+        this.switchFunctionKey = 1;
+      }
+    },
+    switchKeyHighlightValue: function () {
+      if (this.switchFunctionKey % 3 == 2) {
+        this.switchFunctionKey = 0
+      } else {
+        this.switchFunctionKey = 2
+      }
     },
     switchWordFunction: function () {
 
@@ -194,12 +205,13 @@ var vm = new Vue({
 
        // 現在のhtmlの文字列からナビ部分とボタンの文字列を削除
        this.nowpage = document.body.innerHTML
-       .replace(/<div id="inport.+<\/div><\/div>/, '')
-       .replace(/<script src="http.+cle.js"><\/script>/, '')
-       .replace(/<\/div><\/div><\/div><\/div>/, '')
-       .slice(16)
-       .slice( 0, -8 )
-       .replace(/<\/div><\/div><\/div><\/div>/, '')
+       .replace(/<div id="inport.+<!----><\/div>/, '')
+
+       .replace('<script src="http://localhost:8888/js/showInportArticle.js"></script>', '')
+       .replace('<div><div class="uk-padding-small">Edit</div>', '')
+       .replace('<div class="footer uk-section-primary" style="width: 100%;"><div class="uk-container"><div uk-grid="" class="uk-grid-collapse uk-child-width-1-3 uk-text-center uk-grid"><div class="uk-first-column"><div class="uk-padding-small">dictionary</div></div> <div><div class="uk-padding-small">Highlight</div></div>', '')
+       .replace('</div></div></div></div></div></div>', '')
+       .replace(/<div><div><div>/g, '')
 
        axios.post('/api/edit',{
          id: this.articleId,

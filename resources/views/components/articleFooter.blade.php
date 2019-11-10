@@ -8,7 +8,7 @@
                 <div class="uk-padding-small" @click="switchKeyHighlightValue">Highlight</div>
             </div>
             <div>
-                <div class="uk-padding-small" v-on:click="inportArticle">Import</div>
+                <div class="uk-padding-small" v-on:click="editArticle">Edit</div>
             </div>
         </div>
     </div>

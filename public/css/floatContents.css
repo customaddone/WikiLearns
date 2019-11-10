@@ -35,6 +35,12 @@
    opacity: 1.0 !important;
 }
 
+.footer {
+  position: fixed;
+  bottom: 0px;
+  left: 0px;
+}
+
 /* 波設置のため */
 #canvas {
   position:fixed;

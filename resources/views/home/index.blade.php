@@ -13,9 +13,6 @@
         <router-view></router-view>
     </div>
 
-    @component('components.footer')
-    @endcomponent
-
     <!-- タイトルのフォント -->
     <link href="https://fonts.googleapis.com/css?family=Pacifico&display=swap" rel="stylesheet">
     <!-- SPA用js -->

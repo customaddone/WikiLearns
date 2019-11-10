@@ -92,8 +92,19 @@ var vm = new Vue({
   methods: {
     /* ボタンで単語検索モード、ハイライトモード、標準モードを切り替えて、touchstart,
        touchmove, clickの挙動を変える */
-    switchKeyValue: function () {
-      this.switchFunctionKey += 1
+    switchKeyDictValue: function () {
+      if (this.switchFunctionKey % 3 == 1) {
+        this.switchFunctionKey = 0;
+      } else {
+        this.switchFunctionKey = 1;
+      }
+    },
+    switchKeyHighlightValue: function () {
+      if (this.switchFunctionKey % 3 == 2) {
+        this.switchFunctionKey = 0
+      } else {
+        this.switchFunctionKey = 2
+      }
     },
     switchWordFunction: function () {
 
