@@ -23,6 +23,8 @@
 
 .article-footer {
   position: fixed;
+  display: flex;
+  z-index: 999;
   bottom: 0px;
   left: 0px;
 }

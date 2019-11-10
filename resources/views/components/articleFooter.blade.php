@@ -1,4 +1,4 @@
-<div class="footer uk-section-primary" style="width: 100%;">
+<div class="article-footer uk-section-primary" style="width: 100%;">
     <div class="uk-container">
         <div class="uk-grid-collapse uk-child-width-1-3 uk-text-center" uk-grid>
             <div>
