@@ -203,26 +203,44 @@ var vm = new Vue({
      // wiki記事を取り込む
      editArticle: function () {
 
-       // 現在のhtmlの文字列からナビ部分とボタンの文字列を削除
-       this.nowpage = document.body.innerHTML
-       .replace(/<div id="inport.+<!----><\/div>/, '')
+       switchKey().then(() => {
+         if (this.switchFunctionKey % 3 == 0 ) {
+           this.nowpage = document.body.innerHTML
+           .replace(/<div id="inport.+<!----><\/div>/, '')
 
-       .replace('<script src="http://localhost:8888/js/showInportArticle.js"></script>', '')
-       .replace('<div><div class="uk-padding-small">Edit</div>', '')
-       .replace('<div class="footer uk-section-primary" style="width: 100%;"><div class="uk-container"><div uk-grid="" class="uk-grid-collapse uk-child-width-1-3 uk-text-center uk-grid"><div class="uk-first-column"><div class="uk-padding-small">dictionary</div></div> <div><div class="uk-padding-small">Highlight</div></div>', '')
-       .replace('</div></div></div></div></div></div>', '')
-       .replace(/<div><div><div>/g, '')
+           .replace('<script src="http://localhost:8888/js/showInportArticle.js"></script>', '')
+           .replace('<div><div class="uk-padding-small">Edit</div>', '')
+           .replace('<div class="footer uk-section-primary" style="width: 100%;"><div class="uk-container"><div uk-grid="" class="uk-grid-collapse uk-child-width-1-3 uk-text-center uk-grid"><div class="uk-first-column"><div class="uk-padding-small">dictionary</div></div> <div><div class="uk-padding-small">Highlight</div></div>', '')
+           .replace('</div></div></div></div></div></div>', '')
+           .replace(/<div><div><div>/g, '')
 
-       axios.post('/api/edit',{
-         id: this.articleId,
-         article: this.nowpage,
-       }).then((response) => {
-         alert('エディットしました！！');
+           axios.post('/api/edit',{
+             id: this.articleId,
+             article: this.nowpage,
+           }).then((response) => {
+             alert('エディットしました！！');
+           }).catch((response) => {
+
+             console.log(response);
+
+           });
+         }
+
        }).catch((response) => {
 
          console.log(response);
 
        });
+
+
+       function switchKey () {
+         return new Promise((resolve, reject) => {
+           if (this.switchFunctionKey % 3 !== 0 ) {
+             this.switchFunctionKey = 0;
+           }
+           resolve();
+         });
+       }
      },
 
      // 単語登録用
