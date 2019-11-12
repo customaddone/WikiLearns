@@ -208,10 +208,9 @@ var vm = new Vue({
            this.nowpage = document.body.innerHTML
            .replace(/<div id="inport.+<!----><\/div>/, '')
 
-           .replace('<script src="http://localhost:8888/js/showInportArticle.js"></script>', '')
-           .replace('<div><div class="uk-padding-small">Edit</div>', '')
-           .replace('<div class="footer uk-section-primary" style="width: 100%;"><div class="uk-container"><div uk-grid="" class="uk-grid-collapse uk-child-width-1-3 uk-text-center uk-grid"><div class="uk-first-column"><div class="uk-padding-small">dictionary</div></div> <div><div class="uk-padding-small">Highlight</div></div>', '')
-           .replace('</div></div></div></div></div></div>', '')
+           .replace(/<div class="article-footer[\s\S]+Highlight<\/div><\/div>/, '')
+           .replace(/<script[\s\S]+<\/script>/, '')
+           .replace(/<div><div class="uk-padding[\s\S]+<\/div><\/div>/, '')
            .replace(/<div><div><div>/g, '')
 
            axios.post('/api/edit',{
@@ -246,7 +245,7 @@ var vm = new Vue({
      // 単語登録用
      registerWord: function () {
        axios.post('/api/words/add',{
-         articlesId: this.articleId,
+         article_id: this.articleId,
          word: this.translatingWord,
          mean: this.translated,
          status: 0,

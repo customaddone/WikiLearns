@@ -15,7 +15,7 @@ class CreateWordsTable extends Migration
     {
         Schema::create('words', function (Blueprint $table) {
             $table->bigIncrements('id');
-            $table->integer('articlesId');
+            $table->integer('article_id');
             $table->string('word');
             $table->string('mean');
             $table->integer('status');

@@ -9,7 +9,7 @@ class WordsController extends Controller
 {
     public function store(Request $request) {
         $word = new Word;
-        $word->articlesId = $request->articlesId;
+        $word->article_id = $request->article_id;
         $word->word = $request->word;
         $word->mean = $request->mean;
         $word->status = $request->status;
