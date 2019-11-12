@@ -6,7 +6,7 @@
     @endcomponent
 
     <div class="uk-container">
-        <h1>・Heading</h1>
+        <h1>・{{ $article->title }}</h1>
     </div>
     <div class="uk-padding-small">
         <ul class="uk-child-width-expand uk-tab" uk-tab="animation: uk-animation-fade">
@@ -47,10 +47,7 @@
                 </div>
             </li>
             <li>
-                <div class="uk-card uk-card-small uk-card-default uk-card-body">
-                    <p class="uk-card-title"><strong>あ</strong></p>
-                    <p>あああ</p>
-                </div>
+                {!! $article->article !!}
             </li>
         </ul>
     </div>

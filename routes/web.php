@@ -21,7 +21,7 @@ Route::resource('/articles', 'ArticlesController');
 
 Route::get('/seeMoreArticles', 'ArticlesController@seeMoreArticles');
 
-Route::get('/vocabula', 'ArticlesController@vocabula');
+Route::get('/articles/vocabula/{pass?}', 'ArticlesController@vocabula');
 
 Auth::routes();
 

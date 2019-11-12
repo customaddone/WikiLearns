@@ -20207,7 +20207,11 @@ var render = function() {
         _vm._v(" "),
         _c("ul", { staticClass: "uk-switcher uk-margin" }, [
           _c("li", [
-            _c("h1", [_vm._v(_vm._s(_vm.articles[0].title))]),
+            _c(
+              "a",
+              { attrs: { href: "articles/vocabula/" + _vm.articles[0].id } },
+              [_c("h1", [_vm._v(_vm._s(_vm.articles[0].title))])]
+            ),
             _vm._v(" "),
             _c("p", [_vm._v(_vm._s(_vm.articles[0].summary) + " ...")]),
             _vm._v(" "),

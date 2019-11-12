@@ -21,7 +21,7 @@
                 </ul>
                 <ul class="uk-switcher uk-margin">
                     <li>
-                        <h1>{{ articles[0].title}}</h1>
+                        <a :href="'articles/vocabula/' + articles[0].id "><h1>{{ articles[0].title}}</h1></a>
                         <p>{{ articles[0].summary }} ...</p>
 
                         <!-- 関連する単語 -->

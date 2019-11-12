@@ -59,8 +59,9 @@ class ArticlesController extends Controller
         $article = Article::find($id)->delete();
     }
 
-    public function vocabula() {
-        return view('articles.vocabula');
+    public function vocabula($pass) {
+        $article = Article::find($pass);
+        return view('articles.vocabula', [ 'article' => $article ]);
     }
     // wiki詳細記事表示用　データはフロント側が取ってくれる
     public function wikishow(Request $request)
