@@ -21,6 +21,8 @@ Route::resource('/articles', 'ArticlesController');
 
 Route::get('/seeMoreArticles', 'ArticlesController@seeMoreArticles');
 
+Route::get('/vocabula', 'ArticlesController@vocabula');
+
 Auth::routes();
 
 Route::get('/images', function () {
