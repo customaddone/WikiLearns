@@ -45,7 +45,7 @@
             </div>
             <ul class="uk-section-xsmall">
                 <li class="uk-float-left" v-for="(article, index) in articles" v-bind:key="index">
-                    <div class="uk-margin-right uk-margin-top uk-card uk-card-default uk-card-body"
+                    <div class="uk-margin-small-right uk-margin-small-left uk-margin-top uk-card uk-card-default uk-card-body"
                         style="height: 255px; width: 345px;">
                         <div>
                             <a v-on:click="articleDelete(article.id)" href="../" uk-icon="icon: trash" style="float: right; margin-left: 15px;"></a>

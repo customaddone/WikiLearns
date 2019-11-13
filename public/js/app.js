@@ -19440,7 +19440,7 @@ var render = function() {
             "div",
             {
               staticClass:
-                "uk-margin-right uk-margin-top uk-card uk-card-default uk-card-body",
+                "uk-margin-small-right uk-margin-small-left uk-margin-top uk-card uk-card-default uk-card-body",
               staticStyle: { height: "255px", width: "345px" }
             },
             [
