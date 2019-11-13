@@ -33,7 +33,7 @@
                     </div>
                     <div>
                         <router-link to="/settings" class="uk-border-rounded uk-button
-                          uk-button-default tm-button-default uk-button-large tm-button-large button-border">Settings</router-link>
+                          uk-button-default tm-button-default uk-button-large tm-button-large button-border">Explain</router-link>
                     </div>
                 </div>
             </div>

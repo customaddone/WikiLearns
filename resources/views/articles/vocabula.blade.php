@@ -6,6 +6,10 @@
     @endcomponent
 
     <div id="vocabula">
+
+        @component('components.dictAndHighlightcard')
+        @endcomponent
+
         <div class="uk-container">
             <h1>・{{ $article->title }}</h1>
         </div>
@@ -35,7 +39,8 @@
                     </div>
                 </li>
 
-                <li>
+                <li @select="selected" @touchstart="switchWordFunction" @touchmove=
+                    'switchUnhighlight' @blur="selected" @keyup="selected" @click="switchWordFunction">
                     {!! $article->article !!}
                 </li>
             </ul>
@@ -43,6 +48,10 @@
             <div class="showSwitchButton uk-border-circle">
                 <a href="#top" uk-icon="icon: chevron-up; ratio: 1.5" style="margin-left: 9px; margin-top: 10px;"></a>
             </div>
+
+            @component('components.vocabulaFooter')
+            @endcomponent
+
         </div>
     </div>
 

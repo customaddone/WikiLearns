@@ -20000,7 +20000,7 @@ var render = function() {
                         "uk-border-rounded uk-button\n                      uk-button-default tm-button-default uk-button-large tm-button-large button-border",
                       attrs: { to: "/settings" }
                     },
-                    [_vm._v("Settings")]
+                    [_vm._v("Explain")]
                   )
                 ],
                 1
