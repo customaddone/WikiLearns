@@ -1934,6 +1934,9 @@ __webpack_require__.r(__webpack_exports__);
 //
 //
 //
+//
+//
+//
 /* harmony default export */ __webpack_exports__["default"] = ({
   data: function data() {
     return {
@@ -19471,12 +19474,14 @@ var render = function() {
     _vm._v(" "),
     _vm._m(1),
     _vm._v(" "),
-    _c("ul", [
-      _c("li", { staticClass: "uk-section-xsmall" }, [
+    _c("ul", { staticClass: "uk-section-xsmall" }, [
+      _c("li", { staticClass: "uk-float-left" }, [
         _c(
           "div",
           {
-            staticClass: "uk-card uk-card-default uk-card-body uk-width-1-2@m"
+            staticClass:
+              "uk-margin-right uk-margin-top uk-card uk-card-default uk-card-body",
+            staticStyle: { height: "255px", width: "345px" }
           },
           [
             _c("div", [
@@ -19524,11 +19529,13 @@ var render = function() {
         )
       ]),
       _vm._v(" "),
-      _c("li", [
+      _c("li", { staticClass: "uk-float-left" }, [
         _c(
           "div",
           {
-            staticClass: "uk-card uk-card-default uk-card-body uk-width-1-2@m"
+            staticClass:
+              "uk-margin-right uk-margin-top uk-card uk-card-default uk-card-body",
+            staticStyle: { height: "255px", width: "345px" }
           },
           [
             _c("div", [
@@ -19576,11 +19583,13 @@ var render = function() {
         )
       ]),
       _vm._v(" "),
-      _c("li", { staticClass: "uk-section-xsmall" }, [
+      _c("li", { staticClass: "uk-float-left" }, [
         _c(
           "div",
           {
-            staticClass: "uk-card uk-card-default uk-card-body uk-width-1-2@m"
+            staticClass:
+              "uk-margin-right uk-margin-top uk-card uk-card-default uk-card-body",
+            staticStyle: { height: "255px", width: "345px" }
           },
           [
             _c("div", [
@@ -20701,8 +20710,8 @@ __webpack_require__.r(__webpack_exports__);
 /*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
 
-__webpack_require__(/*! /Users/fujisawakenyuu/sampleapp/laravel/wikiLearns/resources/js/app.js */"./resources/js/app.js");
-module.exports = __webpack_require__(/*! /Users/fujisawakenyuu/sampleapp/laravel/wikiLearns/resources/sass/app.scss */"./resources/sass/app.scss");
+__webpack_require__(/*! /var/www/resources/js/app.js */"./resources/js/app.js");
+module.exports = __webpack_require__(/*! /var/www/resources/sass/app.scss */"./resources/sass/app.scss");
 
 
 /***/ })

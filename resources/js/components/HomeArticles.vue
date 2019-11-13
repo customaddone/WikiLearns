@@ -43,9 +43,10 @@
                 <p>Articles</p>
                 <a href="/seeMoreArticles" class="uk-text-right">see more...</a>
             </div>
-            <ul>
-                <li class="uk-section-xsmall">
-                    <div class="uk-card uk-card-default uk-card-body uk-width-1-2@m">
+            <ul class="uk-section-xsmall">
+                <li class="uk-float-left">
+                    <div class="uk-margin-right uk-margin-top uk-card uk-card-default uk-card-body"
+                        style="height: 255px; width: 345px;">
                         <div>
                             <a v-on:click="articleDelete(articles[0].id)" href="../" uk-icon="icon: trash" style="float: right; margin-left: 15px;"></a>
                             <a :href="'articles/' + articles[0].id"  uk-icon="icon: pencil" style="float: right;"></a>
@@ -59,8 +60,9 @@
                         <p>{{ articles[0].summary }} ...</p>
                     </div>
                 </li>
-                <li>
-                    <div class="uk-card uk-card-default uk-card-body uk-width-1-2@m">
+                <li class="uk-float-left">
+                    <div class="uk-margin-right uk-margin-top uk-card uk-card-default uk-card-body"
+                        style="height: 255px; width: 345px;">
                         <div>
                             <a v-on:click="articleDelete(articles[1].id)" href="../" uk-icon="icon: trash" style="float: right; margin-left: 15px;"></a>
                             <a :href="'articles/' + articles[1].id"  uk-icon="icon: pencil" style="float: right;"></a>
@@ -74,8 +76,9 @@
                         <p>{{ articles[1].summary }} ...</p>
                     </div>
                 </li>
-                <li class="uk-section-xsmall">
-                    <div class="uk-card uk-card-default uk-card-body uk-width-1-2@m">
+                <li class="uk-float-left">
+                    <div class="uk-margin-right uk-margin-top uk-card uk-card-default uk-card-body"
+                        style="height: 255px; width: 345px;">
                         <div>
                             <a v-on:click="articleDelete(articles[2].id)" href="../" uk-icon="icon: trash" style="float: right; margin-left: 15px;"></a>
                             <a :href="'articles/' + articles[2].id"  uk-icon="icon: pencil" style="float: right;"></a>
