@@ -14,8 +14,8 @@
             <p>Articles and related words</p>
             <div>
                 <ul class="uk-child-width-expand uk-tab" uk-tab="animation: uk-animation-fade">
-                    <li class="" aria-expanded="false"><a href="#">ITEM 1</a></li>
-                    <li aria-expanded="true" class="uk-active"><a href="#">ITEM 2</a></li>
+                    <li class="uk-active" aria-expanded="true"><a href="#">ITEM 1</a></li>
+                    <li aria-expanded="false"><a href="#">ITEM 2</a></li>
                     <li aria-expanded="false"><a href="#">ITEM 3</a></li>
                     <li aria-expanded="false"><a href="#">ITEM 4</a></li>
                 </ul>

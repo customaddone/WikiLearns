@@ -1,5 +1,5 @@
 <!-- ナビバー componentにはvueで宣言した変数の値は渡されないっぽい -->
-<div class="uk-section-primary" style="width: 100%; border-bottom: dotted 2px #ffffff;">
+<div class="uk-section-primary" id="top" style="width: 100%; border-bottom: dotted 2px #ffffff;">
     <div class="uk-container">
         <nav class="uk-navbar">
             <div class="uk-navbar-left">

@@ -20266,15 +20266,15 @@ var staticRenderFns = [
         attrs: { "uk-tab": "animation: uk-animation-fade" }
       },
       [
-        _c("li", { attrs: { "aria-expanded": "false" } }, [
-          _c("a", { attrs: { href: "#" } }, [_vm._v("ITEM 1")])
-        ]),
-        _vm._v(" "),
         _c(
           "li",
           { staticClass: "uk-active", attrs: { "aria-expanded": "true" } },
-          [_c("a", { attrs: { href: "#" } }, [_vm._v("ITEM 2")])]
+          [_c("a", { attrs: { href: "#" } }, [_vm._v("ITEM 1")])]
         ),
+        _vm._v(" "),
+        _c("li", { attrs: { "aria-expanded": "false" } }, [
+          _c("a", { attrs: { href: "#" } }, [_vm._v("ITEM 2")])
+        ]),
         _vm._v(" "),
         _c("li", { attrs: { "aria-expanded": "false" } }, [
           _c("a", { attrs: { href: "#" } }, [_vm._v("ITEM 3")])
