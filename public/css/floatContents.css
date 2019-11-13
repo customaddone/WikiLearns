@@ -25,7 +25,7 @@
    position: fixed;
    display: flex;
    z-index: 3;
-   top: 470px;
+   top: 450px;
    opacity: 0.4;
    left: 280px;
  }

@@ -40,4 +40,7 @@ Route::group(['middleware' => 'api'], function() {
 
   Route::match(["post", "options"], '/words/add',  'WordsController@store')
   ->middleware('modify');
+
+  Route::match(["post", "options"], '/words/{id}',  'WordsController@index')
+  ->middleware('modify');
 });

@@ -3,5 +3,6 @@
     "/js/app.js": "/js/app.js",
     "/css/app.css": "/css/app.css",
     "/js/articlesShow.js": "/js/articlesShow.js",
-    "/js/showInportArticle.js": "/js/showInportArticle.js"
+    "/js/showInportArticle.js": "/js/showInportArticle.js",
+    "/js/vocabula.js": "/js/vocabula.js"
 }
