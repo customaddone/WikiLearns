@@ -17,8 +17,8 @@
                     <div class="uk-section-small">
                         <ul uk-accordion="" class="uk-accordion">
                             <li v-for="(article, index) in articles" v-bind:key="index">
-                                <a :href="'articles/vocabula/' + articles[0].id "><h1>{{ article.title }}</h1></a>
-                                <p class="uk-accordion-title" style="font-size: 15px;">Show related words</p>
+                                <a :href="'articles/vocabula/' + article.id "><h1>{{ article.title }}</h1></a>
+                                <p class="uk-accordion-title uk-margin-top" style="font-size: 15px;">Show related words</p>
                                 <div class="uk-accordion-content" aria-hidden="true" hidden="hidden">
                                     <p>コンテンツ 1 智ちに働けば角かどが立つ。情じょうに棹さおさせば流される。意地を通とおせば窮屈きゅうくつだ。とかくに人の世は住みにくい。</p>
                                 </div>

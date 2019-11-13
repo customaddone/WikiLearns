@@ -20062,16 +20062,14 @@ var render = function() {
                 return _c("li", { key: index }, [
                   _c(
                     "a",
-                    {
-                      attrs: { href: "articles/vocabula/" + _vm.articles[0].id }
-                    },
+                    { attrs: { href: "articles/vocabula/" + article.id } },
                     [_c("h1", [_vm._v(_vm._s(article.title))])]
                   ),
                   _vm._v(" "),
                   _c(
                     "p",
                     {
-                      staticClass: "uk-accordion-title",
+                      staticClass: "uk-accordion-title uk-margin-top",
                       staticStyle: { "font-size": "15px" }
                     },
                     [_vm._v("Show related words")]
