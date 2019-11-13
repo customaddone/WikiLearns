@@ -38,6 +38,8 @@
                             </div>
                         </div>
                     </div>
+                    <div style="padding: 300px 0px;">
+                    </div>
                 </li>
 
                 <li @select="selected" @touchstart="switchWordFunction" @touchmove=
