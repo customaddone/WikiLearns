@@ -20,7 +20,8 @@
             </ul>
             <ul class="uk-switcher uk-margin">
                 <li>
-                    <div v-for="(relatedWord, index) in relatedWords" v-bind:key="index">
+                    <div v-for="(relatedWord, index) in relatedWords" v-bind:key="index"
+                        class="uk-margin-right uk-float-left" style="height: 100px; width: 345px;">
                         <div class="uk-card uk-card-small uk-grid-collapse uk-card-default
                             uk-padding-small" uk-grid>
                             <div class="uk-width-2-3">
