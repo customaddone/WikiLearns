@@ -1060,7 +1060,7 @@ __webpack_require__.r(__webpack_exports__);
 /*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
 
-module.exports = __webpack_require__(/*! /var/www/resources/js/HomePageWave.js */"./resources/js/HomePageWave.js");
+module.exports = __webpack_require__(/*! /Users/fujisawakenyuu/sampleapp/laravel/wikiLearns/resources/js/HomePageWave.js */"./resources/js/HomePageWave.js");
 
 
 /***/ })
