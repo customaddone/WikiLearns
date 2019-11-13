@@ -21,4 +21,8 @@ class WordsController extends Controller
         $word->status = $request->status;
         $word->save();
     }
+
+    public function del($id) {
+        $article = Word::find($id)->delete();
+    }
 }

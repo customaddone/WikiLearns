@@ -27,8 +27,8 @@
                                 <div class="uk-flex-left" style="padding-top: 15px;" uk-grid>
                                     <button uk-icon="icon: pencil; ratio: 1.5" class="uk-logo">
                                     </button>
-                                    <button uk-icon="icon: trash; ratio: 1.5" class="uk-logo">
-                                    </button>
+                                    <a @click="wordDelete(relatedWord.id)" uk-icon="icon: trash; ratio: 1.5" class="uk-logo">
+                                    </a>
                                 </div>
                             </div>
                         </div>

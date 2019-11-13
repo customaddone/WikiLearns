@@ -18,4 +18,15 @@ var vm = new Vue({
       console.log(response);
     })
   },
+
+  methods: {
+   wordDelete: function (id) {
+     axios.delete('/api/delwords/' + id)
+     .then(() => {
+       this.wordIndex;
+     }).catch((response) => {
+       console.log(response);
+     });
+   }
+  }
 })
