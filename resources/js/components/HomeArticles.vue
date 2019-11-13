@@ -44,52 +44,20 @@
                 <a href="/seeMoreArticles" class="uk-text-right">see more...</a>
             </div>
             <ul class="uk-section-xsmall">
-                <li class="uk-float-left">
+                <li class="uk-float-left" v-for="(article, index) in articles" v-bind:key="index">
                     <div class="uk-margin-right uk-margin-top uk-card uk-card-default uk-card-body"
                         style="height: 255px; width: 345px;">
                         <div>
-                            <a v-on:click="articleDelete(articles[0].id)" href="../" uk-icon="icon: trash" style="float: right; margin-left: 15px;"></a>
-                            <a :href="'articles/' + articles[0].id"  uk-icon="icon: pencil" style="float: right;"></a>
+                            <a v-on:click="articleDelete(article.id)" href="../" uk-icon="icon: trash" style="float: right; margin-left: 15px;"></a>
+                            <a :href="'articles/' + article.id"  uk-icon="icon: pencil" style="float: right;"></a>
                         </div>
-                        <h1 class="uk-card-title">{{ articles[0].title}}</h1>
+                        <h1 class="uk-card-title">{{ article.title }}</h1>
                         <div class="uk-child-width-1-2" uk-grid style="margin-top: 10px;">
-                            <p>author: {{ articles[0].name }}</p>
+                            <p>author: {{ article.name }}</p>
                             <p>status: wiki</p>
                         </div>
                         <hr>
-                        <p>{{ articles[0].summary }} ...</p>
-                    </div>
-                </li>
-                <li class="uk-float-left">
-                    <div class="uk-margin-right uk-margin-top uk-card uk-card-default uk-card-body"
-                        style="height: 255px; width: 345px;">
-                        <div>
-                            <a v-on:click="articleDelete(articles[1].id)" href="../" uk-icon="icon: trash" style="float: right; margin-left: 15px;"></a>
-                            <a :href="'articles/' + articles[1].id"  uk-icon="icon: pencil" style="float: right;"></a>
-                        </div>
-                        <h1 class="uk-card-title">{{ articles[1].title}}</h1>
-                        <div class="uk-child-width-1-2" uk-grid style="margin-top: 10px;">
-                            <p>author: {{ articles[1].name }}</p>
-                            <p>status: wiki</p>
-                        </div>
-                        <hr>
-                        <p>{{ articles[1].summary }} ...</p>
-                    </div>
-                </li>
-                <li class="uk-float-left">
-                    <div class="uk-margin-right uk-margin-top uk-card uk-card-default uk-card-body"
-                        style="height: 255px; width: 345px;">
-                        <div>
-                            <a v-on:click="articleDelete(articles[2].id)" href="../" uk-icon="icon: trash" style="float: right; margin-left: 15px;"></a>
-                            <a :href="'articles/' + articles[2].id"  uk-icon="icon: pencil" style="float: right;"></a>
-                        </div>
-                        <h1 class="uk-card-title">{{ articles[2].title }}</h1>
-                        <div class="uk-child-width-1-2" uk-grid style="margin-top: 10px;">
-                            <p>author: {{ articles[2].name }}</p>
-                            <p>status: wiki</p>
-                        </div>
-                        <hr>
-                        <p>{{ articles[2].summary }} ...</p>
+                        <p>{{ article.summary }} ...</p>
                     </div>
                 </li>
             </ul>
@@ -111,17 +79,6 @@ export default {
       this.articles = [];
       this.articles = response.data;
 
-      // 記事が３つ未満の場合は空のデータをarticlesに入れる
-      if (this.articles.length < 3) {
-        for ( let i = 0; i < 3; i++ ) {
-          this.articles.push({
-            id: 0,
-            name: 'guest',
-            title: 'No data',
-            summary: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.',
-          })
-        }
-      }
     })
   },
   methods : {

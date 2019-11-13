@@ -1905,38 +1905,6 @@ __webpack_require__.r(__webpack_exports__);
 //
 //
 //
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
 /* harmony default export */ __webpack_exports__["default"] = ({
   data: function data() {
     return {
@@ -1949,18 +1917,7 @@ __webpack_require__.r(__webpack_exports__);
 
     axios.get('/api/get').then(function (response) {
       _this.articles = [];
-      _this.articles = response.data; // 記事が３つ未満の場合は空のデータをarticlesに入れる
-
-      if (_this.articles.length < 3) {
-        for (var i = 0; i < 3; i++) {
-          _this.articles.push({
-            id: 0,
-            name: 'guest',
-            title: 'No data',
-            summary: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.'
-          });
-        }
-      }
+      _this.articles = response.data;
     });
   },
   methods: {
@@ -19474,169 +19431,66 @@ var render = function() {
     _vm._v(" "),
     _vm._m(1),
     _vm._v(" "),
-    _c("ul", { staticClass: "uk-section-xsmall" }, [
-      _c("li", { staticClass: "uk-float-left" }, [
-        _c(
-          "div",
-          {
-            staticClass:
-              "uk-margin-right uk-margin-top uk-card uk-card-default uk-card-body",
-            staticStyle: { height: "255px", width: "345px" }
-          },
-          [
-            _c("div", [
-              _c("a", {
-                staticStyle: { float: "right", "margin-left": "15px" },
-                attrs: { href: "../", "uk-icon": "icon: trash" },
-                on: {
-                  click: function($event) {
-                    return _vm.articleDelete(_vm.articles[0].id)
+    _c(
+      "ul",
+      { staticClass: "uk-section-xsmall" },
+      _vm._l(_vm.articles, function(article, index) {
+        return _c("li", { key: index, staticClass: "uk-float-left" }, [
+          _c(
+            "div",
+            {
+              staticClass:
+                "uk-margin-right uk-margin-top uk-card uk-card-default uk-card-body",
+              staticStyle: { height: "255px", width: "345px" }
+            },
+            [
+              _c("div", [
+                _c("a", {
+                  staticStyle: { float: "right", "margin-left": "15px" },
+                  attrs: { href: "../", "uk-icon": "icon: trash" },
+                  on: {
+                    click: function($event) {
+                      return _vm.articleDelete(article.id)
+                    }
                   }
-                }
-              }),
-              _vm._v(" "),
-              _c("a", {
-                staticStyle: { float: "right" },
-                attrs: {
-                  href: "articles/" + _vm.articles[0].id,
-                  "uk-icon": "icon: pencil"
-                }
-              })
-            ]),
-            _vm._v(" "),
-            _c("h1", { staticClass: "uk-card-title" }, [
-              _vm._v(_vm._s(_vm.articles[0].title))
-            ]),
-            _vm._v(" "),
-            _c(
-              "div",
-              {
-                staticClass: "uk-child-width-1-2",
-                staticStyle: { "margin-top": "10px" },
-                attrs: { "uk-grid": "" }
-              },
-              [
-                _c("p", [_vm._v("author: " + _vm._s(_vm.articles[0].name))]),
+                }),
                 _vm._v(" "),
-                _c("p", [_vm._v("status: wiki")])
-              ]
-            ),
-            _vm._v(" "),
-            _c("hr"),
-            _vm._v(" "),
-            _c("p", [_vm._v(_vm._s(_vm.articles[0].summary) + " ...")])
-          ]
-        )
-      ]),
-      _vm._v(" "),
-      _c("li", { staticClass: "uk-float-left" }, [
-        _c(
-          "div",
-          {
-            staticClass:
-              "uk-margin-right uk-margin-top uk-card uk-card-default uk-card-body",
-            staticStyle: { height: "255px", width: "345px" }
-          },
-          [
-            _c("div", [
-              _c("a", {
-                staticStyle: { float: "right", "margin-left": "15px" },
-                attrs: { href: "../", "uk-icon": "icon: trash" },
-                on: {
-                  click: function($event) {
-                    return _vm.articleDelete(_vm.articles[1].id)
+                _c("a", {
+                  staticStyle: { float: "right" },
+                  attrs: {
+                    href: "articles/" + article.id,
+                    "uk-icon": "icon: pencil"
                   }
-                }
-              }),
+                })
+              ]),
               _vm._v(" "),
-              _c("a", {
-                staticStyle: { float: "right" },
-                attrs: {
-                  href: "articles/" + _vm.articles[1].id,
-                  "uk-icon": "icon: pencil"
-                }
-              })
-            ]),
-            _vm._v(" "),
-            _c("h1", { staticClass: "uk-card-title" }, [
-              _vm._v(_vm._s(_vm.articles[1].title))
-            ]),
-            _vm._v(" "),
-            _c(
-              "div",
-              {
-                staticClass: "uk-child-width-1-2",
-                staticStyle: { "margin-top": "10px" },
-                attrs: { "uk-grid": "" }
-              },
-              [
-                _c("p", [_vm._v("author: " + _vm._s(_vm.articles[1].name))]),
-                _vm._v(" "),
-                _c("p", [_vm._v("status: wiki")])
-              ]
-            ),
-            _vm._v(" "),
-            _c("hr"),
-            _vm._v(" "),
-            _c("p", [_vm._v(_vm._s(_vm.articles[1].summary) + " ...")])
-          ]
-        )
-      ]),
-      _vm._v(" "),
-      _c("li", { staticClass: "uk-float-left" }, [
-        _c(
-          "div",
-          {
-            staticClass:
-              "uk-margin-right uk-margin-top uk-card uk-card-default uk-card-body",
-            staticStyle: { height: "255px", width: "345px" }
-          },
-          [
-            _c("div", [
-              _c("a", {
-                staticStyle: { float: "right", "margin-left": "15px" },
-                attrs: { href: "../", "uk-icon": "icon: trash" },
-                on: {
-                  click: function($event) {
-                    return _vm.articleDelete(_vm.articles[2].id)
-                  }
-                }
-              }),
+              _c("h1", { staticClass: "uk-card-title" }, [
+                _vm._v(_vm._s(article.title))
+              ]),
               _vm._v(" "),
-              _c("a", {
-                staticStyle: { float: "right" },
-                attrs: {
-                  href: "articles/" + _vm.articles[2].id,
-                  "uk-icon": "icon: pencil"
-                }
-              })
-            ]),
-            _vm._v(" "),
-            _c("h1", { staticClass: "uk-card-title" }, [
-              _vm._v(_vm._s(_vm.articles[2].title))
-            ]),
-            _vm._v(" "),
-            _c(
-              "div",
-              {
-                staticClass: "uk-child-width-1-2",
-                staticStyle: { "margin-top": "10px" },
-                attrs: { "uk-grid": "" }
-              },
-              [
-                _c("p", [_vm._v("author: " + _vm._s(_vm.articles[2].name))]),
-                _vm._v(" "),
-                _c("p", [_vm._v("status: wiki")])
-              ]
-            ),
-            _vm._v(" "),
-            _c("hr"),
-            _vm._v(" "),
-            _c("p", [_vm._v(_vm._s(_vm.articles[2].summary) + " ...")])
-          ]
-        )
-      ])
-    ])
+              _c(
+                "div",
+                {
+                  staticClass: "uk-child-width-1-2",
+                  staticStyle: { "margin-top": "10px" },
+                  attrs: { "uk-grid": "" }
+                },
+                [
+                  _c("p", [_vm._v("author: " + _vm._s(article.name))]),
+                  _vm._v(" "),
+                  _c("p", [_vm._v("status: wiki")])
+                ]
+              ),
+              _vm._v(" "),
+              _c("hr"),
+              _vm._v(" "),
+              _c("p", [_vm._v(_vm._s(article.summary) + " ...")])
+            ]
+          )
+        ])
+      }),
+      0
+    )
   ])
 }
 var staticRenderFns = [
