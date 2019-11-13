@@ -1,6 +1,6 @@
 <template>
     <!-- uk-container 横にpadding uk-section 縦にpadding -->
-      <div class="uk-section-xsmall uk-container">
+    <div class="uk-section-xsmall uk-container">
         <div class="uk-margin">
 
             <!-- タイトル -->
@@ -11,162 +11,21 @@
 
             <!-- 記事 -->
             <hr>
-            <p>Articles and related words</p>
-            <div>
-                <ul class="uk-child-width-expand uk-tab" uk-tab="animation: uk-animation-fade">
-                    <li class="uk-active" aria-expanded="true"><a href="#">ITEM 1</a></li>
-                    <li aria-expanded="false"><a href="#">ITEM 2</a></li>
-                    <li aria-expanded="false"><a href="#">ITEM 3</a></li>
-                    <li aria-expanded="false"><a href="#">ITEM 4</a></li>
-                </ul>
-                <ul class="uk-switcher uk-margin">
-                    <li>
-                        <a :href="'articles/vocabula/' + articles[0].id "><h1>{{ articles[0].title}}</h1></a>
-                        <p>{{ articles[0].summary }} ...</p>
-
-                        <!-- 関連する単語 -->
-                        <p><strong>・related words</strong></p>
-                        <div class="uk-container">
-                            <div class="uk-child-width-1-3 uk-text-center" uk-grid>
-                                <div>
-                                    <p>sample</p>
-                                    <p>例、サンプル</p>
+            <h3>Articles and related words</h3>
+            <section  id="link-accordion">
+                <div class="uk-container">
+                    <div class="uk-section-small">
+                        <ul uk-accordion="" class="uk-accordion">
+                            <li class="">
+                                <h3 class="uk-accordion-title">タイトル 1</h3>
+                                <div class="uk-accordion-content" aria-hidden="true" hidden="hidden">
+                                    <p>コンテンツ 1 智ちに働けば角かどが立つ。情じょうに棹さおさせば流される。意地を通とおせば窮屈きゅうくつだ。とかくに人の世は住みにくい。</p>
                                 </div>
-                                <div>
-                                    <p>sample</p>
-                                    <p>例、サンプル</p>
-                                </div>
-                                <div>
-                                    <p>sample</p>
-                                    <p>例、サンプル</p>
-                                </div>
-                            </div>
-                            <div class="uk-child-width-1-3 uk-text-center" uk-grid>
-                                <div>
-                                    <p>sample</p>
-                                    <p>例、サンプル</p>
-                                </div>
-                                <div>
-                                    <p>sample</p>
-                                    <p>例、サンプル</p>
-                                </div>
-                                <div>
-                                    <p>sample</p>
-                                    <p>例、サンプル</p>
-                                </div>
-                            </div>
-                        </div>
-                    </li>
-                    <li>
-                        <h1>{{ articles[1].title}}</h1>
-                        <p>{{ articles[1].summary }} ...</p>
-
-                        <p><strong>・related words</strong></p>
-                        <div class="uk-container">
-                            <div class="uk-child-width-1-3 uk-text-center" uk-grid>
-                                <div>
-                                    <p>sample</p>
-                                    <p>例、サンプル</p>
-                                </div>
-                                <div>
-                                    <p>sample</p>
-                                    <p>例、サンプル</p>
-                                </div>
-                                <div>
-                                    <p>sample</p>
-                                    <p>例、サンプル</p>
-                                </div>
-                            </div>
-                            <div class="uk-child-width-1-3 uk-text-center" uk-grid>
-                                <div>
-                                    <p>sample</p>
-                                    <p>例、サンプル</p>
-                                </div>
-                                <div>
-                                    <p>sample</p>
-                                    <p>例、サンプル</p>
-                                </div>
-                                <div>
-                                    <p>sample</p>
-                                    <p>例、サンプル</p>
-                                </div>
-                            </div>
-                        </div>
-                    </li>
-                    <li>
-                        <h1>{{ articles[2].title}}</h1>
-                        <p>{{ articles[2].summary }} ...</p>
-
-                        <p><strong>・related words</strong></p>
-                        <div class="uk-container">
-                            <div class="uk-child-width-1-3 uk-text-center" uk-grid>
-                                <div>
-                                    <p>sample</p>
-                                    <p>例、サンプル</p>
-                                </div>
-                                <div>
-                                    <p>sample</p>
-                                    <p>例、サンプル</p>
-                                </div>
-                                <div>
-                                    <p>sample</p>
-                                    <p>例、サンプル</p>
-                                </div>
-                            </div>
-                            <div class="uk-child-width-1-3 uk-text-center" uk-grid>
-                                <div>
-                                    <p>sample</p>
-                                    <p>例、サンプル</p>
-                                </div>
-                                <div>
-                                    <p>sample</p>
-                                    <p>例、サンプル</p>
-                                </div>
-                                <div>
-                                    <p>sample</p>
-                                    <p>例、サンプル</p>
-                                </div>
-                            </div>
-                        </div>
-                    </li>
-                    <li>
-                        <h1>{{ articles[3].title}}</h1>
-                        <p>{{ articles[3].summary }} ...</p>
-
-                        <p><strong>・related words</strong></p>
-                        <div class="uk-container">
-                            <div class="uk-child-width-1-3 uk-text-center" uk-grid>
-                                <div>
-                                    <p>sample</p>
-                                    <p>例、サンプル</p>
-                                </div>
-                                <div>
-                                    <p>sample</p>
-                                    <p>例、サンプル</p>
-                                </div>
-                                <div>
-                                    <p>sample</p>
-                                    <p>例、サンプル</p>
-                                </div>
-                            </div>
-                            <div class="uk-child-width-1-3 uk-text-center" uk-grid>
-                                <div>
-                                    <p>sample</p>
-                                    <p>例、サンプル</p>
-                                </div>
-                                <div>
-                                    <p>sample</p>
-                                    <p>例、サンプル</p>
-                                </div>
-                                <div>
-                                    <p>sample</p>
-                                    <p>例、サンプル</p>
-                                </div>
-                            </div>
-                        </div>
-                    </li>
-                </ul>
-            </div>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+            </section>
         </div>
     </div>
 </template>
