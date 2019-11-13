@@ -2098,6 +2098,7 @@ __webpack_require__.r(__webpack_exports__);
 //
 //
 //
+//
 /* harmony default export */ __webpack_exports__["default"] = ({
   data: function data() {
     return {
@@ -2110,17 +2111,7 @@ __webpack_require__.r(__webpack_exports__);
 
     axios.get('/api/get').then(function (response) {
       _this.articles = [];
-      _this.articles = response.data; // 記事が３つ未満の場合は空のデータをarticlesに入れる
-
-      if (_this.articles.length < 4) {
-        for (var i = 0; i < 4; i++) {
-          _this.articles.push({
-            id: 0,
-            title: 'No data',
-            summary: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.'
-          });
-        }
-      }
+      _this.articles = response.data;
     });
   }
 });
@@ -20043,65 +20034,79 @@ var render = function() {
   var _vm = this
   var _h = _vm.$createElement
   var _c = _vm._self._c || _h
-  return _vm._m(0)
+  return _c("div", { staticClass: "uk-section-xsmall uk-container" }, [
+    _c("div", { staticClass: "uk-margin" }, [
+      _c(
+        "h1",
+        {
+          staticClass: "uk-text-center uk-text-primary ",
+          staticStyle: {
+            "font-size": "30px",
+            "font-family": "'Pacifico', cursive"
+          }
+        },
+        [_vm._v("\n            ~Vocabulary~\n        ")]
+      ),
+      _vm._v(" "),
+      _c("hr"),
+      _vm._v(" "),
+      _c("h3", [_vm._v("Articles and related words")]),
+      _vm._v(" "),
+      _c("section", { attrs: { id: "link-accordion" } }, [
+        _c("div", { staticClass: "uk-container" }, [
+          _c("div", { staticClass: "uk-section-small" }, [
+            _c(
+              "ul",
+              { staticClass: "uk-accordion", attrs: { "uk-accordion": "" } },
+              _vm._l(_vm.articles, function(article, index) {
+                return _c("li", { key: index }, [
+                  _c(
+                    "a",
+                    {
+                      attrs: { href: "articles/vocabula/" + _vm.articles[0].id }
+                    },
+                    [_c("h1", [_vm._v(_vm._s(article.title))])]
+                  ),
+                  _vm._v(" "),
+                  _c(
+                    "p",
+                    {
+                      staticClass: "uk-accordion-title",
+                      staticStyle: { "font-size": "15px" }
+                    },
+                    [_vm._v("Show related words")]
+                  ),
+                  _vm._v(" "),
+                  _vm._m(0, true)
+                ])
+              }),
+              0
+            )
+          ])
+        ])
+      ])
+    ])
+  ])
 }
 var staticRenderFns = [
   function() {
     var _vm = this
     var _h = _vm.$createElement
     var _c = _vm._self._c || _h
-    return _c("div", { staticClass: "uk-section-xsmall uk-container" }, [
-      _c("div", { staticClass: "uk-margin" }, [
-        _c(
-          "h1",
-          {
-            staticClass: "uk-text-center uk-text-primary ",
-            staticStyle: {
-              "font-size": "30px",
-              "font-family": "'Pacifico', cursive"
-            }
-          },
-          [_vm._v("\n            ~Vocabulary~\n        ")]
-        ),
-        _vm._v(" "),
-        _c("hr"),
-        _vm._v(" "),
-        _c("h3", [_vm._v("Articles and related words")]),
-        _vm._v(" "),
-        _c("section", { attrs: { id: "link-accordion" } }, [
-          _c("div", { staticClass: "uk-container" }, [
-            _c("div", { staticClass: "uk-section-small" }, [
-              _c(
-                "ul",
-                { staticClass: "uk-accordion", attrs: { "uk-accordion": "" } },
-                [
-                  _c("li", {}, [
-                    _c("h3", { staticClass: "uk-accordion-title" }, [
-                      _vm._v("タイトル 1")
-                    ]),
-                    _vm._v(" "),
-                    _c(
-                      "div",
-                      {
-                        staticClass: "uk-accordion-content",
-                        attrs: { "aria-hidden": "true", hidden: "hidden" }
-                      },
-                      [
-                        _c("p", [
-                          _vm._v(
-                            "コンテンツ 1 智ちに働けば角かどが立つ。情じょうに棹さおさせば流される。意地を通とおせば窮屈きゅうくつだ。とかくに人の世は住みにくい。"
-                          )
-                        ])
-                      ]
-                    )
-                  ])
-                ]
-              )
-            ])
-          ])
+    return _c(
+      "div",
+      {
+        staticClass: "uk-accordion-content",
+        attrs: { "aria-hidden": "true", hidden: "hidden" }
+      },
+      [
+        _c("p", [
+          _vm._v(
+            "コンテンツ 1 智ちに働けば角かどが立つ。情じょうに棹さおさせば流される。意地を通とおせば窮屈きゅうくつだ。とかくに人の世は住みにくい。"
+          )
         ])
-      ])
-    ])
+      ]
+    )
   }
 ]
 render._withStripped = true

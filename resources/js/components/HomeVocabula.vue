@@ -16,8 +16,9 @@
                 <div class="uk-container">
                     <div class="uk-section-small">
                         <ul uk-accordion="" class="uk-accordion">
-                            <li class="">
-                                <h3 class="uk-accordion-title">タイトル 1</h3>
+                            <li v-for="(article, index) in articles" v-bind:key="index">
+                                <a :href="'articles/vocabula/' + articles[0].id "><h1>{{ article.title }}</h1></a>
+                                <p class="uk-accordion-title" style="font-size: 15px;">Show related words</p>
                                 <div class="uk-accordion-content" aria-hidden="true" hidden="hidden">
                                     <p>コンテンツ 1 智ちに働けば角かどが立つ。情じょうに棹さおさせば流される。意地を通とおせば窮屈きゅうくつだ。とかくに人の世は住みにくい。</p>
                                 </div>
@@ -43,17 +44,6 @@ export default {
     ).then((response) => {
       this.articles = [];
       this.articles = response.data;
-
-      // 記事が３つ未満の場合は空のデータをarticlesに入れる
-      if (this.articles.length < 4) {
-        for ( let i = 0; i < 4; i++ ) {
-          this.articles.push({
-            id: 0,
-            title: 'No data',
-            summary: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.',
-          })
-        }
-      }
     })
   },
 }
