@@ -9,11 +9,11 @@ var vm = new Vue({
       selectedText: "使い方",
       searchWordId: "",
       translated: "「単語検索」のボタンで表示切り替え、範囲指定＋適当なところをタッチで単語検索",
+      editMean: "",
 
       isActive: [true, false, false, false, false, false],
       nowHighlightColor: "#FF89FF",
       highlightColor: ["#FF89FF", "#89DB89", "#90AFEE", "	#C8AAF2", "#8BDEDE", "#FF9999"],
-      inportArticleButton: false,
 
     }
   },
@@ -53,6 +53,9 @@ var vm = new Vue({
 
        console.log(response);
      })
+   },
+   wordEdit: function (id, mean) {
+     alert(mean);
    },
    wordDelete: function (id) {
      axios.delete('/api/delwords/' + id)
