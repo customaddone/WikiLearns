@@ -55,7 +55,14 @@ var vm = new Vue({
      })
    },
    wordEdit: function (id, mean) {
-     alert(mean);
+     axios.post('/api/editwords/' + id, {
+       mean: mean,
+     })
+     .then(() => {
+       this.wordIndex();
+     }).catch((response) => {
+       console.log(response);
+     });
    },
    wordDelete: function (id) {
      axios.delete('/api/delwords/' + id)

@@ -1,6 +1,6 @@
 <!-- 単語検索結果を表示するカードを右上に設置 -->
 <div class="showTextBox">
-    <div v-if="switchFunctionKey % 3 == 1" class="uk-card uk-card-default uk-margin" style="width: 250px;">
+    <div v-show="switchFunctionKey % 3 == 1" class="uk-card uk-card-default uk-margin" style="width: 250px;">
         <div class="uk-card-media-top">
             <div class="uk-cover-container">
             </div>
@@ -15,7 +15,7 @@
 
 <!-- ハイライトのカラー選択 -->
 <div class="showTextBox">
-    <div v-if="switchFunctionKey % 3 == 2" class="uk-card uk-card-default uk-margin" style="width: 250px;">
+    <div v-show="switchFunctionKey % 3 == 2" class="uk-card uk-card-default uk-margin" style="width: 250px;">
         <div class="uk-card-media-top">
             <div class="uk-cover-container">
             </div>

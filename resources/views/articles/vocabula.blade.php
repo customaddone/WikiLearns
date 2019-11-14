@@ -46,8 +46,8 @@
                                             style="width: 100%;"></textarea>
                                         <p class="uk-text-right">
                                             <button class="uk-button uk-button-default uk-modal-close" type="button">Cancel</button>
-                                            <button @click="wordEdit(relatedWord.id, relatedWord.mean)" class="uk-button uk-button-primary"
-                                                type="button">Save</button>
+                                            <button @click="wordEdit(relatedWord.id, relatedWord.mean)"
+                                                class="uk-button uk-button-primary uk-modal-close" type="button">Save</button>
                                         </p>
                                     </div>
                                 </div>

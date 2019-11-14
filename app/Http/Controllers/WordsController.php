@@ -22,7 +22,13 @@ class WordsController extends Controller
         $word->save();
     }
 
+    public function edit($id, Request $request) {
+        $word = Word::find($id);
+        $word->mean = $request->mean;
+        $word->save();
+    }
+
     public function del($id) {
-        $article = Word::find($id)->delete();
+        $word = Word::find($id)->delete();
     }
 }
