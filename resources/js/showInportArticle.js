@@ -206,7 +206,7 @@ var vm = new Vue({
        switchKey().then(() => {
          if (this.switchFunctionKey % 3 == 0 ) {
            this.nowpage = document.body.innerHTML
-           .replace(/<div id="inport.+<!----><\/div>/, '')
+           .replace(/<div id="inport.+><\/div>/, '')
 
            .replace(/<div class="article-footer[\s\S]+Highlight<\/div><\/div>/, '')
            .replace(/<script[\s\S]+<\/script>/, '')
