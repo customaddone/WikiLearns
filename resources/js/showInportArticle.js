@@ -203,15 +203,13 @@ var vm = new Vue({
      // wiki記事を取り込む
      editArticle: function () {
 
+       // ここ怪しい
        switchKey().then(() => {
          if (this.switchFunctionKey % 3 == 0 ) {
-           this.nowpage = document.body.innerHTML
-           .replace(/<div id="inport.+><\/div>/, '')
+           var nowPageHTML = document.body.innerHTML
+           .match(/mw-parser-output[\s\S]+canonical and timestamp/)
+           this.nowpage = '<div class="' + nowPageHTML + '-->';
 
-           .replace(/<div class="article-footer[\s\S]+Highlight<\/div><\/div>/, '')
-           .replace(/<script[\s\S]+<\/script>/, '')
-           .replace(/<div><div class="uk-padding[\s\S]+<\/div><\/div>/, '')
-           .replace(/<div><div><div>/g, '')
 
            axios.post('/api/edit',{
              id: this.articleId,
