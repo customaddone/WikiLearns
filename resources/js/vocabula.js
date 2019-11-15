@@ -9,6 +9,8 @@ var vm = new Vue({
       selectedText: "使い方",
       searchWordId: "",
       translated: "「単語検索」のボタンで表示切り替え、範囲指定＋適当なところをタッチで単語検索",
+      editWord: "",
+      editId: "",
       editMean: "",
 
       isActive: [true, false, false, false, false, false],
@@ -71,6 +73,11 @@ var vm = new Vue({
      }).catch((response) => {
        console.log(response);
      });
+   },
+   showModal: function (obj) {
+     this.editWord = obj.word;
+     this.editId = obj.id;
+     this.editMean = obj.mean;
    },
 
    switchKeyDictValue: function () {

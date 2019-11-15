@@ -30,32 +30,34 @@
                             </div>
                             <div class="uk-width-1-3">
                                 <div class="uk-flex" style="padding-top: 15px;" uk-grid>
-                                    <a href="#modal-edit" uk-icon="icon: pencil; ratio: 1.5"
+                                    <a href="#modal-edit" @click="showModal(relatedWord)" uk-icon="icon: pencil; ratio: 1.5"
                                         class="uk-logo" uk-toggle>
                                     </a>
                                     <a @click="wordDelete(relatedWord.id)" uk-icon=
                                         "icon: trash; ratio: 1.5" class="uk-logo">
                                     </a>
                                 </div>
-                                <div id="modal-edit" uk-modal>
-                                    <div class="uk-modal-dialog uk-modal-body uk-margin-auto-vertical">
-                                        <h3 class="uk-modal-title">Edit</h3>
-                                        <p>word: @{{ relatedWord.word }}</p>
-                                        <p>means:</p>
-                                        <textarea v-model="relatedWord.mean" rows="5"
-                                            style="width: 100%;"></textarea>
-                                        <p class="uk-text-right">
-                                            <button class="uk-button uk-button-default uk-modal-close" type="button">Cancel</button>
-                                            <button @click="wordEdit(relatedWord.id, relatedWord.mean)"
-                                                class="uk-button uk-button-primary uk-modal-close" type="button">Save</button>
-                                        </p>
-                                    </div>
-                                </div>
                             </div>
                         </div>
                     </div>
-                    <div style="padding: 150px 0px;">
+                    <div id="modal-edit" uk-modal>
+                        <div class="uk-modal-dialog uk-modal-body uk-margin-auto-vertical">
+                            <h3 class="uk-modal-title">Edit</h3>
+                            <p>word: @{{ editWord }}</p>
+                            <p>means:</p>
+                            <textarea v-model="editMean" rows="5"
+                                style="width: 100%;"></textarea>
+                            <p class="uk-text-right">
+                                <button class="uk-button uk-button-default uk-modal-close" type="button">Cancel</button>
+                                <button @click="wordEdit(editId, editMean)"
+                                    class="uk-button uk-button-primary uk-modal-close" type="button">Save</button>
+                            </p>
+                        </div>
                     </div>
+
+                    <div style="padding: 300px 0px;">
+                    </div>
+
                 </li>
 
                 <li @select="selected" @touchstart="switchWordFunction" @touchmove=
