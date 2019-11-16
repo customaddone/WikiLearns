@@ -4,10 +4,11 @@ var y = 0;
 
 document.getElementById( "target" ).addEventListener( "touchstart", function( event ) {
 	var touchObject = event.changedTouches[0] ;
+
 	x = touchObject.pageX ;
 	y = touchObject.pageY ;
-  alert(y)
-} ) ;
+
+}) ;
 
 var vm = new Vue({
   el: "#vocabula",
@@ -224,6 +225,7 @@ var vm = new Vue({
     },
 
     scroll: function () {
+      alert(y)
       scrollTo(0, y);
     },
 
