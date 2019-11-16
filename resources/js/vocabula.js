@@ -1,13 +1,15 @@
+// さっきまで読んでいた位置にスクロールして戻る
 var x = 0;
 var y = 0;
 
-document.body.addEventListener( "touchstart", function( event ) {
+document.getElementById( "target" ).ontouchstart = function( event ) {
+	// タッチの情報を含むオブジェクト
 	var touchObject = event.changedTouches[0] ;
 
-	x = touchObject.pageX ;
-	y = touchObject.pageY ;
-
-}) ;
+	// 位置座標を取得する
+	x = touchObject.pageX ;	// 水平方向の位置座標
+	y = touchObject.pageY ;	// 垂直方向の位置座標
+}
 
 var vm = new Vue({
   el: "#vocabula",
