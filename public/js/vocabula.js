@@ -223,6 +223,7 @@ var vm = new Vue({
     },
 
     scroll: function () {
+      alert(y);
       scrollTo(0, y);
     },
 
