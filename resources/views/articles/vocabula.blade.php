@@ -7,7 +7,7 @@
 
     <div id="vocabula">
 
-        @component('components.dictAndHighlightcard')
+        @component('components.dictAndHighlightForEdit')
         @endcomponent
 
         <div class="uk-container">
@@ -18,6 +18,7 @@
                 <li class="" aria-expanded="false"><a href="#">Words</a></li>
                 <li aria-expanded="true" class="uk-active"><a href="#">Article</a></li>
             </ul>
+            <!-- 単語一覧ページ -->
             <ul class="uk-switcher uk-margin">
                 <li>
                     <div v-for="(relatedWord, index) in relatedWords" v-bind:key="index"
@@ -61,6 +62,7 @@
 
                 </li>
 
+                <!-- 記事ページ　-->
                 <li @select="selected" @touchstart="switchWordFunction" @touchmove=
                     'switchUnhighlight' @blur="selected" @keyup="selected" @click="switchWordFunction">
                     <div id="target">{!! $article->article !!}</div>

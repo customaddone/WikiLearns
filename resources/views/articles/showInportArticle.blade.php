@@ -8,7 +8,7 @@
 
     <div class="uk-container">
 
-        @component('components.dictAndHighlightcard')
+        @component('components.dictAndHighlightForEdit')
         @endcomponent
 
         <div class="showSwitchButton uk-border-circle">
