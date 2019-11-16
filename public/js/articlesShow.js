@@ -79,7 +79,7 @@ var vm = new Vue({
             var keyId = Object.keys(response.data.query.pages)
             this.articleDetail = response.data.query.pages[keyId].extract
             .replace(/<.+?>/g, "")
-            .slice(0, 150);
+            .slice(0, 120);
          })
     .catch(response => console.log(response));
 

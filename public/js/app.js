@@ -1907,7 +1907,6 @@ __webpack_require__.r(__webpack_exports__);
 //
 //
 //
-//
 /* harmony default export */ __webpack_exports__["default"] = ({
   data: function data() {
     return {
@@ -19529,19 +19528,9 @@ var render = function() {
               ]),
               _vm._v(" "),
               _c("a", { attrs: { href: "articles/" + article.id } }, [
-                _c(
-                  "h1",
-                  {
-                    staticClass: "uk-card-title",
-                    staticStyle: { overflow: "hidden" }
-                  },
-                  [
-                    _vm._v(
-                      "\n                                    " +
-                        _vm._s(article.title)
-                    )
-                  ]
-                )
+                _c("h1", { staticClass: "uk-card-title cardword-round" }, [
+                  _vm._v(_vm._s(article.title))
+                ])
               ]),
               _vm._v(" "),
               _c(
@@ -19560,7 +19549,9 @@ var render = function() {
               _vm._v(" "),
               _c("hr"),
               _vm._v(" "),
-              _c("p", [_vm._v(_vm._s(article.summary) + " ...")])
+              _c("p", { staticStyle: { overflow: "hidden" } }, [
+                _vm._v(_vm._s(article.summary) + " ...")
+              ])
             ]
           )
         ])
