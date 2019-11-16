@@ -13,7 +13,9 @@ class ArticlesController extends Controller
         // idとタイトルだけgetする
         // idの前にはテーブルの名前をつける
        $articles = Article::join('users','users.id','=','articles.user_id')
+           ->whereIn('user_id', [1, Auth::id()])
            ->select('articles.id', 'title', 'summary', 'name')
+           ->limit(6)
            ->get();
        return $articles;
     }

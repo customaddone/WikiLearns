@@ -1906,10 +1906,12 @@ __webpack_require__.r(__webpack_exports__);
 //
 //
 //
+//
 /* harmony default export */ __webpack_exports__["default"] = ({
   data: function data() {
     return {
-      articles: []
+      articles: [],
+      articleRandom: []
     };
   },
   // 記事表示
@@ -1918,7 +1920,10 @@ __webpack_require__.r(__webpack_exports__);
 
     axios.get('/api/get').then(function (response) {
       _this.articles = [];
-      _this.articles = response.data;
+      _this.articles = response.data; // ランダムで記事表示
+
+      var randnum = Math.floor(Math.random() * response.data.length);
+      _this.articleRandom = _this.articles[randnum];
     });
   },
   methods: {
@@ -19428,7 +19433,72 @@ var render = function() {
   var _h = _vm.$createElement
   var _c = _vm._self._c || _h
   return _c("div", { staticClass: " uk-section-xsmall uk-container" }, [
-    _vm._m(0),
+    _c("div", { staticClass: "uk-margin" }, [
+      _c(
+        "h1",
+        {
+          staticClass: "uk-text-center uk-text-primary ",
+          staticStyle: {
+            "font-size": "30px",
+            "font-family": "'Pacifico', cursive"
+          }
+        },
+        [_vm._v("\n                ~Articles~\n            ")]
+      ),
+      _vm._v(" "),
+      _c("div", { staticClass: "uk-first-column" }, [
+        _c(
+          "div",
+          {
+            staticClass: "uk-card uk-card-default uk-margin uk-border-rounded",
+            staticStyle: { border: "solid 1px #fff" }
+          },
+          [
+            _c("p", [_vm._v("Random")]),
+            _vm._v(" "),
+            _c("div", { staticClass: "uk-card-header" }, [
+              _c(
+                "div",
+                {
+                  staticClass: "uk-grid-small uk-flex-middle uk-grid",
+                  attrs: { "uk-grid": "" }
+                },
+                [
+                  _vm._m(0),
+                  _vm._v(" "),
+                  _c("div", { staticClass: "uk-width-expand " }, [
+                    _c(
+                      "h3",
+                      { staticClass: "uk-card-title uk-margin-remove-bottom" },
+                      [_vm._v(_vm._s(_vm.articleRandom.title))]
+                    ),
+                    _vm._v(" "),
+                    _c("p", { staticClass: "uk-text-meta" }, [
+                      _c("time", [_vm._v(_vm._s(_vm.articleRandom.name))])
+                    ])
+                  ])
+                ]
+              )
+            ]),
+            _vm._v(" "),
+            _c("div", { staticClass: "uk-card-body" }, [
+              _c("p", [_vm._v(_vm._s(_vm.articleRandom.summary))])
+            ]),
+            _vm._v(" "),
+            _c("div", { staticClass: "uk-card-footer " }, [
+              _c(
+                "a",
+                {
+                  staticClass: "uk-button uk-button-text",
+                  attrs: { href: "articles/" + _vm.articleRandom.id }
+                },
+                [_vm._v("Read More")]
+              )
+            ])
+          ]
+        )
+      ])
+    ]),
     _vm._v(" "),
     _vm._m(1),
     _vm._v(" "),
@@ -19440,14 +19510,6 @@ var render = function() {
           _c(
             "div",
             {
-              directives: [
-                {
-                  name: "show",
-                  rawName: "v-show",
-                  value: article.name == "guest",
-                  expression: "article.name == 'guest'"
-                }
-              ],
               staticClass:
                 "uk-margin-small-right uk-margin-top uk-card uk-card-default uk-card-body",
               staticStyle: { height: "265px", width: "345px" }
@@ -19501,89 +19563,20 @@ var staticRenderFns = [
     var _vm = this
     var _h = _vm.$createElement
     var _c = _vm._self._c || _h
-    return _c("div", { staticClass: "uk-margin" }, [
-      _c(
-        "h1",
-        {
-          staticClass: "uk-text-center uk-text-primary ",
-          staticStyle: {
-            "font-size": "30px",
-            "font-family": "'Pacifico', cursive"
+    return _c("div", { staticClass: "uk-width-auto uk-first-column" }, [
+      _c("div", { staticClass: "uk-cover-container" }, [
+        _c("img", {
+          staticClass: "uk-cover",
+          staticStyle: { width: "107px", height: "80px" },
+          attrs: {
+            src:
+              "https://tapittalk.com/wp-content/uploads/2018/10/be46dc68a2c32d89451ff8e6006216f3.jpg",
+            alt: "*",
+            "uk-cover": ""
           }
-        },
-        [_vm._v("\n                ~Articles~\n            ")]
-      ),
-      _vm._v(" "),
-      _c("div", { staticClass: "uk-first-column" }, [
-        _c(
-          "div",
-          {
-            staticClass: "uk-card uk-card-default uk-margin uk-border-rounded",
-            staticStyle: { border: "solid 1px #fff" }
-          },
-          [
-            _c("p", [_vm._v("・Top Hit")]),
-            _vm._v(" "),
-            _c("div", { staticClass: "uk-card-header" }, [
-              _c(
-                "div",
-                {
-                  staticClass: "uk-grid-small uk-flex-middle uk-grid",
-                  attrs: { "uk-grid": "" }
-                },
-                [
-                  _c("div", { staticClass: "uk-width-auto uk-first-column" }, [
-                    _c("div", { staticClass: "uk-cover-container" }, [
-                      _c("img", {
-                        staticClass: "uk-cover",
-                        staticStyle: { width: "107px", height: "80px" },
-                        attrs: {
-                          src:
-                            "https://tapittalk.com/wp-content/uploads/2018/10/be46dc68a2c32d89451ff8e6006216f3.jpg",
-                          alt: "*",
-                          "uk-cover": ""
-                        }
-                      }),
-                      _vm._v(" "),
-                      _c("canvas", { attrs: { width: "80", height: "80" } })
-                    ])
-                  ]),
-                  _vm._v(" "),
-                  _c("div", { staticClass: "uk-width-expand " }, [
-                    _c(
-                      "h3",
-                      { staticClass: "uk-card-title uk-margin-remove-bottom" },
-                      [_vm._v("夏目漱石")]
-                    ),
-                    _vm._v(" "),
-                    _c("p", { staticClass: "uk-text-meta" }, [
-                      _c("time", [_vm._v("April 01, 2017")])
-                    ])
-                  ])
-                ]
-              )
-            ]),
-            _vm._v(" "),
-            _c("div", { staticClass: "uk-card-body" }, [
-              _c("p", [
-                _vm._v(
-                  "智ちに働けば角かどが立つ。情じょうに棹さおさせば流される。意地を通とおせば窮屈きゅうくつだ。とかくに人の世は住みにくい。"
-                )
-              ])
-            ]),
-            _vm._v(" "),
-            _c("div", { staticClass: "uk-card-footer " }, [
-              _c(
-                "a",
-                {
-                  staticClass: "uk-button uk-button-text",
-                  attrs: { href: "#" }
-                },
-                [_vm._v("Read More")]
-              )
-            ])
-          ]
-        )
+        }),
+        _vm._v(" "),
+        _c("canvas", { attrs: { width: "80", height: "80" } })
       ])
     ])
   },

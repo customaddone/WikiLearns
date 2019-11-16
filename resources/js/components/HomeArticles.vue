@@ -12,7 +12,7 @@
             <!-- TopHit -->
             <div class="uk-first-column">
                 <div class="uk-card uk-card-default uk-margin uk-border-rounded" style="border: solid 1px #fff;">
-                    <p>・Top Hit</p>
+                    <p>Random</p>
                     <div class="uk-card-header">
                         <div class="uk-grid-small uk-flex-middle uk-grid" uk-grid="">
                             <div class="uk-width-auto uk-first-column">
@@ -21,18 +21,19 @@
                                 </div>
                             </div>
                             <div class="uk-width-expand ">
-                                <h3 class="uk-card-title uk-margin-remove-bottom">夏目漱石</h3>
+                                <h3 class="uk-card-title uk-margin-remove-bottom">{{ articleRandom.title }}</h3>
                                 <p class="uk-text-meta">
-                                    <time>April 01, 2017</time>
+                                    <time>{{ articleRandom.name }}</time>
                                 </p>
                             </div>
                         </div>
                     </div>
                     <div class="uk-card-body">
-                        <p>智ちに働けば角かどが立つ。情じょうに棹さおさせば流される。意地を通とおせば窮屈きゅうくつだ。とかくに人の世は住みにくい。</p>
+                        <p>{{ articleRandom.summary }}</p>
                     </div>
                     <div class="uk-card-footer ">
-                        <a class="uk-button uk-button-text" href="#">Read More</a>
+                        <a class="uk-button uk-button-text"
+                            :href="'articles/' + articleRandom.id">Read More</a>
                     </div>
                 </div>
             </div>
@@ -45,7 +46,7 @@
             </div>
             <ul class="uk-section-xsmall">
                 <li class="uk-float-left" v-for="(article, index) in articles" v-bind:key="index">
-                    <div v-show="article.name == 'guest'" class="uk-margin-small-right uk-margin-top uk-card uk-card-default uk-card-body"
+                    <div class="uk-margin-small-right uk-margin-top uk-card uk-card-default uk-card-body"
                         style="height: 265px; width: 345px;">
                         <div>
                             <a v-on:click="articleDelete(article.id)" href="../" uk-icon="icon: trash" style="float: right; margin-left: 15px;"></a>
@@ -71,6 +72,7 @@ export default {
   data: function () {
     return {
       articles: [],
+      articleRandom: [],
     }
   },
   // 記事表示
@@ -79,6 +81,10 @@ export default {
     ).then((response) => {
       this.articles = [];
       this.articles = response.data;
+
+      // ランダムで記事表示
+      var randnum = Math.floor( Math.random() *  response.data.length );
+      this.articleRandom = this.articles[randnum];
 
     })
   },
