@@ -19,7 +19,7 @@
             <!-- カード表示　-->
             <!-- 検索結果表示 -->
             <div v-for="(searchResult, index) in searchResults" v-bind:key="index">
-                <div v-if="searchResult" style="padding: 5px 5px; width: 100%">
+                <div v-if="searchResult" style="padding: 5px 5px; width: 98%">
                     <!-- toの前の「:」を忘れない -->
                      <a :href="'articles/wikishow/' + searchResult.title ">
                         <div class="uk-card uk-card-header uk-width-1-2@m uk-border-rounded button-border-grey"

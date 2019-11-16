@@ -19679,7 +19679,7 @@ var render = function() {
             searchResult
               ? _c(
                   "div",
-                  { staticStyle: { padding: "5px 5px", width: "100%" } },
+                  { staticStyle: { padding: "5px 5px", width: "98%" } },
                   [
                     _c(
                       "a",
