@@ -45,13 +45,14 @@
             </div>
             <ul class="uk-section-xsmall">
                 <li class="uk-float-left" v-for="(article, index) in articles" v-bind:key="index">
-                    <div class="uk-margin-small-right uk-margin-top uk-card uk-card-default uk-card-body"
+                    <div v-show="article.name == 'guest'" class="uk-margin-small-right uk-margin-top uk-card uk-card-default uk-card-body"
                         style="height: 265px; width: 345px;">
                         <div>
                             <a v-on:click="articleDelete(article.id)" href="../" uk-icon="icon: trash" style="float: right; margin-left: 15px;"></a>
-                            <a :href="'articles/' + article.id"  uk-icon="icon: pencil" style="float: right;"></a>
                         </div>
-                        <h1 class="uk-card-title">{{ article.title }}</h1>
+                            <a :href="'articles/' + article.id">
+                                <h1 class="uk-card-title">{{ article.title }}</h1>
+                            </a>
                         <div class="uk-child-width-1-2" uk-grid style="margin-top: 10px;">
                             <p>author: {{ article.name }}</p>
                             <p>status: wiki</p>

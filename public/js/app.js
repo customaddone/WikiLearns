@@ -1905,6 +1905,7 @@ __webpack_require__.r(__webpack_exports__);
 //
 //
 //
+//
 /* harmony default export */ __webpack_exports__["default"] = ({
   data: function data() {
     return {
@@ -19439,6 +19440,14 @@ var render = function() {
           _c(
             "div",
             {
+              directives: [
+                {
+                  name: "show",
+                  rawName: "v-show",
+                  value: article.name == "guest",
+                  expression: "article.name == 'guest'"
+                }
+              ],
               staticClass:
                 "uk-margin-small-right uk-margin-top uk-card uk-card-default uk-card-body",
               staticStyle: { height: "265px", width: "345px" }
@@ -19453,19 +19462,13 @@ var render = function() {
                       return _vm.articleDelete(article.id)
                     }
                   }
-                }),
-                _vm._v(" "),
-                _c("a", {
-                  staticStyle: { float: "right" },
-                  attrs: {
-                    href: "articles/" + article.id,
-                    "uk-icon": "icon: pencil"
-                  }
                 })
               ]),
               _vm._v(" "),
-              _c("h1", { staticClass: "uk-card-title" }, [
-                _vm._v(_vm._s(article.title))
+              _c("a", { attrs: { href: "articles/" + article.id } }, [
+                _c("h1", { staticClass: "uk-card-title" }, [
+                  _vm._v(_vm._s(article.title))
+                ])
               ]),
               _vm._v(" "),
               _c(
@@ -19935,10 +19938,17 @@ var render = function() {
                       staticClass: "uk-accordion-title uk-margin-top",
                       staticStyle: { "font-size": "15px" }
                     },
-                    [_vm._v("Show related words")]
+                    [_vm._v("Summary")]
                   ),
                   _vm._v(" "),
-                  _vm._m(0, true)
+                  _c(
+                    "div",
+                    {
+                      staticClass: "uk-accordion-content",
+                      attrs: { "aria-hidden": "true", hidden: "hidden" }
+                    },
+                    [_c("p", [_vm._v(_vm._s(article.summary))])]
+                  )
                 ])
               }),
               0
@@ -19949,27 +19959,7 @@ var render = function() {
     ])
   ])
 }
-var staticRenderFns = [
-  function() {
-    var _vm = this
-    var _h = _vm.$createElement
-    var _c = _vm._self._c || _h
-    return _c(
-      "div",
-      {
-        staticClass: "uk-accordion-content",
-        attrs: { "aria-hidden": "true", hidden: "hidden" }
-      },
-      [
-        _c("p", [
-          _vm._v(
-            "コンテンツ 1 智ちに働けば角かどが立つ。情じょうに棹さおさせば流される。意地を通とおせば窮屈きゅうくつだ。とかくに人の世は住みにくい。"
-          )
-        ])
-      ]
-    )
-  }
-]
+var staticRenderFns = []
 render._withStripped = true
 
 
