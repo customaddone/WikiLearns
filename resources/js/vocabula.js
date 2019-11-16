@@ -1,10 +1,13 @@
+var x = 0;
+var y = 0;
+
 document.body.addEventListener( "touchstart", function( event ) {
 	var touchObject = event.changedTouches[0] ;
 
-	var x = touchObject.pageX ;
-	var y = touchObject.pageY ;
+	x = touchObject.pageX ;
+	y = touchObject.pageY ;
 
-} ) ;
+}) ;
 
 var vm = new Vue({
   el: "#vocabula",
@@ -220,5 +223,9 @@ var vm = new Vue({
       this.inportArticleButton = !this.inportArticleButton;
     },
 
-  }
+    scroll: function () {
+      scrollTo(0, y);
+    },
+
+  },
 })
