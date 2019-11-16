@@ -3,6 +3,8 @@ document.body.addEventListener( "touchstart", function( event ) {
 
 	var x = touchObject.pageX ;
 	var y = touchObject.pageY ;
+
+  alert(y);
 } ) ;
 
 var vm = new Vue({
