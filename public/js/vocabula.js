@@ -2,14 +2,11 @@
 var x = 0;
 var y = 0;
 
-document.getElementById( "target" ).ontouchstart = function( event ) {
-	// タッチの情報を含むオブジェクト
+document.getElementById( "target" ).addEventListener( "touchstart", function( event ) {
 	var touchObject = event.changedTouches[0] ;
-
-	// 位置座標を取得する
-	x = touchObject.pageX ;	// 水平方向の位置座標
-	y = touchObject.pageY ;	// 垂直方向の位置座標
-}
+	x = touchObject.pageX ;
+	y = touchObject.pageY ;
+}) ;
 
 var vm = new Vue({
   el: "#vocabula",
