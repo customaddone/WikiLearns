@@ -51,7 +51,9 @@
                 <li>
                     @foreach( $publicArticles as $publicArticle )
                         <div class="uk-card uk-card-small uk-card-default uk-card-body">
-                            <a href="/articles/{{ $publicArticle->id }}" class="uk-card-title"><strong>{{ $publicArticle->title }}</strong></a>
+                            <a href="/articles/{{ $publicArticle->id }}"
+                                class="uk-card-title"　style="overflow: hidden;">
+                                <strong>{{ $publicArticle->title }}</strong></a>
                             <p>{{ $publicArticle->summary }}</p>
                         </div>
                     @endforeach
@@ -64,7 +66,10 @@
                 <li>
                     @foreach( $usersArticles as $usersArticle )
                         <div class="uk-card uk-card-small uk-card-default uk-card-body">
-                            <a href="/articles/{{ $usersArticle->id }}" class="uk-card-title"><strong>{{ $usersArticle->title }}</strong></a>
+                            <a href="/articles/{{ $usersArticle->id }}" style="overflow: hidden;"
+                                class="uk-card-title">
+                                <strong>{{ $usersArticle->title }}</strong>
+                            </a>
                             <p>{{ $usersArticle->summary }}</p>
                         </div>
                     @endforeach

@@ -52,7 +52,8 @@
                             <a v-on:click="articleDelete(article.id)" href="../" uk-icon="icon: trash" style="float: right; margin-left: 15px;"></a>
                         </div>
                             <a :href="'articles/' + article.id">
-                                <h1 class="uk-card-title">{{ article.title }}</h1>
+                                <h1 class="uk-card-title"　style="overflow: hidden;">
+                                    {{ article.title }}</h1>
                             </a>
                         <div class="uk-child-width-1-2" uk-grid style="margin-top: 10px;">
                             <p>author: {{ article.name }}</p>

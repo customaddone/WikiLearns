@@ -1907,6 +1907,7 @@ __webpack_require__.r(__webpack_exports__);
 //
 //
 //
+//
 /* harmony default export */ __webpack_exports__["default"] = ({
   data: function data() {
     return {
@@ -19528,9 +19529,19 @@ var render = function() {
               ]),
               _vm._v(" "),
               _c("a", { attrs: { href: "articles/" + article.id } }, [
-                _c("h1", { staticClass: "uk-card-title" }, [
-                  _vm._v(_vm._s(article.title))
-                ])
+                _c(
+                  "h1",
+                  {
+                    staticClass: "uk-card-title",
+                    staticStyle: { overflow: "hidden" }
+                  },
+                  [
+                    _vm._v(
+                      "\n                                    " +
+                        _vm._s(article.title)
+                    )
+                  ]
+                )
               ]),
               _vm._v(" "),
               _c(
@@ -19675,35 +19686,41 @@ var render = function() {
         _vm._l(_vm.searchResults, function(searchResult, index) {
           return _c("div", { key: index }, [
             searchResult
-              ? _c("div", { staticStyle: { padding: "5px 5px" } }, [
-                  _c(
-                    "a",
-                    {
-                      attrs: { href: "articles/wikishow/" + searchResult.title }
-                    },
-                    [
-                      _c(
-                        "div",
-                        {
-                          staticClass:
-                            "uk-card uk-card-header uk-width-1-2@m uk-border-rounded button-border-grey",
-                          staticStyle: { height: "200px" }
-                        },
-                        [
-                          _c("p", [
-                            _c("strong", [_vm._v(_vm._s(searchResult.title))])
-                          ]),
-                          _vm._v(" "),
-                          _c("div", {
-                            domProps: {
-                              innerHTML: _vm._s(searchResult.snippet)
-                            }
-                          })
-                        ]
-                      )
-                    ]
-                  )
-                ])
+              ? _c(
+                  "div",
+                  { staticStyle: { padding: "5px 5px", width: "100%" } },
+                  [
+                    _c(
+                      "a",
+                      {
+                        attrs: {
+                          href: "articles/wikishow/" + searchResult.title
+                        }
+                      },
+                      [
+                        _c(
+                          "div",
+                          {
+                            staticClass:
+                              "uk-card uk-card-header uk-width-1-2@m uk-border-rounded button-border-grey",
+                            staticStyle: { height: "200px" }
+                          },
+                          [
+                            _c("p", [
+                              _c("strong", [_vm._v(_vm._s(searchResult.title))])
+                            ]),
+                            _vm._v(" "),
+                            _c("div", {
+                              domProps: {
+                                innerHTML: _vm._s(searchResult.snippet)
+                              }
+                            })
+                          ]
+                        )
+                      ]
+                    )
+                  ]
+                )
               : _vm._e()
           ])
         })

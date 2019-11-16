@@ -11,7 +11,7 @@
         @endcomponent
 
         <div class="uk-container">
-            <h1>・{{ $article->title }}</h1>
+            <h1 style="overflow: hidden;">・{{ $article->title }}</h1>
         </div>
         <div class="uk-padding-small">
             <ul class="uk-child-width-expand uk-tab" uk-tab="animation: uk-animation-fade">
