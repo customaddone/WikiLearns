@@ -61,9 +61,9 @@
 
                 </li>
 
-                <li id="target" @select="selected" @touchstart="switchWordFunction" @touchmove=
+                <li @select="selected" @touchstart="switchWordFunction" @touchmove=
                     'switchUnhighlight' @blur="selected" @keyup="selected" @click="switchWordFunction">
-                    {!! $article->article !!}
+                    <div id="target">{!! $article->article !!}</div>
                 </li>
             </ul>
 
