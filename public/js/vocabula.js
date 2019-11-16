@@ -1,11 +1,9 @@
-document.getElementById( "vocabula" ).ontouchstart = function( event ) {
-	// タッチの情報を含むオブジェクト
+document.body.addEventListener( "touchstart", function( event ) {
 	var touchObject = event.changedTouches[0] ;
 
-	// 位置座標を取得する
-	var x = touchObject.pageX ;	// 水平方向の位置座標
-	var y = touchObject.pageY ;	// 垂直方向の位置座標
-}
+	var x = touchObject.pageX ;
+	var y = touchObject.pageY ;
+} ) ;
 
 var vm = new Vue({
   el: "#vocabula",
