@@ -59,12 +59,11 @@ var vm = new Vue({
    wordEdit: function (id, mean) {
      document.getElementById('vocabula').addEventListener('touch', function(e) {
 
-		const touch = e.changedTouches[0];
-    var x = touchObject.pageX ;	// 水平方向の位置座標
-     var y = touchObject.pageY ;
-alert(y);
-	}
-);
+		     const touch = e.changedTouches[0];
+         var x = touch.pageX ;	// 水平方向の位置座標
+         var y = touch.pageY ;
+         alert(y);
+	   });
 
     　
      axios.post('/api/editwords/' + id, {
