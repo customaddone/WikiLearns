@@ -57,6 +57,15 @@ var vm = new Vue({
      })
    },
    wordEdit: function (id, mean) {
+     document.getElementById( "vocabula" ).ontouchstart = function( event ) {
+	      // タッチの情報を含むオブジェクト
+	       var touchObject = event.changedTouches[0] ;
+
+	        // 位置座標を取得する
+	         var x = touchObject.pageX ;	// 水平方向の位置座標
+	          var y = touchObject.pageY ;	// 垂直方向の位置座標
+            alert(y);
+    　}
      axios.post('/api/editwords/' + id, {
        mean: mean,
      })

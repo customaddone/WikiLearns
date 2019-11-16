@@ -210,7 +210,6 @@ var vm = new Vue({
            .match(/mw-parser-output[\s\S]+canonical and timestamp/)
            this.nowpage = '<div class="' + nowPageHTML + '-->';
 
-
            axios.post('/api/edit',{
              id: this.articleId,
              article: this.nowpage,
