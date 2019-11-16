@@ -1,3 +1,12 @@
+document.getElementById( "vocabula" ).ontouchstart = function( event ) {
+	// タッチの情報を含むオブジェクト
+	var touchObject = event.changedTouches[0] ;
+
+	// 位置座標を取得する
+	var x = touchObject.pageX ;	// 水平方向の位置座標
+	var y = touchObject.pageY ;	// 垂直方向の位置座標
+}
+
 var vm = new Vue({
   el: "#vocabula",
   data:function () {
@@ -19,6 +28,7 @@ var vm = new Vue({
 
     }
   },
+
 
   mounted: function () {
     this.wordIndex();
@@ -57,15 +67,7 @@ var vm = new Vue({
      })
    },
    wordEdit: function (id, mean) {
-     document.getElementById('vocabula').addEventListener('touch', function(e) {
-
-		     const touch = e.changedTouches[0];
-         var x = touch.pageX ;	// 水平方向の位置座標
-         var y = touch.pageY ;
-         alert(y);
-	   });
-
-    　
+  　
      axios.post('/api/editwords/' + id, {
        mean: mean,
      })
