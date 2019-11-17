@@ -17,6 +17,8 @@ use Illuminate\Support\Str;
 */
 // Userクラスを生成　フェイクデータを生成 return内の値をセット
 $factory->define(User::class, function (Faker $faker) {
+    static $password;
+    
     return [
         'name' => $faker->name,
         'email' => $faker->unique()->safeEmail,
