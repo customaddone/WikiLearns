@@ -1904,9 +1904,6 @@ __webpack_require__.r(__webpack_exports__);
 //
 //
 //
-//
-//
-//
 /* harmony default export */ __webpack_exports__["default"] = ({
   data: function data() {
     return {
@@ -19512,21 +19509,9 @@ var render = function() {
             {
               staticClass:
                 "uk-margin-small-right uk-margin-top uk-card uk-card-default uk-card-body",
-              staticStyle: { height: "265px", width: "345px" }
+              staticStyle: { height: "255px", width: "345px" }
             },
             [
-              _c("div", [
-                _c("a", {
-                  staticStyle: { float: "right", "margin-left": "15px" },
-                  attrs: { href: "../", "uk-icon": "icon: trash" },
-                  on: {
-                    click: function($event) {
-                      return _vm.articleDelete(article.id)
-                    }
-                  }
-                })
-              ]),
-              _vm._v(" "),
               _c("a", { attrs: { href: "articles/" + article.id } }, [
                 _c("h1", { staticClass: "uk-card-title cardword-round" }, [
                   _vm._v(_vm._s(article.title))
