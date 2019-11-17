@@ -8,7 +8,7 @@
                 </h1>
 
                 <!-- 検索ボタン -->
-                <div class="uk-search uk-search-default button-border-grey"style="width: 100%;">
+                <div class="uk-search uk-search-default button-border-grey" style="width: 100%;">
                     <a href="" uk-search-icon></a>
                     <input class="uk-search-input " type="search"
                         v-model="searchword" placeholder="Search...">
@@ -22,7 +22,7 @@
                 <div v-if="searchResult" style="padding: 5px 5px; width: 98%">
                     <!-- toの前の「:」を忘れない -->
                      <a :href="'articles/wikishow/' + searchResult.title ">
-                        <div class="uk-card uk-card-header uk-width-1-2@m uk-border-rounded button-border-grey"
+                        <div class="uk-card uk-card-header uk-border-rounded button-border-grey"
                             style="height: 200px;">
                             <!-- 検索結果見出し -->
                             <p><strong>{{ searchResult.title }}</strong></p>

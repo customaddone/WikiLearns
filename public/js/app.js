@@ -19678,7 +19678,7 @@ var render = function() {
                           "div",
                           {
                             staticClass:
-                              "uk-card uk-card-header uk-width-1-2@m uk-border-rounded button-border-grey",
+                              "uk-card uk-card-header uk-border-rounded button-border-grey",
                             staticStyle: { height: "200px" }
                           },
                           [
@@ -19785,7 +19785,7 @@ var staticRenderFns = [
               _vm._v(" "),
               _c("p", [
                 _vm._v(
-                  "記事の閲覧中は辞書機能、ハイライト機能が使用可能です。青色のバーに表示されている「dictionary」「highlightwo」"
+                  "記事の閲覧中は辞書機能、ハイライト機能が使用可能です。青色のバーに表示されている「dictionary」「highlight」を押して使用してください"
                 )
               ]),
               _vm._v(" "),
