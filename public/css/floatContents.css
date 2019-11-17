@@ -65,12 +65,7 @@
     /*　画面サイズ 1000px以上から適用　*/
     .showTextBox {
       top: 5%;
-      left: 72%;
-    }
-
-    .showInportBox  {
-      top: 10%;
-      left: 72%;
+      left: 68%;
     }
 
     .showSwitchButton {

@@ -63,8 +63,8 @@
                 </li>
 
                 <!-- 記事ページ　-->
-                <li @select="selected" @touchstart="switchWordFunction" @touchmove=
-                    'switchUnhighlight' @blur="selected" @keyup="selected" @click="switchWordFunction">
+                <div @select="selected" @touchstart="switchWordFunction" @touchmove='switchUnhighlight'
+                    @mousedown="switchWordFunction"  @click="switchUnhighlight">
                     <div id="target">{!! $article->article !!}</div>
                 </li>
             </ul>

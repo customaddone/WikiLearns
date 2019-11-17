@@ -19727,9 +19727,118 @@ var render = function() {
   var _vm = this
   var _h = _vm.$createElement
   var _c = _vm._self._c || _h
-  return _c("div")
+  return _vm._m(0)
 }
-var staticRenderFns = []
+var staticRenderFns = [
+  function() {
+    var _vm = this
+    var _h = _vm.$createElement
+    var _c = _vm._self._c || _h
+    return _c("div", { staticClass: " uk-section-xsmall uk-container" }, [
+      _c("div", { staticClass: "uk-first-column" }, [
+        _c(
+          "div",
+          {
+            staticClass: "uk-card uk-card-default uk-margin uk-border-rounded",
+            staticStyle: { border: "solid 1px #fff" }
+          },
+          [
+            _c("div", { staticClass: "uk-card-header" }, [
+              _c(
+                "div",
+                {
+                  staticClass: "uk-grid-small uk-flex-middle uk-grid",
+                  attrs: { "uk-grid": "" }
+                },
+                [
+                  _c("div", { staticClass: "uk-width-auto uk-first-column" }, [
+                    _c("h1", [_vm._v("使い方")])
+                  ])
+                ]
+              )
+            ]),
+            _vm._v(" "),
+            _c("div", { staticClass: "uk-card-body" }, [
+              _c("h3", [_vm._v("ホーム")]),
+              _vm._v(" "),
+              _c("p", [_vm._v("Findings: wikiの記事を検索する")]),
+              _vm._v(" "),
+              _c("p", [_vm._v("Articles: インポートした記事の確認、編集")]),
+              _vm._v(" "),
+              _c("p", [_vm._v("Vocabula: 登録した単語の確認、編集")]),
+              _vm._v(" "),
+              _c("p", [_vm._v("Explains: アプリの使い方の説明")]),
+              _vm._v(" "),
+              _c("br"),
+              _vm._v(" "),
+              _c("h3", [_vm._v("ログイン")]),
+              _vm._v(" "),
+              _c("p", [
+                _vm._v(
+                  "左上のボタンからログインができます。ログインした状態で記事をインポートすると\n                記事がログインしたユーザー以外に公開されなくなります。"
+                )
+              ]),
+              _vm._v(" "),
+              _c("br"),
+              _vm._v(" "),
+              _c("h3", [_vm._v("辞書機能、ハイライトの説明")]),
+              _vm._v(" "),
+              _c("p", [
+                _vm._v(
+                  "記事の閲覧中は辞書機能、ハイライト機能が使用可能です。青色のバーに表示されている「dictionary」「highlightwo」"
+                )
+              ]),
+              _vm._v(" "),
+              _c("br"),
+              _vm._v(" "),
+              _c("p", [_vm._v("・辞書機能")]),
+              _vm._v(" "),
+              _c("p", [
+                _vm._v(
+                  "調べたい単語一語を範囲選択して適当なところをタッチすると、右上に検索結果が表示されます。"
+                )
+              ]),
+              _vm._v(" "),
+              _c("p", [
+                _vm._v(
+                  "単語登録(Articles、Vocabula使用中のみ)は検索結果が表示されている状態で「単語登録」を押すとできます。"
+                )
+              ]),
+              _vm._v(" "),
+              _c("br"),
+              _vm._v(" "),
+              _c("p", [_vm._v("・ハイライト機能")]),
+              _vm._v(" "),
+              _c("p", [_vm._v("・PCの時")]),
+              _vm._v(" "),
+              _c("p", [
+                _vm._v(
+                  "範囲選択＋適当な場所をクリックでハイライトを付ける、ハイライトの前方あたりをクリックでハイライトを消す。"
+                )
+              ]),
+              _vm._v(" "),
+              _c("p", [_vm._v("・スマホの時")]),
+              _vm._v(" "),
+              _c("p", [
+                _vm._v(
+                  "範囲選択＋適当な場所をタッチでハイライトを付ける、長押ししてハイライトの前方あたりをグリグリしてハイライトを消す。"
+                )
+              ]),
+              _vm._v(" "),
+              _c("p", [
+                _vm._v(
+                  "「Articles」で青色のバーの「Edit」を押した時のみハイライトを付けた/消した変化が反映されます。"
+                )
+              ])
+            ]),
+            _vm._v(" "),
+            _c("div", { staticClass: "uk-card-footer " })
+          ]
+        )
+      ])
+    ])
+  }
+]
 render._withStripped = true
 
 

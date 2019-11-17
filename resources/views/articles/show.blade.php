@@ -16,8 +16,8 @@
 
         <!-- wikiから引っ張ってくる記事 -->
         <!-- touchstart, touchmove, clickはボタンの押し具合によって挙動が変わる -->
-        <div @select="selected" @touchstart="switchWordFunction" @touchmove='switchUnhighlight' @blur="selected" @keyup=
-            "selected" @click="switchWordFunction">
+        <div @select="selected" @touchstart="switchWordFunction" @touchmove='switchUnhighlight'
+            @mousedown="switchWordFunction"  @click="switchUnhighlight">
             <div v-html="article"></div>
         </div>
 
