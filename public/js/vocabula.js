@@ -31,7 +31,7 @@ var vm = new Vue({
      var pathname= location.pathname;
      var searchId = pathname.split("/");
 
-     axios.post('/api/words/' + searchId[3],{
+     axios.get('/api/words/' + searchId[3],{
 
      }).then((response) => {
        this.relatedWords = response.data;

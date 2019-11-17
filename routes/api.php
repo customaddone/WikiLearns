@@ -27,17 +27,17 @@ Route::group(['middleware' => ['api', 'modify']], function() {
   // 記事ページ移動用
   Route::get("/articlesShow/{pass}", "WikiSearchController@articlesShow");
   // 記事のインポート用
-  Route::match(["get", "options"], '/get',  'ArticlesController@index');
-  Route::match(["get", "options"], '/find/{id?}',  'ArticlesController@find');
-  Route::match(["post", "options"], '/add',  'ArticlesController@store');
-  Route::match(["post", "options"], '/edit',  'ArticlesController@edit');
-  Route::match(["delete", "options"], '/del/{id}',  'ArticlesController@delAPI');
+  Route::get('/get',  'ArticlesController@index');
+  Route::get('/find/{id?}',  'ArticlesController@find');
+  Route::post('/add',  'ArticlesController@store');
+  Route::post('/edit',  'ArticlesController@edit');
+  Route::delete('/del/{id}',  'ArticlesController@delAPI');
 
-  Route::match(["post", "options"], '/words/add',  'WordsController@store');
+  Route::post('/words/add',  'WordsController@store');
 
-  Route::match(["post", "options"], '/words/{id}',  'WordsController@index');
+  Route::get('/words/{id}',  'WordsController@index');
 
-  Route::match(["post", "options"], '/editwords/{id}',  'WordsController@edit');
+  Route::post('/editwords/{id}',  'WordsController@edit');
 
-  Route::match(["delete", "options"], '/delwords/{id}', 'WordsController@del');
+  Route::delete('/delwords/{id}', 'WordsController@del');
 });
