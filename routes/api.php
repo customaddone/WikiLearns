@@ -31,7 +31,7 @@ Route::group(['middleware' => ['api', 'modify']], function() {
   Route::match(["get", "options"], '/find/{id?}',  'ArticlesController@find');
   Route::match(["post", "options"], '/add',  'ArticlesController@store');
   Route::match(["post", "options"], '/edit',  'ArticlesController@edit');
-  Route::match(["delete", "options"], '/del/{id}',  'ArticlesController@del');
+  Route::match(["delete", "options"], '/del/{id}',  'ArticlesController@delAPI');
 
   Route::match(["post", "options"], '/words/add',  'WordsController@store');
 

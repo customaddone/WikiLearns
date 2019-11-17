@@ -57,7 +57,12 @@ class ArticlesController extends Controller
         $article->save();
     }
 
-    public function del($id) {
+    public function destroy($id) {
+        $article = Article::find($id)->delete();
+        return back();
+    }
+
+    public function delAPI($id) {
         $article = Article::find($id)->delete();
     }
 

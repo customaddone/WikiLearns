@@ -54,6 +54,11 @@
                             <a href="/articles/{{ $publicArticle->id }}"
                                 class="uk-card-title cardword-round">
                                 <strong>{{ $publicArticle->title }}</strong></a>
+                                <form action="/articles/{{ $publicArticle->id }}" method="post" style="display:inline">
+                                    {{ csrf_field() }}
+                                    {{ method_field('delete') }}
+                                    <button uk-icon="icon: trash" style="float: right; margin-left: 15px;"></button>
+                                </form>
                             <p>{{ $publicArticle->summary }}</p>
                         </div>
                     @endforeach
@@ -70,6 +75,8 @@
                                 class="uk-card-title cardword-round">
                                 <strong>{{ $usersArticle->title }}</strong>
                             </a>
+                            <a v-on:click="articleDelete(article.id)"
+                                uk-icon="icon: trash" style="float: right; margin-left: 15px;"></a>
                             <p>{{ $usersArticle->summary }}</p>
                         </div>
                     @endforeach
