@@ -14,6 +14,10 @@ class ExampleTest extends TestCase
      */
     public function testBasicTest()
     {
+        /*
+            ユニットテスト
+            プログラム全体ではなく、１つ1つの機能について動作を確認していくもの
+        */
         $response = $this->get('/');
 
         $response->assertStatus(200);
